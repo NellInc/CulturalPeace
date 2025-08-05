@@ -1,0 +1,22 @@
+{
+  "name": "cultural-peace-clone",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scrape.mjs",
+    "parse-xml": "node parse-xml.mjs",
+    "verify": "node verify.mjs",
+    "clean": "node clean-for-github.mjs",
+    "full-clone": "npm run parse-xml && npm run scrape && npm run verify && npm run clean"
+  },
+  "dependencies": {
+    "puppeteer": "^22.0.0",
+    "fs-extra": "^11.0.0",
+    "cheerio": "^1.0.0",
+    "axios": "^1.0.0",
+    "p-limit": "^4.0.0",
+    "xml2js": "^0.6.0",
+    "html-minifier-terser": "^7.0.0",
+    "prettier": "^3.0.0"
+  }
+}
