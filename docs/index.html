@@ -18,18 +18,17 @@
             overflow-x: hidden;
           }
           
-          /* HEADER REPLICA */
+          /* HEADER REPLICA - ABSOLUTE PERFECTION */
           .header-replica {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
+            width: 100%;
             z-index: 1000;
-            padding: 20px;
-            height: 188px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 0 20px;
+            height: 188.328px;
+            display: block;
             background: transparent;
             pointer-events: none;
           }
@@ -39,23 +38,28 @@
           }
           
           .logo-replica {
-            display: flex;
-            align-items: center;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: 20px;
             color: transparent;
             text-decoration: none;
           }
           
           .logo-icon {
             width: 250px;
-            height: auto;
-            display: block;
-            max-height: 148px;
+            height: 148.328px;
+            display: inline;
+            max-height: 150px;
             object-fit: contain;
           }
           
           .nav-replica {
+            position: absolute;
+            top: 29.25px;
+            right: 45px;
             display: flex;
-            gap: 13px;
+            gap: 0;
             align-items: center;
           }
           
@@ -66,7 +70,7 @@
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 2px;
-            line-height: 1.2;
+            line-height: 13px;
             text-transform: uppercase;
             transition: all 0.3s ease;
           }
@@ -79,14 +83,17 @@
             padding: 9.75px 0;
             border: none;
             background: transparent;
-            margin-right: 13px;
+            margin: 0;
+            display: block;
           }
           
           .nav-btn.links {
             padding: 13px 19.5px;
+            margin-left: 13px;
             border: 2px solid rgb(255, 255, 255);
             border-radius: 300px;
             background-color: transparent;
+            display: block;
           }
           
           /* HERO SECTION REPLICA */
@@ -136,11 +143,22 @@
           
           @media (max-width: 768px) {
             .header-replica {
-              padding: 15px 20px;
+              padding: 0 20px;
               height: auto;
-              flex-direction: row;
-              gap: 0;
               background: rgba(0,0,0,0.7);
+            }
+            
+            .logo-replica {
+              position: static;
+              display: inline-block;
+              margin-top: 15px;
+            }
+            
+            .nav-replica {
+              position: static;
+              display: inline-block;
+              float: right;
+              margin-top: 20px;
             }
             
             .logo-icon {
@@ -225,7 +243,7 @@
       <body>
         <header class="header-replica">
           <a href="index.html" class="logo-replica">
-            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=300w" alt="Cultural Peace">
+            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
           </a>
           <nav class="nav-replica">
             <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
