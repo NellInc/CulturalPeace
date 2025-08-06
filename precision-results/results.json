@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "totalTests": 0,
+    "passed": 0,
+    "failed": 0,
+    "pixelDifferences": 0,
+    "missingAssets": 0,
+    "errors": [
+      "home-desktop-large: page.waitForTimeout is not a function",
+      "home-desktop-medium: Navigation timeout of 30000 ms exceeded",
+      "home-desktop-small: Navigation timeout of 30000 ms exceeded",
+      "home-tablet: Navigation timeout of 30000 ms exceeded",
+      "home-mobile-large: Navigation timeout of 30000 ms exceeded",
+      "home-mobile-medium: Navigation timeout of 30000 ms exceeded",
+      "home-mobile-small: Navigation timeout of 30000 ms exceeded",
+      "links-desktop-large: page.waitForTimeout is not a function",
+      "links-desktop-medium: page.waitForTimeout is not a function",
+      "links-desktop-small: page.waitForTimeout is not a function",
+      "links-tablet: page.waitForTimeout is not a function",
+      "links-mobile-large: page.waitForTimeout is not a function",
+      "links-mobile-medium: page.waitForTimeout is not a function",
+      "links-mobile-small: page.waitForTimeout is not a function",
+      "contact-desktop-large: page.waitForTimeout is not a function",
+      "contact-desktop-medium: page.waitForTimeout is not a function",
+      "contact-desktop-small: page.waitForTimeout is not a function",
+      "contact-tablet: page.waitForTimeout is not a function",
+      "contact-mobile-large: page.waitForTimeout is not a function",
+      "contact-mobile-medium: page.waitForTimeout is not a function",
+      "contact-mobile-small: page.waitForTimeout is not a function"
+    ]
+  },
+  "detailed": [
+    {
+      "name": "home",
+      "live": "https://www.culturalpeace.org",
+      "local": "file:///Users/nellwatson/Documents/GitHub/Cultural Peace/docs/index.html",
+      "viewports": {
+        "desktop-large": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "desktop-medium": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        },
+        "desktop-small": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        },
+        "tablet": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        },
+        "mobile-large": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        },
+        "mobile-medium": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        },
+        "mobile-small": {
+          "error": "Navigation timeout of 30000 ms exceeded",
+          "passed": false
+        }
+      },
+      "contentComparison": {},
+      "passed": false
+    },
+    {
+      "name": "links",
+      "live": "https://www.culturalpeace.org/links",
+      "local": "file:///Users/nellwatson/Documents/GitHub/Cultural Peace/docs/links.html",
+      "viewports": {
+        "desktop-large": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "desktop-medium": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "desktop-small": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "tablet": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-large": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-medium": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-small": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        }
+      },
+      "contentComparison": {},
+      "passed": false
+    },
+    {
+      "name": "contact",
+      "live": "https://www.culturalpeace.org/contact-1",
+      "local": "file:///Users/nellwatson/Documents/GitHub/Cultural Peace/docs/contact-1.html",
+      "viewports": {
+        "desktop-large": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "desktop-medium": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "desktop-small": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "tablet": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-large": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-medium": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        },
+        "mobile-small": {
+          "error": "page.waitForTimeout is not a function",
+          "passed": false
+        }
+      },
+      "contentComparison": {},
+      "passed": false
+    }
+  ]
+}

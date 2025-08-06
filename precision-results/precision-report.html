@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎯 Precision Verification Report</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 20px; background: #f8f9fa; }
+        .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .stat { background: white; padding: 1.5rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .stat-value { font-size: 2rem; font-weight: bold; }
+        .page-section { background: white; margin-bottom: 2rem; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .page-header { background: #2c3e50; color: white; padding: 1rem; font-weight: bold; }
+        .viewport-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; padding: 1rem; }
+        .viewport-card { border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden; }
+        .viewport-header { background: #f8f9fa; padding: 1rem; border-bottom: 1px solid #dee2e6; display: flex; justify-content: space-between; }
+        .screenshots { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; padding: 1rem; }
+        .screenshot img { width: 100%; border-radius: 4px; }
+        .screenshot-label { text-align: center; font-size: 0.8rem; color: #666; margin-top: 0.5rem; }
+        .passed { border-left: 4px solid #28a745; }
+        .failed { border-left: 4px solid #dc3545; }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Precision Verification Report</h1>
+        <p>CulturalPeace.org Clone Accuracy Analysis</p>
+        <p>Generated: 8/6/2025, 12:52:06 AM</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">1</div>
+            <div>Total Tests</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value success">0</div>
+            <div>Passed</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value error">1</div>
+            <div>Failed</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">0.0%</div>
+            <div>Accuracy</div>
+        </div>
+    </div>
+
+    
+    <div class="page-section">
+        <div class="page-header">
+            HOME ❌
+        </div>
+        
+        
+        <div style="padding: 1rem; background: #f8f9fa; border-bottom: 1px solid #dee2e6;">
+            <h4>📊 Content Analysis</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <strong>Live:</strong> 19 headings, 4 images
+                </div>
+                <div>
+                    <strong>Clone:</strong> 19 headings, 4 images
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="viewport-grid">
+            
+            <div class="viewport-card failed">
+                <div class="viewport-header">
+                    <strong>desktop-large</strong>
+                    <span>❌</span>
+                </div>
+                
+                <div style="padding: 1rem;">
+                    <p>Pixel Difference: <strong>12.87%</strong></p>
+                    <p>Changed pixels: 4,902,035</p>
+                    <p>Height difference: 1236px (5.9%)</p>
+                    <p>Dimensions match: ❌</p>
+                </div>
+                <div class="screenshots">
+                    <div class="screenshot">
+                        <img src="./precision-results/screenshots/home-live-desktop-large.png" alt="Live">
+                        <div class="screenshot-label">Live Site</div>
+                    </div>
+                    <div class="screenshot">
+                        <img src="./precision-results/screenshots/home-local-desktop-large.png" alt="Clone">
+                        <div class="screenshot-label">Clone</div>
+                    </div>
+                    <div class="screenshot">
+                        <img src="./precision-results/diffs/home-diff-desktop-large.png" alt="Diff">
+                        <div class="screenshot-label">Differences</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

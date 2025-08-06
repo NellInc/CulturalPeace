@@ -6,17 +6,22 @@
     "scrape": "node scrape.mjs",
     "parse-xml": "node parse-xml.mjs",
     "verify": "node verify.mjs",
+    "precision-verify": "node precision-verify-server.mjs",
     "clean": "node clean-for-github.mjs",
     "full-clone": "npm run parse-xml && npm run scrape && npm run verify && npm run clean"
   },
   "dependencies": {
-    "puppeteer": "^22.0.0",
-    "fs-extra": "^11.0.0",
-    "cheerio": "^1.0.0",
     "axios": "^1.0.0",
-    "p-limit": "^4.0.0",
-    "xml2js": "^0.6.0",
+    "cheerio": "^1.0.0",
+    "fs-extra": "^11.0.0",
     "html-minifier-terser": "^7.0.0",
-    "prettier": "^3.0.0"
+    "jimp": "^1.6.0",
+    "p-limit": "^4.0.0",
+    "pixelmatch": "^7.1.0",
+    "prettier": "^3.0.0",
+    "puppeteer": "^22.0.0",
+    "resemblejs": "^5.0.0",
+    "sharp": "^0.34.3",
+    "xml2js": "^0.6.0"
   }
 }
