@@ -79,6 +79,45 @@
             }
           }
         </style>
+      
+        <style>
+          /* HERO IMAGE RESTORATION */
+          .hero-section {
+            position: relative !important;
+            z-index: 0 !important;
+          }
+          
+          .squarespace-header {
+            position: fixed !important;
+            z-index: 1001 !important;
+          }
+          
+          /* Responsive hero */
+          @media (max-width: 1200px) {
+            .hero-section div[style*="font-size: 72px"] {
+              font-size: 60px !important;
+            }
+          }
+          
+          @media (max-width: 768px) {
+            .hero-section {
+              height: 80vh !important;
+              min-height: 500px !important;
+            }
+            
+            .hero-section div[style*="font-size: 72px"] {
+              font-size: 48px !important;
+              line-height: 1.2 !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .hero-section div[style*="font-size: 72px"] {
+              font-size: 36px !important;
+              line-height: 1.3 !important;
+            }
+          }
+        </style>
       </head><body id="collection-5c7c11704e17b61d26a77350" style="margin: 0 !important; padding: 0 !important;">
         <header class="squarespace-header" style="
           position: fixed;
