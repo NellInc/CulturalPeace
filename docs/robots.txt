@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://culturalpeace.org/sitemap.xml
+User-agent: *\nAllow: /\nSitemap: https://www.culturalpeace.org/sitemap.xml
