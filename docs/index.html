@@ -2,6 +2,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cultural Peace - Cultural Peace</title>
+        <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
         <style>
           /* EXACT SQUARESPACE REPLICA STYLES */
           * {
@@ -24,7 +25,8 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 24px 40px;
+            padding: 20px;
+            height: 188px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -44,23 +46,27 @@
           }
           
           .logo-icon {
-            width: 150px;
+            width: 250px;
             height: auto;
             display: block;
+            max-height: 148px;
+            object-fit: contain;
           }
           
           .nav-replica {
             display: flex;
-            gap: 20px;
+            gap: 13px;
             align-items: center;
           }
           
           .nav-btn {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
+            font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 2px;
+            line-height: 1.2;
             text-transform: uppercase;
             transition: all 0.3s ease;
           }
@@ -70,9 +76,10 @@
           }
           
           .nav-btn.contact {
-            padding: 9.75px 13px;
+            padding: 9.75px 0;
             border: none;
             background: transparent;
+            margin-right: 13px;
           }
           
           .nav-btn.links {
@@ -129,14 +136,16 @@
           
           @media (max-width: 768px) {
             .header-replica {
-              padding: 20px;
-              flex-direction: column;
-              gap: 20px;
+              padding: 15px 20px;
+              height: auto;
+              flex-direction: row;
+              gap: 0;
               background: rgba(0,0,0,0.7);
             }
             
             .logo-icon {
-              width: 120px;
+              width: 180px;
+              max-height: 106px;
             }
             
             .nav-replica {
