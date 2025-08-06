@@ -1,25 +1,31 @@
-<!DOCTYPE html><html lang="en"><head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cultural Peace - Cultural Peace</title>
-        <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
-        <style>
-          /* EXACT SQUARESPACE REPLICA STYLES */
-          * {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Peace - Cultural Peace</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
+    <style>
+        /* EXACT SQUARESPACE REPLICA STYLES */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-          }
-          
-          body {
-            font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            font-family: 'adobe-garamond-pro', serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-          }
-          
-          /* HEADER REPLICA - ABSOLUTE PERFECTION */
-          .header-replica {
+            background: white;
+            color: rgba(26, 26, 26, 0.7);
+            font-size: 18px;
+            line-height: 28.8px;
+        }
+        
+        /* HEADER REPLICA - ABSOLUTE PERFECTION */
+        .header-replica {
             position: absolute;
             top: 0;
             left: 0;
@@ -31,39 +37,39 @@
             display: block;
             background: transparent;
             pointer-events: none;
-          }
-          
-          .header-replica * {
+        }
+        
+        .header-replica * {
             pointer-events: all;
-          }
-          
-          .logo-replica {
+        }
+        
+        .logo-replica {
             display: inline-block;
             position: absolute;
             top: 20px;
             left: 20px;
             color: transparent;
             text-decoration: none;
-          }
-          
-          .logo-icon {
+        }
+        
+        .logo-icon {
             width: 250px;
             height: 148.328px;
             display: inline;
             max-height: 150px;
             object-fit: contain;
-          }
-          
-          .nav-replica {
+        }
+        
+        .nav-replica {
             position: absolute;
             top: 29.25px;
             right: 45px;
             display: flex;
             gap: 0;
             align-items: center;
-          }
-          
-          .nav-btn {
+        }
+        
+        .nav-btn {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -73,31 +79,31 @@
             line-height: 13px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-          }
-          
-          .nav-btn:hover {
+        }
+        
+        .nav-btn:hover {
             opacity: 0.7;
-          }
-          
-          .nav-btn.contact {
+        }
+        
+        .nav-btn.contact {
             padding: 9.75px 0;
             border: none;
             background: transparent;
             margin: 0;
             display: block;
-          }
-          
-          .nav-btn.links {
+        }
+        
+        .nav-btn.links {
             padding: 13px 19.5px;
             margin-left: 13px;
             border: 2px solid rgb(255, 255, 255);
             border-radius: 300px;
             background-color: transparent;
             display: block;
-          }
-          
-          /* HERO SECTION REPLICA */
-          .hero-replica {
+        }
+        
+        /* HERO SECTION REPLICA */
+        .hero-replica {
             position: relative;
             height: 100vh;
             min-height: 700px;
@@ -108,9 +114,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-          }
-          
-          .hero-overlay {
+        }
+        
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -118,13 +124,14 @@
             bottom: 0;
             background: rgba(0,0,0,0.15);
             z-index: 1;
-          }
-          
-          .hero-text {
+        }
+        
+        .hero-text {
             position: relative;
             z-index: 2;
             text-align: center;
             color: white;
+            font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
             font-weight: 700;
             font-size: 72px;
             line-height: 1.1;
@@ -132,212 +139,268 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
             max-width: 900px;
             padding: 0 40px;
-          }
-          
-          /* RESPONSIVE */
-          @media (max-width: 1200px) {
+        }
+        
+        /* CONTENT SECTIONS */
+        .content-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        
+        .content-section h1 {
+            font-family: 'adobe-garamond-pro', serif;
+            font-size: 32px;
+            font-weight: 400;
+            color: rgba(26, 26, 26, 0.9);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .content-section h2, .content-section h3 {
+            font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, 0.9);
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section p {
+            font-family: 'adobe-garamond-pro', serif;
+            font-size: 18px;
+            line-height: 28.8px;
+            color: rgba(26, 26, 26, 0.7);
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 60px auto;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
             .hero-text {
-              font-size: 60px;
+                font-size: 60px;
             }
-          }
-          
-          @media (max-width: 768px) {
+        }
+        
+        @media (max-width: 768px) {
             .header-replica {
-              padding: 0 20px;
-              height: auto;
-              background: rgba(0,0,0,0.7);
+                padding: 0 20px;
+                height: auto;
+                background: rgba(0,0,0,0.7);
             }
             
             .logo-replica {
-              position: static;
-              display: inline-block;
-              margin-top: 15px;
+                position: static;
+                display: inline-block;
+                margin-top: 15px;
             }
             
             .nav-replica {
-              position: static;
-              display: inline-block;
-              float: right;
-              margin-top: 20px;
+                position: static;
+                display: inline-block;
+                float: right;
+                margin-top: 20px;
             }
             
             .logo-icon {
-              width: 180px;
-              max-height: 106px;
-            }
-            
-            .nav-replica {
-              gap: 15px;
-            }
-            
-            .nav-btn {
-              font-size: 11px;
-              letter-spacing: 1.5px;
-            }
-            
-            .nav-btn.contact {
-              padding: 8px 12px;
-            }
-            
-            .nav-btn.links {
-              padding: 10px 16px;
+                width: 180px;
+                max-height: 106px;
             }
             
             .hero-replica {
-              min-height: 600px;
+                min-height: 600px;
             }
             
             .hero-text {
-              font-size: 48px;
-              line-height: 1.2;
-            }
-          }
-          
-          @media (max-width: 480px) {
-            .hero-text {
-              font-size: 36px;
-              line-height: 1.3;
-            }
-          }
-        </style>
-      
-        <style>
-          /* HERO IMAGE RESTORATION */
-          .hero-section {
-            position: relative !important;
-            z-index: 0 !important;
-          }
-          
-          .squarespace-header {
-            position: fixed !important;
-            z-index: 1001 !important;
-          }
-          
-          /* Responsive hero */
-          @media (max-width: 1200px) {
-            .hero-section div[style*="font-size: 72px"] {
-              font-size: 60px !important;
-            }
-          }
-          
-          @media (max-width: 768px) {
-            .hero-section {
-              height: 80vh !important;
-              min-height: 500px !important;
+                font-size: 48px;
+                line-height: 1.2;
             }
             
-            .hero-section div[style*="font-size: 72px"] {
-              font-size: 48px !important;
-              line-height: 1.2 !important;
+            .content-section {
+                padding: 40px 20px;
             }
-          }
-          
-          @media (max-width: 480px) {
-            .hero-section div[style*="font-size: 72px"] {
-              font-size: 36px !important;
-              line-height: 1.3 !important;
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text {
+                font-size: 36px;
+                line-height: 1.3;
             }
-          }
-        </style>
-      </head>
-      <body>
-        <header class="header-replica">
-          <a href="index.html" class="logo-replica">
+        }
+    </style>
+</head>
+<body>
+    <header class="header-replica">
+        <a href="index.html" class="logo-replica">
             <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
-          </a>
-          <nav class="nav-replica">
+        </a>
+        <nav class="nav-replica">
             <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
             <a href="links.html" class="nav-btn links">LINKS</a>
-          </nav>
-        </header>
-        
-        <section class="hero-replica">
-          <div class="hero-overlay"></div>
-          <div class="hero-text">
+        </nav>
+    </header>
+    
+    <section class="hero-replica">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
             LET'S PROTECT<br>
             INNOCENT PEOPLE<br>
             DURING CULTURAL<br>
             CONFLICT.
-          </div>
-        </section>
-        
-        <!-- Original content below hero -->
-        <main style="background: white; padding: 60px 0;">
-          <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
-            <section style="text-align: center; padding: 80px 0;">
-              <h1 style="font-family: 'adobe-garamond-pro', serif; font-size: 32px; font-weight: 400; color: rgba(26, 26, 26, 0.9); margin-bottom: 40px;">
-                We can manage political polarization in our society better.
-              </h1>
-              <p style="font-family: 'adobe-garamond-pro', serif; font-size: 18px; line-height: 28.8px; color: rgba(26, 26, 26, 0.7); max-width: 900px; margin: 0 auto 30px;">
-                Social media is transforming our global society in powerful ways. The perception of increased social density has created a crucible of conflict where social interactions happen at vastly accelerated pace and scale. Meanwhile, algorithms decide who we are likely to interact with, and when, and with what content.
-              </p>
-              <p style="font-family: 'adobe-garamond-pro', serif; font-size: 18px; line-height: 28.8px; color: rgba(26, 26, 26, 0.7); max-width: 900px; margin: 0 auto;">
-                The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health seems to have become weakened, and researchers suggest that our empathy for those in an out-group is much weaker. The profound existential stresses brought force from these new social technologies, and their effect on our brains, is changing our culture, and contributing to polarization. How should we react to these developments in order to ensure that the fabric of society remains strong? Do we need a 'Digital Geneva Conventions' or modern 'Treaty of Westphalia' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even cold civil war?
-              </p>
-            </section>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="content-section">
+            <h1>We can manage political polarization in our society better.</h1>
+            
+            <p>Social media is transforming our global society in powerful ways. The perception of increased social density has created a crucible of conflict where social interactions happen at vastly accelerated pace and scale. Meanwhile, algorithms decide who we are likely to interact with, and when, and with what content.</p>
+            
+            <p>The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health seems to have become weakened, and researchers suggest that our empathy for those in an out-group is much weaker. The profound existential stresses brought force from these new social technologies, and their effect on our brains, is changing our culture, and contributing to polarization. How should we react to these developments in order to ensure that the fabric of society remains strong? Do we need a 'Digital Geneva Conventions' or modern 'Treaty of Westphalia' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even cold civil war?</p>
             
             <!-- Video Section -->
-            <section style="padding: 60px 0; text-align: center;">
-              <div style="max-width: 900px; margin: 0 auto;">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
-                  <iframe 
+            <div class="video-container">
+                <iframe 
                     src="https://player.vimeo.com/video/360261033?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture" 
                     allowfullscreen
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                     title="Cultural Peace">
-                  </iframe>
-                </div>
-              </div>
-            </section>
-          </div>
-        </main>
-        
-        
-      
-      
-      
-      
-    <div style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgba(0, 0, 0, 0); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 0px; border-block-end-color: rgb(0, 0, 0); border-block-end-width: 0px; border-block-start-color: rgb(0, 0, 0); border-block-start-width: 0px; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgb(0, 0, 0); border-inline-end-width: 0px; border-inline-start-color: rgb(0, 0, 0); border-inline-start-width: 0px; border-left-color: rgb(0, 0, 0); border-left-width: 0px; border-right-color: rgb(0, 0, 0); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; box-sizing: content-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgb(0, 0, 0); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: sans-serif; font-palette: normal; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 0px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 1920px; justify-content: normal; justify-items: normal; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: normal; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 960px 0px; position: static; position-try-order: normal; position-visibility: always; r: 0px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: start; text-anchor: start; text-decoration: none solid rgb(0, 0, 0); text-decoration-color: rgb(0, 0, 0); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; transform-origin: 960px 0px; transform-style: flat; transition-behavior: normal; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: visible; white-space-collapse: collapse; widows: 2; width: 1920px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb"></div>
-    <div style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgba(0, 0, 0, 0); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 0px; border-block-end-color: rgb(0, 0, 0); border-block-end-width: 0px; border-block-start-color: rgb(0, 0, 0); border-block-start-width: 0px; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgb(0, 0, 0); border-inline-end-width: 0px; border-inline-start-color: rgb(0, 0, 0); border-inline-start-width: 0px; border-left-color: rgb(0, 0, 0); border-left-width: 0px; border-right-color: rgb(0, 0, 0); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; box-sizing: content-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgb(0, 0, 0); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: sans-serif; font-palette: normal; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 0px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 1920px; justify-content: normal; justify-items: normal; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: normal; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 960px 0px; position: static; position-try-order: normal; position-visibility: always; r: 0px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: start; text-anchor: start; text-decoration: none solid rgb(0, 0, 0); text-decoration-color: rgb(0, 0, 0); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; transform-origin: 960px 0px; transform-style: flat; transition-behavior: normal; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: visible; white-space-collapse: collapse; widows: 2; width: 1920px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb"></div>
-    <div id="sidecarNav" style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgb(33, 33, 33); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 1080px; border-block-end-color: rgb(0, 0, 0); border-block-end-width: 0px; border-block-start-color: rgb(0, 0, 0); border-block-start-width: 0px; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgb(0, 0, 0); border-inline-end-width: 0px; border-inline-start-color: rgb(0, 0, 0); border-inline-start-width: 0px; border-left-color: rgb(0, 0, 0); border-left-width: 0px; border-right-color: rgb(0, 0, 0); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; bottom: 0px; box-sizing: border-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgb(0, 0, 0); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: sans-serif; font-palette: normal; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 1080px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 260px; inset-block-end: 0px; inset-block-start: 0px; inset-inline-end: 0px; inset-inline-start: 1660px; justify-content: normal; justify-items: normal; left: 1660px; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: 16px; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 130px 540px; position: fixed; position-try-order: normal; position-visibility: always; r: 0px; right: 0px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: left; text-anchor: start; text-decoration: none solid rgb(0, 0, 0); text-decoration-color: rgb(0, 0, 0); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; top: 0px; transform-origin: 130px 540px; transform-style: flat; transition-behavior: normal, normal; transition-delay: 0.14s, 0.14s; transition-duration: 0s, 0s; transition-property: height, visibility; transition-timing-function: linear, linear; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: hidden; white-space-collapse: collapse; widows: 2; width: 260px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; z-index: -1; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-font-smoothing: antialiased; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb">
-      
-
-  <div id="mobileNavWrapper" data-content-field="navigation-mobileNav" style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgba(0, 0, 0, 0); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 128.5px; border-block-end-color: rgb(0, 0, 0); border-block-end-width: 0px; border-block-start-color: rgb(0, 0, 0); border-block-start-width: 0px; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgb(0, 0, 0); border-inline-end-width: 0px; border-inline-start-color: rgb(0, 0, 0); border-inline-start-width: 0px; border-left-color: rgb(0, 0, 0); border-left-width: 0px; border-right-color: rgb(0, 0, 0); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; bottom: 0px; box-sizing: content-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgb(0, 0, 0); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: sans-serif; font-palette: normal; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 128.5px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 260px; inset-block-end: 0px; inset-block-start: 0px; inset-inline-end: 0px; inset-inline-start: 0px; justify-content: normal; justify-items: normal; left: 0px; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: 16px; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 130px 64.25px; position: relative; position-try-order: normal; position-visibility: always; r: 0px; right: 0px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: left; text-anchor: start; text-decoration: none solid rgb(0, 0, 0); text-decoration-color: rgb(0, 0, 0); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; top: 0px; transform-origin: 130px 64.25px; transform-style: flat; transition-behavior: normal; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: hidden; white-space-collapse: collapse; widows: 2; width: 260px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-font-smoothing: antialiased; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb">
-    
-  </div>
-
-
-
-    </div>
-    <div id="siteWrapper" style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgb(255, 255, 255); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 19841.1px; border-block-end-color: rgba(26, 26, 26, 0.7); border-block-end-width: 0px; border-block-start-color: rgba(26, 26, 26, 0.7); border-block-start-width: 0px; border-bottom-color: rgba(26, 26, 26, 0.7); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgba(26, 26, 26, 0.7); border-inline-end-width: 0px; border-inline-start-color: rgba(26, 26, 26, 0.7); border-inline-start-width: 0px; border-left-color: rgba(26, 26, 26, 0.7); border-left-width: 0px; border-right-color: rgba(26, 26, 26, 0.7); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgba(26, 26, 26, 0.7); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; bottom: 0px; box-sizing: border-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgba(26, 26, 26, 0.7); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgba(26, 26, 26, 0.7); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: adobe-garamond-pro; font-palette: normal; font-size: 18px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 19841.1px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 1920px; inset-block-end: 0px; inset-block-start: 0px; inset-inline-end: 0px; inset-inline-start: 0px; justify-content: normal; justify-items: normal; left: 0px; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: 28.8px; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgba(26, 26, 26, 0.7); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 960px 9920.55px; position: relative; position-try-order: normal; position-visibility: always; r: 0px; right: 0px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: start; text-anchor: start; text-decoration: none solid rgba(26, 26, 26, 0.7); text-decoration-color: rgba(26, 26, 26, 0.7); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; top: 0px; transform-origin: 960px 9920.56px; transform-style: flat; transition-behavior: normal; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: visible; white-space-collapse: collapse; widows: 2; width: 1920px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb">
-                <div style="
-                  text-align: center;
-                  color: white;
-                  font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
-                  font-weight: 700;
-                  font-size: 72px;
-                  line-height: 1.1;
-                  letter-spacing: -0.02em;
-                  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-                  margin: 0;
-                  padding: 0;
-                  max-width: 900px;
-                  margin-left: auto;
-                  margin-right: auto;
-                ">
-                  
-                </div>
-              </div>
-
-    
-    
-
-  
-
-<div style="align-content: normal; align-items: normal; animation-composition: replace; animation-delay: 0s; animation-direction: normal; animation-duration: 0s; animation-iteration-count: 1; animation-play-state: running; animation-range-end: normal; animation-range-start: normal; animation-timing-function: ease; backface-visibility: visible; background-attachment: scroll; background-blend-mode: normal; background-clip: border-box; background-color: rgba(0, 0, 0, 0); background-origin: padding-box; background-position: 0% 0%; background-repeat: repeat; baseline-shift: 0px; block-size: 0px; border-block-end-color: rgb(0, 0, 0); border-block-end-width: 0px; border-block-start-color: rgb(0, 0, 0); border-block-start-width: 0px; border-bottom-color: rgb(0, 0, 0); border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom-width: 0px; border-collapse: separate; border-end-end-radius: 0px; border-end-start-radius: 0px; border-image-outset: 0; border-image-repeat: stretch; border-image-slice: 100%; border-image-width: 1; border-inline-end-color: rgb(0, 0, 0); border-inline-end-width: 0px; border-inline-start-color: rgb(0, 0, 0); border-inline-start-width: 0px; border-left-color: rgb(0, 0, 0); border-left-width: 0px; border-right-color: rgb(0, 0, 0); border-right-width: 0px; border-start-end-radius: 0px; border-start-start-radius: 0px; border-top-color: rgb(0, 0, 0); border-top-left-radius: 0px; border-top-right-radius: 0px; border-top-width: 0px; bottom: -18761.1px; box-sizing: content-box; caption-side: top; caret-color: rgb(0, 0, 0); clip-rule: nonzero; color: rgb(0, 0, 0); color-interpolation: srgb; color-interpolation-filters: linearrgb; column-gap: normal; column-rule-color: rgb(0, 0, 0); column-rule-width: 0px; container-type: normal; content: normal; cx: 0px; cy: 0px; direction: ltr; display: block; empty-cells: show; field-sizing: fixed; fill: rgb(0, 0, 0); fill-opacity: 1; fill-rule: nonzero; flex-direction: row; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flood-color: rgb(0, 0, 0); flood-opacity: 1; font-family: sans-serif; font-palette: normal; font-size: 16px; font-stretch: 100%; font-style: normal; font-variant: normal; font-variant-alternates: normal; font-variant-caps: normal; font-variant-east-asian: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-position: normal; font-weight: 400; grid-auto-flow: row; height: 0px; hyphens: manual; image-orientation: from-image; initial-letter: normal; inline-size: 0px; inset-block-end: -18761.1px; inset-block-start: 19841.1px; inset-inline-end: 1920px; inset-inline-start: 0px; justify-content: normal; justify-items: normal; left: 0px; letter-spacing: normal; lighting-color: rgb(255, 255, 255); line-height: normal; list-style-position: outside; list-style-type: disc; margin-block-end: 0px; margin-block-start: 0px; margin-bottom: 0px; margin-inline-end: 0px; margin-inline-start: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; mask-clip: border-box; mask-composite: add; mask-mode: match-source; mask-origin: border-box; mask-position: 0% 0%; mask-repeat: repeat; mask-type: luminance; math-depth: 0; math-shift: normal; math-style: normal; min-block-size: 0px; min-height: 0px; min-inline-size: 0px; min-width: 0px; mix-blend-mode: normal; object-fit: fill; object-position: 50% 50%; offset-distance: 0px; offset-position: normal; offset-rotate: auto 0deg; opacity: 1; order: 0; orphans: 2; outline-color: rgb(0, 0, 0); outline-offset: 0px; outline-width: 0px; overflow-clip-margin: 0px; overflow-wrap: normal; overflow-x: visible; overflow-y: visible; padding-block-end: 0px; padding-block-start: 0px; padding-bottom: 0px; padding-inline-end: 0px; padding-inline-start: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; paint-order: normal; perspective-origin: 0px 0px; position: absolute; position-try-order: normal; position-visibility: always; r: 0px; right: 1920px; row-gap: normal; ruby-align: space-around; ruby-position: over; scroll-margin-block-end: 0px; scroll-margin-block-start: 0px; scroll-margin-inline-end: 0px; scroll-margin-inline-start: 0px; scroll-timeline-axis: block; shape-image-threshold: 0; shape-margin: 0px; speak: normal; stop-color: rgb(0, 0, 0); stop-opacity: 1; stroke-dashoffset: 0px; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 1px; tab-size: 8; text-align: start; text-anchor: start; text-decoration: none solid rgb(0, 0, 0); text-decoration-color: rgb(0, 0, 0); text-decoration-style: solid; text-emphasis-color: rgb(0, 0, 0); text-emphasis-position: over; text-indent: 0px; text-overflow: clip; text-size-adjust: 100%; text-spacing-trim: normal; text-wrap: wrap; top: 19841.1px; transform-origin: 0px 0px; transform-style: flat; transition-behavior: normal; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; unicode-bidi: isolate; vertical-align: baseline; view-timeline-axis: block; visibility: hidden; white-space-collapse: collapse; widows: 2; width: 0px; word-break: normal; word-spacing: 0px; writing-mode: horizontal-tb; x: 0px; y: 0px; zoom: 1; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-box-align: stretch; -webkit-box-decoration-break: slice; -webkit-box-direction: normal; -webkit-box-flex: 0; -webkit-box-ordinal-group: 1; -webkit-box-orient: horizontal; -webkit-box-pack: start; -webkit-locale: &quot;en-US&quot;; -webkit-mask-box-image-outset: 0; -webkit-mask-box-image-repeat: stretch; -webkit-mask-box-image-slice: 0 fill; -webkit-print-color-adjust: economy; -webkit-rtl-ordering: logical; -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); -webkit-text-fill-color: rgb(0, 0, 0); -webkit-text-orientation: vertical-right; -webkit-text-stroke-color: rgb(0, 0, 0); -webkit-text-stroke-width: 0px; -webkit-user-modify: read-only; -webkit-writing-mode: horizontal-tb"></div>
-        </main>
-      
-      
-      </body></html>
+                </iframe>
+            </div>
+            
+            <p>The Cultural Peace Principles aim to make and collect suggestions on how we can make fair, just, and impartial rules above conflict to preserve good faith and societal cohesion, and to help support a future détente between a multitude of memetic tribes.</p>
+            
+            <!-- Cultural Peace Principles -->
+            <h2>Self Determination & Political Franchise.</h2>
+            <p>Allow people to enjoy their own communities with their own subcultures. Don't stop or invade other people's conversations.</p>
+            <p>People have a natural right to form their own communities. People who share certain characteristics and perspectives require a degree of separation in order to build and sustain subcultures. Being part of a group can make it much easier to coordinate with others, and be build networks based on trust. It can also mean enabling a unique and specific culture and norms, a quality of diversity that may otherwise be washed away within the mainstream.</p>
+            
+            <h2>BANKING NEUTRALITY.</h2>
+            <p>End the removal of economic franchise. No-one may be 'outlawed' without due process.</p>
+            <p>We live in a deeply inter-connected world, where so many aspects of our daily lives depend upon apps, online shopping, and mobile payments. Modern life is dependent on being able to make convenient payments and access online services, and to receive legitimate payment for honest work.</p>
+            <p>Payment processors today have immense power. They can use their influence to force others to comply with their wishes, at an implied risk of losing access to the payments network, or a downgrade of service. This means that payment processors can single-handedly strongarm other players into doing their bidding for them.</p>
+            <p>Today, we are seeing secondary payment processors kicking people off their platforms, despite them doing nothing illegal, and perhaps nothing explicitly against their terms of service either, perhaps to appease authoritarian governments. Generally, there is very little opportunity for an appeal or management escalation. This may cost people their entire livelihoods, taking food from their families and creating a very uncertain future. Meanwhile, credit scoring mechanisms are often based on paradoxical rules that can easily lock honest people out of creating bank accounts. Moreover, such mechanisms are coming into the world of business also.</p>
+            
+            <h2>Immunity from Partiality.</h2>
+            <p>Termination of Employment on 'moral grounds' must reach a threshold of being legally prosecutable / indictable, as well as having demonstrated clear negative intent.</p>
+            <p>We live in a world where what is moral or acceptable is changing very quickly, and may differ greatly between different groups. Secular moralities are being felt very keenly by many people. As political polarization continues, there are going to be increasingly differing moral norms in our society. Forbearance must be given for any alleged infraction or moral failure that does not have a clear demonstration of bad faith or negative intent behind it.</p>
+            <p>In a world of very different moral assumptions, we also must refuse to attack the livelihoods of those who we disagree with, through understanding that such tit-for-tat economic violence simply makes paupers of us all. An increasingly used tactic is to put pressure on the employers of a disliked person to fire them, and creating irate supporters of that person, thereby metastasizing a small conflict into a much larger one.</p>
+            <p>To attack a person's livelihood is to attack their spouse and dependents, innocent parties. We must tolerate those that we disagree with, confronting their arguments, but leaving the person and their family and livelihoods intact, unless they have been justly prosecuted in a court of law.</p>
+            <p>Employers should commit to not release people on subjective, non-judicial 'moral' grounds because of intimidation. Should they happen to do so, the public should hold them accountable for their lack of courage, compassion, and resolve in safeguarding their employees from mob attacks.</p>
+            <p>Peace requires enabling people to build a secure career built upon honest work.</p>
+            
+            <h2>Freedom from Assault.</h2>
+            <p>Personal attacks including doxxing, harassment, and threats to people's families are unacceptable. Everyone has a right to privacy, and a private life.</p>
+            <p>Our interconnected world makes it easier to injure people's privacy than ever. We live in a digital panopticon, where everyone is potentially always watching what we say or write online. Somebody's smartphone is potentially recording any minor altercation, to be broadcast to millions.</p>
+            <p>Social media blurs the boundaries between virtual and physical realms, and makes potentially public figures out of private individuals, especially with the omnipresent danger of being doxxed, and the implied threat that the leak of private information creates.</p>
+            
+            <h2>Freedom from Political Discrimination.</h2>
+            <p>End prejudice in employment, education, or housing, including based on political affiliation.</p>
+            <p>Industries are very strongly segregated by political affiliation. This means that it can be extremely challenging to enter or maintain a career in a certain sector if one's political alignment does not fit. Over time, this effect tends to increase further, as minorities will leave, and thus the predominant ideologies concentrate. This risks the creation of something like a soft caste system, whereby people are kept out of certain professions by default.</p>
+            <p>Academia is one of the most polarised sectors, in some colleges having more than a 100:1 ratio of polarization. Academia is considered to be a nest that the future elite are nurtured within. Academic departments (particularly within the humanities), are often institutionally prejudiced against anyone who does not follow postmodernist values. This reinforces structural inequities by locking underprivileged traditional people out of access to higher education.</p>
+            <p>If one group in society is frustrated by feeling unwelcome, or even heretical, within an academic environment, this will inevitably create immense resentment. This may be one reason why many people today who are less likely to be welcome in such an environment trust experts less than ever.</p>
+            <p>As most of science comes from the academic world, the public trust is science is being weakened. The scientific community is increasingly prone to partisan bias and a preference for political correctness over accuracy. This contributes to anti-intellectual feelings in society.</p>
+            <p>Having certain perceived political affiliations may make it difficult to access housing, education, and employment in certain areas, preventing people from participating in a city's cultural core, and in joining the property ladder. Most industrialised nations forbid discrimination in housing, education, and employment based on various protected characteristics, and it may be just and necessary for political orientation to become a protected characteristic also.</p>
+            <p>Peace requires ensuring equality of access to the pillars upon which a successful life is built.</p>
+            
+            <h2>Judicial Reporting Embargo.</h2>
+            <p>A moderate level of sexuality in an appropriate context should be tolerated, and we should be careful not to demonise it. It is normal for people to scope each other out, and sometimes such processes may be clumsy and unwelcome. Unless someone is being a serious threat, stalking, or a nuisance, we should forgive unrequited interest. Generally a polite rebuff is sufficient, and it is unjust to attack someone merely for trying. One should not apply an ideological lens to shame innocent, normal, natural behaviour.</p>
+            <p>Court cases for alleged crimes of a sexual nature, or alleged crimes which are heavily politicised, should not be reported upon until a verdict is reached. No-one should be judged in the court of human opinion, and no jurist today can reasonably be expected to successfully avoid contact with news and influence from the opinions of others.</p>
+            <p>The justice system by and large works well until a case is politicized and tried in the media. It's not equipped to control for that. Today, journalists are increasingly acting more as activists rather than reporters. Hearsay and accusations should never be used to convict someone in a court of public opinion regardless of any legal judgment. Such cases create a 'scissor issue' which threatens to rupture society further, as two extremely indignant groups move to defend their preferred position.</p>
+            <p>In the past, when a juror in a case was obliged to avoid paying attention to the news, not reading the newspaper or watching TV would be enough. Today with so much of our news coming from social media, news is almost inescapable. This is particularly important in a time when even lawyers representing defendants as part of due process are being targeted for career or domestic destruction in sensitive cases.</p>
+            <p>Media reporting of sensitive cases prior to or pending judgment is damaging to the process of justice, and it is also damaging to our society and innocent people. Judges should consider if media coverage ought to be embargoed until a legal judgment has been declared. If further litigants are inspired to come forward they may then do so after a judgment on the first matter has been settled. We must thoughtfully weigh this against society's need to enable large groups of plaintiffs to collectively pursue legal action against those who may have committed widespread offenses, even if they were never formally charged.</p>
+            <p>Gibbeting someone's reputation is unacceptable, and hysteria related to hard cases can potentially lead to lynching of people themselves. This is particularly troublesome in a world where police themselves are increasingly getting involved in policing 'non-crime crime'. Many issues of a sensitive nature are today being held in non-judicial contexts, such as private hearings within academia. To satisfy due process, a private hearing must be a real one, not a sham or pretense. Those adjudicating have a solemn duty of responsibility to invest proper attention to the matter. Participants must be given access to sufficient information to satisfy their defense, and prosecutors must not declare any new charges that have not come directly from the individual making the original accusation. Such private hearings should be able to be decided within a court of law instead, if so any judgment of the hearing should not take effect until the matter has been decided in a formal public hearing.</p>
+            <p>Finally, the invention of provably false (or overinflated) claims in order to gain prestige or support must be subject to stringent prosecution, along with public excoriation. If a crime is afforded an aggravated status as being also a hate crime, the injured party in this aspect is not the person to which the primary crime pertains. Rather, the wounded party in a hate crime is society at large. A hate crime injures all of us by our collective dismay and consequential diminished social trust.</p>
+            <p>For this reason, the false reporting (or fraudulent commission) of a hate crime is itself a hate crime, and it must be judged as such. Irrespective of whether police time is wasted or not, or if any particular party is falsely named, the costs to society from diminished social trust are immense. Legislators should consider that the reckless or bad faith creation of false reports of hate, or politically or ethnically motivated hoaxes, ought to be legislated against as a public order offense.</p>
+            <p>Peace requires the strict implementation of impartial justice adjudicated in a court of one's unbiased peers.</p>
+            
+            <h2>Statute of Limitations.</h2>
+            <p>Cultural expectations and rules are changing rapidly. Conduct, jokes, writings, etc older than five years, or made before the age of 25, are not to be counted against someone, unless the matter has been judged in court.</p>
+            <p>All of us have said or done things in our younger years that we regret, and that we would prefer to move on from than be remembered. Today, with so many of our private thoughts and conversations in digital form, we live in a virtual panopticon. The practice of using  'Offence Archaeology' or 'Opinion Necromancy' to dig up dirt on people has become trivial.</p>
+            <p>Media should be thought of like a time machine; it can take us back to the time and culture in which it was written. But we are the visitor to that realm. We are the stranger. Media, and the statements of its creators within, should be judged in the context in which it was made.</p>
+            
+            <h2>Freedom from Secret Exclusion.</h2>
+            <p>No-one should ever be in doubt as to whether or not they are able to express themselves in a way that is meaningful for them. 'Shadowbanning' people is unacceptable.</p>
+            <p>It is an eerie experience to post something and experience no engagement whatsoever. One suspects that one has been shadowbanned so that no-one else sees that content, or its distribution is throttled (de-boosted).</p>
+            
+            <h2>Transparency of Judgment.</h2>
+            <p>The specific reasoning behind decisions or predictions that affect the capabilities or reputation of people and organizations, must be made accessible, transparent, and explainable in plain language.</p>
+            <p>Algorithms are making snap judgments of people's content and character, without explaining why, and without any recourse to demand a detailed description, or challenge false impressions. We cannot allow extrajudicial judgment to become accepted practice in our society.</p>
+            <p>Blacklisting of prospective or former employees for prejudicial reasons is a major issue affecting many sectors of employment. This is becoming an even more pressing issue due to algorithmic processing of data, as well as widespread political polarization and cancel culture.</p>
+            <p>Any such processes of making and sharing lists of persona non grata should be strongly discouraged. Where it may happen to remain permitted, it must be explicitly transparent. Similarly, transparency of all employment references and performance records disclosed to third parties must also be made explicit. Without these issue explicitly covered under employment law, a massive loophole enables the exploitation of persons who are technically not party to employment regulations per se.</p>
+            <p>Online tools offer to rank a potential hire by the sentiment (or contentiousness) of their comments online, on even those they have liked or favorited. These tools typically offer no explanation for how such an estimation is calculated, or what data drove such conclusions, or even what such a score should mean for a vettor.</p>
+            <p>This threatens to enable bigotry and prejudice through the backdoor, by allowing one to wash one's hands of being explicitly discriminatory, yet ensuring that only the 'right sort of people' pass through the gate. Algorithms, along with those who deploy them, must be held accountable for their use, and that any such use that can affect reputation, access to resources, or livelihood is fully transparent.</p>
+            <p>Peace requires that algorithms are not used as a tool to launder secret, prejudicial acts.</p>
+            
+            <h2>Freedom of Consciousness.</h2>
+            <p>Technology must not be used to manipulate people's behavior or impressions of reality. Our minds are sacred sovereign territory.</p>
+            <p>We are presently headed for a world where our lives are ever more entwined with technology, such as artificial intelligence and social media. Propaganda used to be one-size-fits-all, but today campaigns can be micro-targeted. Repeated barely-noticeable impressions may not only change our opinions on something, but even our mood.</p>
+            <p>Meanwhile, technology is enabling us to make uncanny impressions about people, or to predict their future behaviors. As technology improves, our minds are likely to become even more deeply invaded, perhaps even by educators and employers.</p>
+            <p>There is a war ongoing for our minds, not just our loyalties. Our minds cannot become a battlefield to be conquered, nor a testing ground for the worst excesses of psychological manipulation tactics. No non-obvious fake accounts or generated misinformation can be permitted to twist our very perception of reality. The human mind is off limits.</p>
+            <p>Peace requires respecting the sovereign autonomy of the heart and mind.</p>
+            
+            <h2>Freedom to enjoy Culture.</h2>
+            <p>Culture and cultural tropes should be open to being appreciated by others, as long as it is not being disrespected.</p>
+            <p>In different places of the world, at different times, people have tried to control culture. The co-opting of cultural capital, along with the history that it represents, is an essential component of every authoritarian stance.</p>
+            <p>Divide and conquer (bifurcation strategy) is a time-tested tactic, and it can apply to culture also. Forking culture, to take it in a desired direction for political or ideological aim, is an unfortunately common ploy. Because of this, many people are rightfully suspicious or alarmed when they perceive their culture being subverted, erased, or replaced by others.</p>
+            <p>Respectful homage or admiration, without diminishing culture and its context, should be tolerated. Satire should also be given a pass. Good-natured ignorance or guacheness should be readily forgiven also, perhaps as part of a gentle 'teachable moment'.</p>
+            
+            <h2>EQUALITY OF public ACCESS</h2>
+            <p>People should not be removed from access to public communities and the goods and services of public corporations without good reason.</p>
+            <p>From reverse-engineering Youtube's algorithms, evidence is emerging that it may be demonetizing content based on simple keywords. Anything with a title or description featuring words as innocuous as 'Gay/Lesbian' to 'North Carolina', or even 'Asians' may be liable to be blocked from advertising revenue.</p>
+            <p>Furthermore, tools such as alleging copyright infringement may be used to suppress unfavorable news, hold people to digital ransom, or appropriation of revenue. Online flash mobs may even cause content to be demonetised simply for commenting on it. This can lead to the deletion of associated email accounts, along with the channel, greatly amplifying the economic and social damage, and amplifying the chilling effects.</p>
+            <p>It is unacceptable to demonetise content in order to economically dis-enfranchise voices that one may not agree with or finds suspect, or to place a  surcharge on service access to certain consumers and not others, or kick people off platforms for 'lack of commercial viability', perhaps based on their political affiliations. Sometimes this is done under an ostensible justification to protect the feelings of others.</p>
+            <p>Boycotts are justifiable on an individual level, but not on a corporate level, e.g. a business boycotting or refusing service to an individual without very good reason. It is also unacceptable on a mob level, e.g. using threats to cause economic damage, by forcing extra security costs, or to pressure a business or local government to stop trading with a third party. Such an escalation is less of a boycott, and closer to making someone an Economic Outlaw, or even perpetrating a Digital Kristallnacht.</p>
+            <p>If a business is an effective monopoly or part of a cartel (i.e. it's practically impossible for the average person to avoid it, or that avoiding it would inflict a large penalty in terms of resources such as money or time) then it shouldn't be allowed to discriminate based on ethnicity, age, or political or sexual orientation, or sector of employment.</p>
+            <p>Furthermore, there is a meaningful difference between a private company and a public corporation. If a venture has a public corporate charter, is open to the general public and uses the commons for commercial transactions, and if it is publicly traded, then it should engage with the public on a general basis, without discrimination. Private business transactions involving one-on-one contracts, membership clubs, and consultations, occur on private property exclusively. That's why private country clubs are allowed for example to be discriminating in terms of their membership, and individuals can choose to enter into contractual relationships using whatever criteria of discrimination they prefer, similarly to how one has the right to refuse entrance to one's home. But if a venture is open to the general public, and business relies upon custom from random strangers wandering in, it should not be permitted to be partisan or discriminatory due to the social contract of public benefit that affords public corporations their unique blend of privileges and duties.</p>
+            <p>If people feel that they are being cheated out of a fair and equitable life, they will lose hope in the future for them and their children, and instead grow in frustration (NSFW), resentment, and destroyed livelihoods. Governmental and economic gatekeepers must not use their power and influence to support partisan interests. Boycotts must be made on an individual basis as a personal act of conscience, not at corporate or jurisdictional scale.</p>
+            <p>Peace requires that we enable everyone to participate fairly in public communities and to benefit from public corporations.</p>
+            
+            <h2>Freedom of Association.</h2>
+            <p>Association with a person or group, following them, or an acknowledgement of their content should not be equated to agreement with it, or endorsement of it. Contamination by proxy is unjust and invalid.</p>
+            <p>Many people seek a variety of opinions and ideas to take inspiration and guidance from. Even ideas or opinions that are dismissed as being incorrect might retain a grain of truth, or an unusual perspective. Even a bad idea can still be interesting, and it might serve as a jumping-off point to explore a space of uncharted thought where better ideas might lie.In a time of with-us-or-against-us polarization, there is a tendency to police the attention of others – to root out signs of potential dissent. This is an increasingly prevalent practice in the online world, where who has viewed or acknowledged content is often transparent information.</p>
+            <p>It can be very complicated to unpack why someone may have made note of something. Are they acknowledging the content, or the person sharing it? A like may not be an endorsement or agreement, merely an 'I hear what you're saying'. Is someone 'angry' at an incident itself, or the way that someone talked about it?</p>
+            <p>Norms of communication differ by platform, as well as demography, and over time. A Twitter 'heart' was once a 'favorite' instead, a neutral selector commonly used to earmark posts. Old favorited tweets have been used to attack people and attempt to smear them as 'loving' objectionable views. This is an error of judgment, but the underlying act of policing of someone's personal curation of the content they encounter is itself an error of morals.</p>
+            <p>Peace requires that we allow others to listen to a diverse variety of voices, so that human beings can be empowered to draw their own personal conclusions by syncretising from a selection of evidence.</p>
+            
+            <h2>There Are No Monopolies on Truth.</h2>
+            <p>No person, identity, or group has a natural monopoly on the truth of a situation. On the contrary, lived experience within a cultural tribe may be reason to take someone's assertions with a grain of salt.</p>
+            <p>It is often remarked that someone's lived experience should always be given primacy in a situation; their perspective, based upon their personal experiences, should be afforded the deepest respect and that they should own the definition of what it happening in a situation.</p>
+            <p>However, objective truth is very difficult to discern, and being close to a situation often makes it rather challenging to remain impartial.</p>
+            <p>Therefore, people who have an identity tied up in a situation should simultaneously be given more credence for their opinion (due to their experiences), and also a great deal more wariness towards their assertions, due to the much greater risk of motivated reasoning (e.g. tribal identity politics, receiving a social benefit from being disproportionately aggrieved).</p>
+            <p>This creates something of a paradox. This paradox is resolved through engagement between persons who are close to a situation in terms of lived experience or identity, and those who are far from it. Only by engaging in good faith dialogue and discussion can something closer to the objective truth of a situation be ascertained, and in so doing find a balance which is more likely to be fair and equitable for everyone.</p>
+            <p>Similarly, people in a particular demographic may feel that their experience generalizes to all other people in that demographic, and that they can speak for all, which is doubtful. Opinions and experiences should always be a personal matter, avoiding any claim upon those of other people.</p>
+            <p>Peace requires acknowledging that having an identity tied up in a situation does not entitle one to a monopoly on the truth of it. Rather, such truth may best be located in dialogue between different groups, some close to a situation, some far from it.</p>
+            <p>What are your thoughts? What do you agree and disagree with? Think something should be changed? Is something missing?</p>
+            <p>Please kindly make a comment, or lead a discussion in our Facebook Group.</p>
+        </div>
+    </main>
+</body>
+</html>
