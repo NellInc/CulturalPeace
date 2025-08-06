@@ -52,32 +52,112 @@
 <!-- End of Squarespace Headers -->
     
   <link rel="icon" type="image/png" href="assets/favicon.ico"><link rel="shortcut icon" type="image/png" href="assets/favicon.ico">
+        </head>
+  <body id="collection-5c099fd06d2a73da2f5fa383" style="margin: 0 !important; padding: 0 !important;">
+        <header class="squarespace-header" style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: transparent;
+          padding: 20px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        ">
+          <div class="header-logo" style="display: flex; align-items: center;">
+            <svg width="40" height="40" viewBox="0 0 100 100" style="margin-right: 12px;">
+              <circle cx="35" cy="35" r="25" fill="none" stroke="white" stroke-width="3"></circle>
+              <circle cx="65" cy="65" r="25" fill="none" stroke="white" stroke-width="3"></circle>
+              <path d="M35 35 L65 65" stroke="white" stroke-width="3"></path>
+            </svg>
+            <a href="index.html" style="
+              color: white;
+              text-decoration: none;
+              font-size: 20px;
+              font-weight: 500;
+              font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
+              letter-spacing: 0.5px;
+            ">Cultural Peace</a>
+          </div>
+          <div class="header-nav" style="display: flex; align-items: center; gap: 20px;">
+            <a href="contact-1.html" style="
+              color: white;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 400;
+              font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              padding: 8px 16px;
+              border: 1px solid rgba(255,255,255,0.3);
+              border-radius: 2px;
+              transition: all 0.3s ease;
+            " onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='transparent'">CONTACT</a>
+            <a href="links.html" style="
+              color: white;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 400;
+              font-family: 'proxima-nova', -apple-system, BlinkMacSystemFont, sans-serif;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              padding: 8px 16px;
+              border: 1px solid rgba(255,255,255,0.3);
+              border-radius: 2px;
+              transition: all 0.3s ease;
+            " onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)'" onmouseout="this.style.backgroundColor='transparent'">LINKS</a>
+          </div>
+        </header>
+
         <style>
-          /* TRUE VERBATIM RESET - Remove all artificial spacing */
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+          /* Ensure header shows above all content */
+          .squarespace-header {
+            pointer-events: all;
           }
           
-          html, body {
+          .squarespace-header a {
+            pointer-events: all;
+          }
+          
+          /* Mobile responsive */
+          @media (max-width: 768px) {
+            .squarespace-header {
+              padding: 15px 20px !important;
+              flex-direction: column !important;
+              gap: 15px !important;
+              background: rgba(0,0,0,0.7) !important;
+            }
+            
+            .header-logo svg {
+              width: 30px !important;
+              height: 30px !important;
+            }
+            
+            .header-logo a {
+              font-size: 18px !important;
+            }
+            
+            .header-nav {
+              gap: 15px !important;
+            }
+            
+            .header-nav a {
+              font-size: 12px !important;
+              padding: 6px 12px !important;
+            }
+          }
+          
+          /* Ensure body content doesn't get covered by header */
+          body {
             margin: 0 !important;
             padding: 0 !important;
-            overflow-x: hidden;
           }
           
-          /* Ensure first content element starts at absolute top */
-          body > *:first-child {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-          }
-          
-          /* Remove any header-like spacing */
-          .header, .site-header, nav {
-            display: none !important;
-          }
-        </style></head>
-  <body id="collection-5c099fd06d2a73da2f5fa383" style="margin: 0 !important; padding: 0 !important;">
+          /* But don't add top padding since header is transparent overlay */
+        </style>
+      
       
       
       
