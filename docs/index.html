@@ -181,6 +181,20 @@
             margin-right: auto;
         }
         
+        /* Link styling - exact color from original */
+        .content-section a,
+        main a {
+            color: rgb(61, 153, 145);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .content-section a:hover,
+        main a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+        
         /* Video Container */
         .video-container {
             position: relative;
@@ -282,7 +296,7 @@
             
             <p>Social media is transforming our global society in powerful ways. The perception of increased social density has created a crucible of conflict where social interactions happen at vastly accelerated pace and scale. Meanwhile, algorithms decide who we are likely to interact with, and when, and with what content.</p>
             
-            <p>The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health seems to have become weakened, and researchers suggest that our empathy for those in an out-group is much weaker. The profound existential stresses brought force from these new social technologies, and their effect on our brains, is changing our culture, and contributing to polarization. How should we react to these developments in order to ensure that the fabric of society remains strong? Do we need a 'Digital Geneva Conventions' or modern 'Treaty of Westphalia' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even cold civil war?</p>
+            <p>The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health <a href="https://www.bbc.co.uk/news/health-47133338" target="_blank">seems to have become weakened</a>, and researchers suggest that our <a href="https://www.sciencedirect.com/science/article/pii/S0896627310007208" target="_blank">empathy for those in an out-group is much weaker</a>. The profound existential stresses brought force from these new social technologies, and <a href="https://www.bustle.com/p/7-ways-social-media-changes-your-brain-according-to-science-9211397" target="_blank">their effect on our brains</a>, is <a href="https://www.aspeninstitute.org/blog-posts/how-to-fix-internet/" target="_blank">changing our culture</a>, and <a href="https://www.pnas.org/content/115/37/9216" target="_blank">contributing to polarization</a>. How should we react to these developments in order to ensure that the fabric of society remains strong? Do we need a 'Digital Geneva Conventions' or modern 'Treaty of Westphalia' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even cold civil war?</p>
             
             <!-- Video Section -->
             <div class="video-container">
@@ -298,17 +312,17 @@
             <p>The Cultural Peace Principles aim to make and collect suggestions on how we can make fair, just, and impartial rules above conflict to preserve good faith and societal cohesion, and to help support a future détente between a multitude of memetic tribes.</p>
             
             <!-- Cultural Peace Principles -->
-            <h2>Self Determination & Political Franchise.</h2>
+            <h2 id="self-determination">Self Determination & Political Franchise.</h2>
             <p>Allow people to enjoy their own communities with their own subcultures. Don't stop or invade other people's conversations.</p>
             <p>People have a natural right to form their own communities. People who share certain characteristics and perspectives require a degree of separation in order to build and sustain subcultures. Being part of a group can make it much easier to coordinate with others, and be build networks based on trust. It can also mean enabling a unique and specific culture and norms, a quality of diversity that may otherwise be washed away within the mainstream.</p>
             
-            <h2>BANKING NEUTRALITY.</h2>
+            <h2 id="banking-neutrality">BANKING NEUTRALITY.</h2>
             <p>End the removal of economic franchise. No-one may be 'outlawed' without due process.</p>
             <p>We live in a deeply inter-connected world, where so many aspects of our daily lives depend upon apps, online shopping, and mobile payments. Modern life is dependent on being able to make convenient payments and access online services, and to receive legitimate payment for honest work.</p>
             <p>Payment processors today have immense power. They can use their influence to force others to comply with their wishes, at an implied risk of losing access to the payments network, or a downgrade of service. This means that payment processors can single-handedly strongarm other players into doing their bidding for them.</p>
             <p>Today, we are seeing secondary payment processors kicking people off their platforms, despite them doing nothing illegal, and perhaps nothing explicitly against their terms of service either, perhaps to appease authoritarian governments. Generally, there is very little opportunity for an appeal or management escalation. This may cost people their entire livelihoods, taking food from their families and creating a very uncertain future. Meanwhile, credit scoring mechanisms are often based on paradoxical rules that can easily lock honest people out of creating bank accounts. Moreover, such mechanisms are coming into the world of business also.</p>
             
-            <h2>Immunity from Partiality.</h2>
+            <h2 id="immunity-from-partiality">Immunity from Partiality.</h2>
             <p>Termination of Employment on 'moral grounds' must reach a threshold of being legally prosecutable / indictable, as well as having demonstrated clear negative intent.</p>
             <p>We live in a world where what is moral or acceptable is changing very quickly, and may differ greatly between different groups. Secular moralities are being felt very keenly by many people. As political polarization continues, there are going to be increasingly differing moral norms in our society. Forbearance must be given for any alleged infraction or moral failure that does not have a clear demonstration of bad faith or negative intent behind it.</p>
             <p>In a world of very different moral assumptions, we also must refuse to attack the livelihoods of those who we disagree with, through understanding that such tit-for-tat economic violence simply makes paupers of us all. An increasingly used tactic is to put pressure on the employers of a disliked person to fire them, and creating irate supporters of that person, thereby metastasizing a small conflict into a much larger one.</p>
@@ -316,12 +330,12 @@
             <p>Employers should commit to not release people on subjective, non-judicial 'moral' grounds because of intimidation. Should they happen to do so, the public should hold them accountable for their lack of courage, compassion, and resolve in safeguarding their employees from mob attacks.</p>
             <p>Peace requires enabling people to build a secure career built upon honest work.</p>
             
-            <h2>Freedom from Assault.</h2>
+            <h2 id="freedom-from-assault">Freedom from Assault.</h2>
             <p>Personal attacks including doxxing, harassment, and threats to people's families are unacceptable. Everyone has a right to privacy, and a private life.</p>
             <p>Our interconnected world makes it easier to injure people's privacy than ever. We live in a digital panopticon, where everyone is potentially always watching what we say or write online. Somebody's smartphone is potentially recording any minor altercation, to be broadcast to millions.</p>
             <p>Social media blurs the boundaries between virtual and physical realms, and makes potentially public figures out of private individuals, especially with the omnipresent danger of being doxxed, and the implied threat that the leak of private information creates.</p>
             
-            <h2>Freedom from Political Discrimination.</h2>
+            <h2 id="freedom-from-political-discrimination">Freedom from Political Discrimination.</h2>
             <p>End prejudice in employment, education, or housing, including based on political affiliation.</p>
             <p>Industries are very strongly segregated by political affiliation. This means that it can be extremely challenging to enter or maintain a career in a certain sector if one's political alignment does not fit. Over time, this effect tends to increase further, as minorities will leave, and thus the predominant ideologies concentrate. This risks the creation of something like a soft caste system, whereby people are kept out of certain professions by default.</p>
             <p>Academia is one of the most polarised sectors, in some colleges having more than a 100:1 ratio of polarization. Academia is considered to be a nest that the future elite are nurtured within. Academic departments (particularly within the humanities), are often institutionally prejudiced against anyone who does not follow postmodernist values. This reinforces structural inequities by locking underprivileged traditional people out of access to higher education.</p>
@@ -330,7 +344,7 @@
             <p>Having certain perceived political affiliations may make it difficult to access housing, education, and employment in certain areas, preventing people from participating in a city's cultural core, and in joining the property ladder. Most industrialised nations forbid discrimination in housing, education, and employment based on various protected characteristics, and it may be just and necessary for political orientation to become a protected characteristic also.</p>
             <p>Peace requires ensuring equality of access to the pillars upon which a successful life is built.</p>
             
-            <h2>Judicial Reporting Embargo.</h2>
+            <h2 id="judicial-reporting-embargo">Judicial Reporting Embargo.</h2>
             <p>A moderate level of sexuality in an appropriate context should be tolerated, and we should be careful not to demonise it. It is normal for people to scope each other out, and sometimes such processes may be clumsy and unwelcome. Unless someone is being a serious threat, stalking, or a nuisance, we should forgive unrequited interest. Generally a polite rebuff is sufficient, and it is unjust to attack someone merely for trying. One should not apply an ideological lens to shame innocent, normal, natural behaviour.</p>
             <p>Court cases for alleged crimes of a sexual nature, or alleged crimes which are heavily politicised, should not be reported upon until a verdict is reached. No-one should be judged in the court of human opinion, and no jurist today can reasonably be expected to successfully avoid contact with news and influence from the opinions of others.</p>
             <p>The justice system by and large works well until a case is politicized and tried in the media. It's not equipped to control for that. Today, journalists are increasingly acting more as activists rather than reporters. Hearsay and accusations should never be used to convict someone in a court of public opinion regardless of any legal judgment. Such cases create a 'scissor issue' which threatens to rupture society further, as two extremely indignant groups move to defend their preferred position.</p>
@@ -341,16 +355,16 @@
             <p>For this reason, the false reporting (or fraudulent commission) of a hate crime is itself a hate crime, and it must be judged as such. Irrespective of whether police time is wasted or not, or if any particular party is falsely named, the costs to society from diminished social trust are immense. Legislators should consider that the reckless or bad faith creation of false reports of hate, or politically or ethnically motivated hoaxes, ought to be legislated against as a public order offense.</p>
             <p>Peace requires the strict implementation of impartial justice adjudicated in a court of one's unbiased peers.</p>
             
-            <h2>Statute of Limitations.</h2>
+            <h2 id="statute-of-limitations">Statute of Limitations.</h2>
             <p>Cultural expectations and rules are changing rapidly. Conduct, jokes, writings, etc older than five years, or made before the age of 25, are not to be counted against someone, unless the matter has been judged in court.</p>
             <p>All of us have said or done things in our younger years that we regret, and that we would prefer to move on from than be remembered. Today, with so many of our private thoughts and conversations in digital form, we live in a virtual panopticon. The practice of using  'Offence Archaeology' or 'Opinion Necromancy' to dig up dirt on people has become trivial.</p>
             <p>Media should be thought of like a time machine; it can take us back to the time and culture in which it was written. But we are the visitor to that realm. We are the stranger. Media, and the statements of its creators within, should be judged in the context in which it was made.</p>
             
-            <h2>Freedom from Secret Exclusion.</h2>
+            <h2 id="freedom-from-secret-exclusion">Freedom from Secret Exclusion.</h2>
             <p>No-one should ever be in doubt as to whether or not they are able to express themselves in a way that is meaningful for them. 'Shadowbanning' people is unacceptable.</p>
             <p>It is an eerie experience to post something and experience no engagement whatsoever. One suspects that one has been shadowbanned so that no-one else sees that content, or its distribution is throttled (de-boosted).</p>
             
-            <h2>Transparency of Judgment.</h2>
+            <h2 id="transparency-of-judgment">Transparency of Judgment.</h2>
             <p>The specific reasoning behind decisions or predictions that affect the capabilities or reputation of people and organizations, must be made accessible, transparent, and explainable in plain language.</p>
             <p>Algorithms are making snap judgments of people's content and character, without explaining why, and without any recourse to demand a detailed description, or challenge false impressions. We cannot allow extrajudicial judgment to become accepted practice in our society.</p>
             <p>Blacklisting of prospective or former employees for prejudicial reasons is a major issue affecting many sectors of employment. This is becoming an even more pressing issue due to algorithmic processing of data, as well as widespread political polarization and cancel culture.</p>
@@ -359,20 +373,20 @@
             <p>This threatens to enable bigotry and prejudice through the backdoor, by allowing one to wash one's hands of being explicitly discriminatory, yet ensuring that only the 'right sort of people' pass through the gate. Algorithms, along with those who deploy them, must be held accountable for their use, and that any such use that can affect reputation, access to resources, or livelihood is fully transparent.</p>
             <p>Peace requires that algorithms are not used as a tool to launder secret, prejudicial acts.</p>
             
-            <h2>Freedom of Consciousness.</h2>
+            <h2 id="freedom-of-consciousness">Freedom of Consciousness.</h2>
             <p>Technology must not be used to manipulate people's behavior or impressions of reality. Our minds are sacred sovereign territory.</p>
             <p>We are presently headed for a world where our lives are ever more entwined with technology, such as artificial intelligence and social media. Propaganda used to be one-size-fits-all, but today campaigns can be micro-targeted. Repeated barely-noticeable impressions may not only change our opinions on something, but even our mood.</p>
             <p>Meanwhile, technology is enabling us to make uncanny impressions about people, or to predict their future behaviors. As technology improves, our minds are likely to become even more deeply invaded, perhaps even by educators and employers.</p>
             <p>There is a war ongoing for our minds, not just our loyalties. Our minds cannot become a battlefield to be conquered, nor a testing ground for the worst excesses of psychological manipulation tactics. No non-obvious fake accounts or generated misinformation can be permitted to twist our very perception of reality. The human mind is off limits.</p>
             <p>Peace requires respecting the sovereign autonomy of the heart and mind.</p>
             
-            <h2>Freedom to enjoy Culture.</h2>
+            <h2 id="freedom-to-enjoy-culture">Freedom to enjoy Culture.</h2>
             <p>Culture and cultural tropes should be open to being appreciated by others, as long as it is not being disrespected.</p>
             <p>In different places of the world, at different times, people have tried to control culture. The co-opting of cultural capital, along with the history that it represents, is an essential component of every authoritarian stance.</p>
             <p>Divide and conquer (bifurcation strategy) is a time-tested tactic, and it can apply to culture also. Forking culture, to take it in a desired direction for political or ideological aim, is an unfortunately common ploy. Because of this, many people are rightfully suspicious or alarmed when they perceive their culture being subverted, erased, or replaced by others.</p>
             <p>Respectful homage or admiration, without diminishing culture and its context, should be tolerated. Satire should also be given a pass. Good-natured ignorance or guacheness should be readily forgiven also, perhaps as part of a gentle 'teachable moment'.</p>
             
-            <h2>EQUALITY OF public ACCESS</h2>
+            <h2 id="equality-of-public-access">EQUALITY OF public ACCESS</h2>
             <p>People should not be removed from access to public communities and the goods and services of public corporations without good reason.</p>
             <p>From reverse-engineering Youtube's algorithms, evidence is emerging that it may be demonetizing content based on simple keywords. Anything with a title or description featuring words as innocuous as 'Gay/Lesbian' to 'North Carolina', or even 'Asians' may be liable to be blocked from advertising revenue.</p>
             <p>Furthermore, tools such as alleging copyright infringement may be used to suppress unfavorable news, hold people to digital ransom, or appropriation of revenue. Online flash mobs may even cause content to be demonetised simply for commenting on it. This can lead to the deletion of associated email accounts, along with the channel, greatly amplifying the economic and social damage, and amplifying the chilling effects.</p>
@@ -383,14 +397,14 @@
             <p>If people feel that they are being cheated out of a fair and equitable life, they will lose hope in the future for them and their children, and instead grow in frustration (NSFW), resentment, and destroyed livelihoods. Governmental and economic gatekeepers must not use their power and influence to support partisan interests. Boycotts must be made on an individual basis as a personal act of conscience, not at corporate or jurisdictional scale.</p>
             <p>Peace requires that we enable everyone to participate fairly in public communities and to benefit from public corporations.</p>
             
-            <h2>Freedom of Association.</h2>
+            <h2 id="freedom-of-association">Freedom of Association.</h2>
             <p>Association with a person or group, following them, or an acknowledgement of their content should not be equated to agreement with it, or endorsement of it. Contamination by proxy is unjust and invalid.</p>
             <p>Many people seek a variety of opinions and ideas to take inspiration and guidance from. Even ideas or opinions that are dismissed as being incorrect might retain a grain of truth, or an unusual perspective. Even a bad idea can still be interesting, and it might serve as a jumping-off point to explore a space of uncharted thought where better ideas might lie.In a time of with-us-or-against-us polarization, there is a tendency to police the attention of others – to root out signs of potential dissent. This is an increasingly prevalent practice in the online world, where who has viewed or acknowledged content is often transparent information.</p>
             <p>It can be very complicated to unpack why someone may have made note of something. Are they acknowledging the content, or the person sharing it? A like may not be an endorsement or agreement, merely an 'I hear what you're saying'. Is someone 'angry' at an incident itself, or the way that someone talked about it?</p>
             <p>Norms of communication differ by platform, as well as demography, and over time. A Twitter 'heart' was once a 'favorite' instead, a neutral selector commonly used to earmark posts. Old favorited tweets have been used to attack people and attempt to smear them as 'loving' objectionable views. This is an error of judgment, but the underlying act of policing of someone's personal curation of the content they encounter is itself an error of morals.</p>
             <p>Peace requires that we allow others to listen to a diverse variety of voices, so that human beings can be empowered to draw their own personal conclusions by syncretising from a selection of evidence.</p>
             
-            <h2>There Are No Monopolies on Truth.</h2>
+            <h2 id="there-are-no-monopolies-on-truth">There Are No Monopolies on Truth.</h2>
             <p>No person, identity, or group has a natural monopoly on the truth of a situation. On the contrary, lived experience within a cultural tribe may be reason to take someone's assertions with a grain of salt.</p>
             <p>It is often remarked that someone's lived experience should always be given primacy in a situation; their perspective, based upon their personal experiences, should be afforded the deepest respect and that they should own the definition of what it happening in a situation.</p>
             <p>However, objective truth is very difficult to discern, and being close to a situation often makes it rather challenging to remain impartial.</p>
