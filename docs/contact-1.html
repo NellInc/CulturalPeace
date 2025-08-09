@@ -281,8 +281,36 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
+        /* Honeypot field - ensure it's completely hidden on all devices */
+        input[name="_gotcha"] {
+            display: none !important;
+            position: absolute !important;
+            left: -5000px !important;
+            height: 0 !important;
+            width: 0 !important;
+            line-height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: 0 !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            clip: rect(0,0,0,0) !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+        }
+        
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            /* Extra safety for honeypot on mobile devices */
+            input[name="_gotcha"] {
+                display: none !important;
+                visibility: hidden !important;
+                position: fixed !important;
+                left: -9999px !important;
+                top: -9999px !important;
+            }
+            
             .header-replica {
                 padding: 0 20px;
                 height: auto;
@@ -343,8 +371,15 @@
                     <form action="https://formspree.io/f/mdkdwwop" method="POST">
                         <!-- Hidden fields -->
                         <input type="hidden" name="_subject" value="Cultural Peace Contact Form">
-                        <!-- Honeypot field for spam protection -->
-                        <input type="text" name="_gotcha" style="display:none">
+                        <!-- Honeypot field for spam protection (hidden from users) -->
+                        <input 
+                            type="text" 
+                            name="_gotcha" 
+                            tabindex="-1"
+                            autocomplete="off"
+                            style="display: none !important; position: absolute !important; left: -5000px !important; height: 0 !important; width: 0 !important; line-height: 0 !important; padding: 0 !important; margin: 0 !important; border: 0 !important;"
+                            aria-hidden="true"
+                        />
                         
                         <div class="field-list">
                             <!-- Name Field -->
