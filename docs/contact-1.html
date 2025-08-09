@@ -341,53 +341,43 @@
             <div class="form-wrapper">
                 <div class="form-inner-wrapper">
                     <form action="https://formspree.io/f/mdkdwwop" method="POST">
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="_subject" value="Cultural Peace Contact Form">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
                         <div class="field-list">
-                            <!-- Name Field (First and Last) -->
-                            <fieldset class="form-item fields name required">
-                                <legend class="title">
+                            <!-- Name Field -->
+                            <div class="form-item field name required">
+                                <label class="title" for="name-field">
                                     Name
                                     <span class="required" aria-hidden="true">*</span>
-                                </legend>
+                                </label>
                                 
-                                <div class="field first-name">
-                                    <label class="caption">
-                                        <input
-                                            class="field-element field-control"
-                                            name="First Name"
-                                            type="text"
-                                            required
-                                            aria-required="true"
-                                        />
-                                        <span class="caption-text">First Name</span>
-                                    </label>
-                                </div>
-                                
-                                <div class="field last-name">
-                                    <label class="caption">
-                                        <input
-                                            class="field-element field-control"
-                                            name="Last Name"
-                                            type="text"
-                                            required
-                                            aria-required="true"
-                                        />
-                                        <span class="caption-text">Last Name</span>
-                                    </label>
-                                </div>
-                            </fieldset>
+                                <input
+                                    class="field-element"
+                                    id="name-field"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name..."
+                                    required
+                                    aria-required="true"
+                                />
+                            </div>
                             
                             <!-- Email Field -->
                             <div class="form-item field email required">
                                 <label class="title" for="email-field">
-                                    Email
+                                    Email Address
                                     <span class="required" aria-hidden="true">*</span>
                                 </label>
                                 
                                 <input
                                     class="field-element"
                                     id="email-field"
-                                    name="Email"
+                                    name="email"
                                     type="email"
+                                    placeholder="your@email.com"
                                     required
                                     aria-required="true"
                                 />
@@ -403,7 +393,8 @@
                                 <textarea
                                     class="field-element"
                                     id="message-field"
-                                    name="Message"
+                                    name="message"
+                                    placeholder="Write your message..."
                                     required
                                     aria-required="true"
                                 ></textarea>
@@ -414,13 +405,13 @@
                                 <label style="display: flex; align-items: flex-start; font-family: 'adobe-garamond-pro', serif; font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, 0.7); cursor: pointer;">
                                     <input
                                         type="checkbox"
-                                        name="Privacy Consent"
-                                        value="I consent to having this website store my submitted information"
+                                        name="privacy-consent"
+                                        id="privacy-consent"
                                         required
                                         aria-required="true"
                                         style="margin-right: 10px; margin-top: 3px; width: auto; height: auto; cursor: pointer;"
                                     />
-                                    <span>I consent to having this website store my submitted information so they can respond to my inquiry. <span class="required" aria-hidden="true">*</span></span>
+                                    <span>I agree to the processing of my personal data for the purpose of responding to this inquiry. <span class="required" aria-hidden="true">*</span></span>
                                 </label>
                             </div>
                         </div>
@@ -430,7 +421,7 @@
                             <input
                                 class="button"
                                 type="submit"
-                                value="Submit"
+                                value="Send Message"
                             />
                         </div>
                     </form>
