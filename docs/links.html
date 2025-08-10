@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
     <style>
-        /* EXACT SQUARESPACE REPLICA STYLES */
+        /* EXACT MATCH TO ORIGINAL SITE */
         * {
             margin: 0;
             padding: 0;
@@ -22,10 +22,50 @@
             background: white;
             color: rgba(26, 26, 26, 0.7);
             font-size: 18px;
-            line-height: 28.8px;
+            line-height: 1.6em;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0em;
         }
         
-        /* HEADER REPLICA - ABSOLUTE PERFECTION */
+        /* HERO SECTION */
+        .hero-section {
+            position: relative;
+            height: 500px;
+            background: url('assets/links-header.png') center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .hero-text {
+            font-family: proxima-nova, sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            z-index: 2;
+            position: relative;
+            margin: 0;
+            line-height: 1.1;
+        }
+        
+        /* HEADER */
         .header-replica {
             position: absolute;
             top: 0;
@@ -59,12 +99,11 @@
             display: inline;
             max-height: 150px;
             object-fit: contain;
-            filter: invert(1);
         }
         
         .nav-replica {
             position: absolute;
-            top: 29.25px;
+            top: 70px;
             right: 45px;
             display: flex;
             gap: 0;
@@ -72,9 +111,9 @@
         }
         
         .nav-btn {
-            color: rgba(26, 26, 26, 0.9);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: proxima-nova, sans-serif;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 2px;
@@ -88,7 +127,7 @@
         }
         
         .nav-btn.contact {
-            padding: 9.75px 0;
+            padding: 9.75px 13px;
             border: none;
             background: transparent;
             margin: 0;
@@ -98,7 +137,7 @@
         .nav-btn.links {
             padding: 13px 19.5px;
             margin-left: 13px;
-            border: 2px solid rgba(26, 26, 26, 0.9);
+            border: 2px solid rgb(255, 255, 255);
             border-radius: 300px;
             background-color: transparent;
             display: block;
@@ -106,31 +145,21 @@
         
         /* CONTENT SECTIONS */
         .content-section {
-            padding: 240px 0 80px;
-            max-width: 1200px;
+            padding: 70px 40px 100px;
+            max-width: 900px;
             margin: 0 auto;
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        
-        .content-section h1 {
-            font-family: adobe-garamond-pro, serif;
-            font-size: 32px;
-            font-weight: 400;
-            color: rgba(26, 26, 26, 0.9);
-            margin-bottom: 40px;
-            text-align: center;
         }
         
         .content-section h3 {
-            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: proxima-nova, sans-serif;
             font-size: 16px;
             font-weight: 600;
+            line-height: 1.2em;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: rgba(26, 26, 26, 0.9);
             margin-top: 60px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
         }
         
@@ -139,32 +168,60 @@
             font-size: 18px;
             line-height: 28.8px;
             color: rgba(26, 26, 26, 0.7);
-            margin-bottom: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 18px;
             text-align: center;
+            font-weight: 400;
+            letter-spacing: 0em;
         }
         
-        /* Link styling - exact color from original */
+        /* Link styling */
         .content-section a,
         main a {
             color: rgb(61, 153, 145);
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.1s ease;
+            border-bottom: 1px solid transparent;
         }
         
         .content-section a:hover,
         main a:hover {
+            opacity: 0.8;
+            border-bottom: 1px solid rgb(61, 153, 145);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgb(31, 31, 31);
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            padding: 64px 32px;
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+        }
+        
+        footer p {
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            color: rgba(255, 255, 255, 0.4);
+            margin: 0;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
             opacity: 0.7;
-            text-decoration: underline;
         }
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .header-replica {
                 position: relative;
-                background: white;
+                background: rgba(0,0,0,0.7);
                 padding: 20px;
                 height: auto;
             }
@@ -187,6 +244,14 @@
                 max-height: 106px;
             }
             
+            .hero-section {
+                height: 350px;
+            }
+            
+            .hero-text {
+                font-size: 48px;
+            }
+            
             .content-section {
                 padding: 40px 20px;
             }
@@ -204,11 +269,14 @@
         </nav>
     </header>
     
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-text">EXTERNAL LINKS</h1>
+    </section>
+    
     <!-- Main Content -->
     <main>
         <div class="content-section">
-            <h1>Links</h1>
-            
             <h3>External Links to Conflict Management thoughts & COMMENTS</h3>
             
             <p><a href="https://www.wsj.com/articles/geneva-conventions-for-the-culture-war-1532729748" target="_blank">Geneva Conventions for the Culture War – Orrin G. Hatch</a></p>
@@ -327,20 +395,21 @@
             
             <p><a href="https://programs.clearerthinking.org/productive_disagreement.html" target="_blank">Productive Disagreements Tool</a></p>
             
-            <h3>GAMES & learning TOYS:</h3>
+            <h3>GAMES & LEARNING TOYS:</h3>
             
             <p><a href="https://getbadnews.com/" target="_blank">Get Bad News – DROG</a></p>
-            
-            <p><a href="https://ncase.itch.io/wbwwb" target="_blank">We Become What We Behold – Nicky Case</a></p>
             
             <p><a href="https://ncase.me/polygons/" target="_blank">Polygons – Nicky Case</a></p>
             
             <p><a href="https://ncase.me/crowds/" target="_blank">The Wisdom (and/or madness) of Crowds – Nicky Case</a></p>
             
             <p><a href="https://ncase.me/trust/" target="_blank">The Evolution of Trust – Nicky Case</a></p>
-            
-            <p><a href="https://ncase.itch.io/wbwwb" target="_blank">We Become What We Behold – Nicky Case</a></p>
         </div>
     </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>2018-25 <a href="https://www.culturalpeace.org/links" target="_blank">CC BY 4.0</a></p>
+    </footer>
 </body>
 </html>

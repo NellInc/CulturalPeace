@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultural Peace - Cultural Peace</title>
+    <title>Cultural Peace</title>
+    <meta name="description" content="Let's protect innocent people during cultural conflict.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Cultural Peace">
+    <meta property="og:title" content="Cultural Peace">
+    <meta property="og:url" content="https://www.culturalpeace.org">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Let's protect innocent people during cultural conflict.">
+    <meta property="og:image" content="http://static1.squarespace.com/static/5c09945b2971142b63035e4a/t/5c12e7efc2241b21d2dcc063/1544742901896/Digital+Peace+Pact-logo-black+%281%29+copy.png?format=1500w">
+    <meta property="og:image:width" content="1500">
+    <meta property="og:image:height" content="1427">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cultural Peace">
+    <meta name="twitter:description" content="Let's protect innocent people during cultural conflict.">
+    <meta name="twitter:url" content="https://www.culturalpeace.org">
+    <meta name="twitter:image" content="http://static1.squarespace.com/static/5c09945b2971142b63035e4a/t/5c12e7efc2241b21d2dcc063/1544742901896/Digital+Peace+Pact-logo-black+%281%29+copy.png?format=1500w">
+    
+    <link rel="canonical" href="https://www.culturalpeace.org/">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
     <style>
@@ -14,6 +35,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: adobe-garamond-pro, serif;
             margin: 0;
@@ -22,7 +47,7 @@
             background: white;
             color: rgba(26, 26, 26, 0.7);
             font-size: 18px;
-            line-height: 1.6em;
+            line-height: 28.8px;
             letter-spacing: 0px;
             font-weight: 400;
             font-style: normal;
@@ -69,7 +94,7 @@
         
         .nav-replica {
             position: absolute;
-            top: 29.25px;
+            top: 70px;
             right: 45px;
             display: flex;
             gap: 0;
@@ -92,8 +117,30 @@
             opacity: 0.7;
         }
         
+        /* Footer link states */
+        footer a {
+            background: none !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        footer a:hover {
+            opacity: 0.7;
+            background: none !important;
+        }
+        
+        footer a:visited,
+        footer a:focus,
+        footer a:active {
+            background: none !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
         .nav-btn.contact {
-            padding: 9.75px 0;
+            padding: 9.75px 13px;
             border: none;
             background: transparent;
             margin: 0;
@@ -140,11 +187,13 @@
             color: white;
             font-family: proxima-nova, sans-serif;
             font-weight: 700;
-            font-size: 72px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            font-size: 68px;
+            line-height: 85px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
             max-width: 900px;
+            margin: 0 auto;
             padding: 0 40px;
         }
         
@@ -162,10 +211,22 @@
             color: rgba(26, 26, 26, 0.9);
             margin-bottom: 30px;
             text-align: center;
-            line-height: 1.3;
+            line-height: 38.4px;
         }
         
-        .content-section h2, .content-section h3 {
+        .content-section h2 {
+            font-family: proxima-nova, sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(26, 26, 26, 0.9);
+            margin-top: 60px;
+            margin-bottom: 20px;
+            line-height: 28px;
+        }
+        
+        .content-section h3 {
             font-family: proxima-nova, sans-serif;
             font-size: 13px;
             font-weight: 600;
@@ -174,17 +235,19 @@
             color: rgba(26, 26, 26, 0.9);
             margin-top: 60px;
             margin-bottom: 20px;
+            line-height: 19.2px;
         }
         
         .content-section p {
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
-            line-height: 1.6em;
+            line-height: 28.8px;
             letter-spacing: 0px;
             font-weight: 400;
             font-style: normal;
             color: rgba(26, 26, 26, 0.7);
-            margin-bottom: 1em;
+            margin-bottom: 18px;
+            margin-top: 0;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
@@ -208,6 +271,7 @@
             color: rgba(26, 26, 26, 0.9) !important;
             text-align: center !important;
             margin: 60px auto 40px !important;
+            line-height: 38.4px !important;
         }
         
         /* Principles list styling */
@@ -226,7 +290,7 @@
             margin-bottom: 25px;
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
-            line-height: 1.6em;
+            line-height: 28.8px;
             font-weight: 300;
             color: rgba(26, 26, 26, 0.7);
         }
@@ -259,6 +323,24 @@
         main a:hover {
             opacity: 0.7;
             text-decoration: underline;
+        }
+        
+        /* Blockquote styling */
+        blockquote {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 0 20px;
+            border-left: 3px solid rgb(61, 153, 145);
+            font-style: italic;
+        }
+        
+        blockquote p,
+        .content-section blockquote p {
+            color: rgba(26, 26, 26, 0.6);
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+            line-height: 28.8px;
+            font-style: italic !important;
         }
         
         /* Video Container */
@@ -330,15 +412,15 @@
         @media (max-width: 480px) {
             .hero-text {
                 font-size: 32px;
-                line-height: 1.3;
+                line-height: 38.4px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header-replica">
+    <header class="header-replica" id="header">
         <a href="index.html" class="logo-replica">
-            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
+            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace Logo" loading="eager">
         </a>
         <nav class="nav-replica">
             <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
@@ -359,13 +441,14 @@
     <!-- Main Content -->
     <main>
         <div class="content-section">
-            <h1>Let's protect innocent people during cultural conflict.</h1>
+            <h1>We can manage political polarization in our society better.</h1>
             
-            <p style="font-size: 24px; font-weight: 300; text-align: center; margin: 20px auto 40px; max-width: 900px;">We can manage political polarization in our society better.</p>
             
             <p>Social media is transforming our global society in powerful ways. The perception of increased social density has created a crucible of conflict where social interactions happen at vastly accelerated pace and scale. Meanwhile, algorithms decide who we are likely to interact with, and when, and with what content.</p>
             
-            <p>The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health <a href="https://www.bbc.co.uk/news/health-47133338" target="_blank">seems to have become weakened</a>, and researchers suggest that our <a href="https://www.sciencedirect.com/science/article/pii/S0896627310007208" target="_blank">empathy for those in an out-group is much weaker</a>. The profound existential stresses brought force from these new social technologies, and <a href="https://www.bustle.com/p/7-ways-social-media-changes-your-brain-according-to-science-9211397" target="_blank">their effect on our brains</a>, is <a href="https://www.aspeninstitute.org/blog-posts/how-to-fix-internet/" target="_blank">changing our culture</a>, and <a href="https://www.pnas.org/content/115/37/9216" target="_blank">contributing to polarization</a>. How should we react to these developments in order to ensure that the <a href="http://www.people-press.org/2017/10/05/1-partisan-divides-over-political-values-widen/" target="_blank">fabric of society remains strong</a>? Do we need a 'Digital Geneva Conventions' or modern '<a href="https://www.wikiwand.com/en/Peace_of_Westphalia" target="_blank">Treaty of Westphalia</a>' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even <a href="https://www.nytimes.com/2019/02/04/us/conflicting-experts-peacebuilders.html" target="_blank">cold civil war</a>?</p>
+            <p>The human brain did not evolve to cope with such a challenging social environment. Mental and emotional health <a href="https://www.bbc.co.uk/news/health-47133338" target="_blank">seems to have become weakened</a>, and researchers suggest that our <a href="https://www.sciencedirect.com/science/article/pii/S0896627310007208" target="_blank">empathy for those in an out-group is much weaker</a>. The profound existential stresses brought force from these new social technologies, and <a href="https://www.bustle.com/p/7-ways-social-media-changes-your-brain-according-to-science-9211397" target="_blank">their effect on our brains</a>, is <a href="https://www.aspeninstitute.org/blog-posts/how-to-fix-internet/" target="_blank">changing our culture</a>, and <a href="https://www.pnas.org/content/115/37/9216" target="_blank">contributing to polarization</a>.</p>
+            
+            <p>How should we react to these developments in order to ensure that the <a href="https://www.people-press.org/2017/10/05/1-partisan-divides-over-political-values-widen/" target="_blank">fabric of society remains strong</a>? Do we need a 'Digital Geneva Conventions' or modern '<a href="https://www.wikiwand.com/en/Peace_of_Westphalia" target="_blank">Treaty of Westphalia</a>' for online memetic warfare? How might we mitigate the risk of imminent global outbreaks of sectarianism, or even <a href="https://www.nytimes.com/2019/02/04/us/conflicting-experts-peacebuilders.html" target="_blank">cold civil war</a>?</p>
             
             <!-- Video Section -->
             <div class="video-container">
@@ -374,7 +457,8 @@
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture" 
                     allowfullscreen
-                    title="Cultural Peace">
+                    title="Cultural Peace Introduction Video" 
+                    loading="lazy">
                 </iframe>
             </div>
             
@@ -390,17 +474,17 @@
                 <li><a href="#freedom-from-assault"><strong>Freedom from Assault.</strong></a> Personal attacks including doxxing, harassment, and threats to people's families are unacceptable. Everyone has a right to privacy, and a private life.</li>
                 <li><a href="#freedom-from-political-discrimination"><strong>Freedom from Political Discrimination.</strong></a> End prejudice in employment, education, or housing, including based on political affiliation.</li>
                 <li><a href="#judicial-reporting-embargo"><strong>Judicial Reporting Embargo.</strong></a> Court cases for alleged crimes of a sexual nature should not be reported until a verdict is reached. No-one should be judged in the court of human opinion, and no jurist today can reasonably be expected to successfully avoid contact with news and influence from the opinions of others.</li>
-                <li><a href="#statute-of-limitations"><strong>Statute of Limitations.</strong></a> Conduct, jokes, writings, etc older than five years, or made before the age of 25, are not to be counted against someone, unless the matter has been judged in court.</li>
+                <li><a href="#statute-of-limitations"><strong>Statute of Limitations.</strong></a> Cultural expectations and rules are changing rapidly. Conduct, jokes, writings, etc older than five years, or made before the age of 25, are not to be counted against someone, unless the matter has been judged in court.</li>
                 <li><a href="#freedom-from-secret-exclusion"><strong>Freedom from Secret Exclusion.</strong></a> No-one should ever be in doubt as to whether or not they are able to express themselves in a way that is meaningful for them. 'Shadowbanning' people is unacceptable.</li>
                 <li><a href="#transparency-of-judgment"><strong>Transparency of Judgment.</strong></a> The specific reasoning behind decisions or predictions that affect the capabilities or reputation of people and organizations, must be made accessible, transparent, and explainable in plain language.</li>
-                <li><a href="#freedom-of-consciousness"><strong>Freedom of Consciousness.</strong></a> Technology must not be used to manipulate people's behavior or impressions of reality. Our minds are sacred sovereign territory.</li>
-                <li><a href="#freedom-to-enjoy-culture"><strong>Freedom to Enjoy Culture.</strong></a> Culture and cultural tropes should be open to being appreciated by others, as long as it is not being disrespected.</li>
+                <li><a href="#freedom-of-consciousness"><strong>Freedom of Consciousness.</strong></a> Technology must not be used to manipulate people's behavior or impressions of reality.</li>
+                <li><a href="#freedom-to-enjoy-culture"><strong>Freedom to Enjoy Culture.</strong></a> Culture and cultural tropes should be open to appreciation by others, as long as it is not disrespected.</li>
                 <li><a href="#equality-of-public-access"><strong>Equality of Public Access.</strong></a> People should not be removed from access to public communities and the goods and services of public corporations without good reason.</li>
                 <li><a href="#freedom-of-association"><strong>Freedom of Association.</strong></a> Association with a person or group, following them, or an acknowledgement of their content should not be equated to agreement with it, or endorsement of it. Contamination by proxy is unjust and invalid.</li>
                 <li><a href="#there-are-no-monopolies-on-truth"><strong>There Are No Monopolies on Truth.</strong></a> No person, identity, or group has a natural monopoly on the truth of a situation. On the contrary, lived experience within a cultural tribe may be reason to take someone's assertions with a grain of salt.</li>
             </ol>
             
-            <p style="font-family: adobe-garamond-pro, serif; font-size: 18px; line-height: 28.8px; color: rgba(26, 26, 26, 0.7); text-align: center; margin: 40px auto; max-width: 900px;"><strong>Further description:</strong></p>
+            <p style="font-family: adobe-garamond-pro, serif; font-size: 28px; line-height: 36px; color: rgba(26, 26, 26, 0.7); text-align: center; margin: 40px auto; max-width: 900px;"><strong>Further description:</strong></p>
             
             <h2 id="self-determination">Self Determination & Political Franchise.</h2>
             <p>Allow people to enjoy their own communities with their own subcultures. Don't stop or invade other people's conversations.</p>
@@ -410,20 +494,32 @@
                 <p>…</p>
                 <p>Some pleasures demand exclusivity. Respect doesn't mean erasing differences. Respect means being aware of differences and affording others the dignity and self-determination we give ourselves. Sometimes that may mean being excluded."</p>
             </blockquote>
-            <p>— Christopher Robinson</p>
+            <p style="text-align: center;">— Christopher Robinson</p>
             <p>One should allow others to possess, maintain, and defend their own private spaces. One should not petition for private spaces or <a href="https://reclaimthenet.org/private-conversations-hate-speech-facebook/" target="_blank">private conversations to be shut down</a>, <a href="https://www.thecollegefix.com/university-ignores-its-own-lawyer-refuses-to-recognize-conservative-club/" target="_blank">simply because one dislikes</a> a non-violent ideology, or the content of their communication, unless they are actively breaking the rule of law.</p>
             <p>Different groups may have very different norms for communication. Someone 'wandering by' a conversation, particularly in the online world these days, may find such discussion alarming or insensitive if they have different values or culture. However, one should not apply one's own cultural norms or values to other groups, or expect them to communicate in the same way that one would think common. It can be very misleading to pull a snippet of conversation from a place with one set of norms, for it to be appraised somewhere else.</p>
             <p>One should not be judged based upon who one happens to follow or is connected to. Merely following someone's tweets or retweeting a single statement, etc, should not be taken as a tacit endorsement of someone else's character or beliefs. Some folks like to culture a broad set of inputs, or may respect someone's professional achievements without necessarily agreeing with their values.</p>
             <p>Similarly, a network or group should not be judged by the actions of a small minority within it, unless the larger group is explicitly shown to approve of those actions. Works featuring <a href="https://www.youtube.com/watch?v=t4VRkE01mi4" target="_blank">challenging material from a historical perspective</a> should not be excised, particularly if the <a href="https://www.timesofisrael.com/youtubes-new-policy-blocks-history-teachers-from-uploading-hitler-archive-clips/" target="_blank">context is within education</a>. Furthermore, large tech companies are <a href="https://fee.org/articles/google-is-burying-alternative-health-sites-to-protect-people-from-dangerous-medical-advice/" target="_blank">deliberately censoring (or down-throttling) information</a> that they feel is dangerous or misleading, without being sufficiently transparent as to what they have censored, or how <a href="https://www.projectveritas.com/video/to-catch-a-journalist-rutgers-education-professor-in-pay-for-play/" target="_blank">research may be cherry-picked to order</a>. <a href="https://www.forbes.com/sites/kalevleetaru/2019/05/05/would-facebooks-phone-based-content-moderation-solve-its-globalization-problem" target="_blank">On-device content moderation</a> may soon mean that even a file or link sent directly to you from a friend may be disappeared or 'harmonized' once it reaches your location.</p>
             <p>Who are they to say what info qualifies? If one starts censoring one thing 'for the common good', it's a very slippery slope towards censoring almost anything potentially controversial or objectionable to someone, somewhere. Not only does this prevent subcultures, minority beliefs, and internet sleuths from coalescing, but it may also prevent justified whistleblowing of scandalous truths, as well as the innovation of new ideas, which are naturally avant-garde before they are accepted by the mainstream.</p>
-            <p>All public spaces, including schools, hospitals, and corporate and academic campuses, especially those that take public funding, should remain an impartial commons without any partisan allegiance.</p>
+            <p>All public spaces, including schools, hospitals, and corporate and academic campuses, especially those that take public funding, should remain an impartial commons without any partisan allegiance. Online discussions must be designated as public spaces, where rules and expectations that would apply in a street are enforced, and only those same rules.</p>
+            <p>Online discussion platforms must be held to the same standards, as they have an effective monopoly on opinion forming. This is especially important in the case of banning of political parties and politicians from online platforms.</p>
             <p>Peace requires allowing people to form their own communities and conversations, and to enable a diversity of amicable norms within them.</p>
+            <p><code><a href="https://drive.google.com/open?id=1YHcShsFzSKcLtTKpFrQaf9S5Fv7ro-fMK4ThSvkrQT8" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="banking-neutrality">BANKING NEUTRALITY.</h2>
             <p>End the removal of economic franchise. No-one may be 'outlawed' without due process.</p>
             <p>We live in a deeply inter-connected world, where so many aspects of our daily lives depend upon apps, online shopping, and mobile payments. Modern life is dependent on being able to make convenient payments and access online services, and to receive legitimate payment for honest work.</p>
             <p>Payment processors today have immense power. They can use their influence to force others to comply with their wishes, at an implied risk of losing access to the payments network, or a downgrade of service. This means that payment processors can single-handedly strongarm <a href="https://www.youtube.com/watch?v=Hv7hvZee-PQ" target="_blank">other players</a> into doing their bidding for them.</p>
             <p>Today, we are seeing secondary payment processors <a href="https://www.theransomnote.com/musings/view-side/view-from-the-side-paypal-banning-the-alt-right-is-a-wake-up-call-to-all/" target="_blank">kicking people off their platforms</a>, despite them doing nothing illegal, and perhaps nothing explicitly against their terms of service either, perhaps to <a href="https://signal.supchina.com/all-the-international-brands-that-have-apologized-to-china/" target="_blank">appease authoritarian governments</a>. Generally, there is <a href="https://boingboing.net/2019/08/13/getting-deplatformed-from-appl.html" target="_blank">very little opportunity for an appeal or management escalation</a>. This may <a href="https://www.businessinsider.com/youtubers-entire-channels-can-get-mistakenly-demonetized-for-months-2019-8?IR=T&r=US" target="_blank">cost people their entire livelihoods</a>, taking food from their families and creating a <a href="https://www.fastcompany.com/90394048/uh-oh-silicon-valley-is-building-a-chinese-style-social-credit-system" target="_blank">very uncertain future</a>. Meanwhile, credit scoring mechanisms are often based on paradoxical rules that can easily <a href="https://andrewbolster.info/2014/07/banking-trouble-at-t-lloyds.html" target="_blank">lock honest people out of creating bank accounts</a>. Moreover, such mechanisms are coming into the world of business also.</p>
+            <blockquote>
+                <p>"[If FAMGA dropped off the face of the Earth], nearly all of your electronic devices would either stop working or would disappear, the internet would become nothing short of mass chaos, nearly all e-commerce activity would halt, and your undying thirst to watch cat videos would forever go unquenched."</p>
+            </blockquote>
+            <p style="text-align: center;">— Matt Hulbert</p>
+            <p>Meanwhile, evidence is mounting that some  have been changing the list price of goods or availability of credit for some users, based upon completely non-transparent mechanisms which are highly prone to acting in negative ways, even in the absence of human action. It seems these days that competing with Silicon Valley would require building a whole entire parallel internet and banking system. Our digital payment networks and revenue mechanisms must be scrupulously non-partisan if we are to build a fair and just society.</p>
+            <p>Democratic franchise is important, but economic franchise is essential. Modern life is impossible without secure access to payment networks. We cannot allow people to become outlawed from the engines of the economy, simply because they are deemed politically undesirable. Just as many nations have developed a separation of church and state, we must ensure that money and ideology are kept separate also.</p>
+            <p>Bank Neutrality is essential, especially in a world where social media companies are becoming de facto megabanks. In fact, the next stage in payments will be a trend of consolidation of many of the world's biggest entities. Banning policies these days are often capricious and unexplained. Getting kicked off such platforms could cause absolute economic disenfranchisement.</p>
+            <p>If people cannot possess bank accounts and credit cards, if they are refused service on account of their political beliefs, you back them into a corner. They have nothing left to lose, and all options become permissible simply in order to survive and take care of their families. Participation in the economy is a right, not a privilege.</p>
+            <p>Peace requires allowing people to participate freely in economic society.</p>
+            <p><code><a href="https://drive.google.com/open?id=1C2wa-oJwzblmNRiC-LJ-ghqFQ6NIVWQc3UdHowH6v7A" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="immunity-from-partiality">Immunity from Partiality.</h2>
             <p>Termination of Employment on 'moral grounds' must reach a threshold of being legally prosecutable / indictable, as well as having demonstrated clear negative intent.</p>
@@ -432,6 +528,7 @@
             <p>To attack a person's livelihood is to attack their spouse and dependents, innocent parties. We must tolerate those that we disagree with, confronting their arguments, but leaving the person and their family and livelihoods intact, unless they have been justly prosecuted in a court of law.</p>
             <p>Employers should commit to not release people on subjective, non-judicial 'moral' grounds because of intimidation. Should they happen to do so, the public should hold them accountable for their lack of courage, compassion, and resolve in safeguarding their employees from mob attacks.</p>
             <p>Peace requires enabling people to build a secure career built upon honest work.</p>
+            <p><code><a href="https://drive.google.com/open?id=1i7LiUIk7i7aSo99zOHaTHHBaum5Ia00RDYdWy1hcjx4" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-from-assault">Freedom from Assault.</h2>
             <p>Personal attacks including doxxing, harassment, and <a href="https://news.sky.com/video/share-11829639" target="_blank">threats to people's families</a> are unacceptable. Everyone has a right to privacy, and a private life.</p>
@@ -440,9 +537,10 @@
             <blockquote>
                 <p>"I object to violence as the good it does is only temporary.<br>The evil it does is permanent."</p>
             </blockquote>
-            <p>— Mahatma Gandhi</p>
+            <p style="text-align: center;">— Mahatma Gandhi</p>
             <p>The Cultural Conflict is following people offline, into the real world. Political Violence has become a normal way to keep political opposition out of the running. People's <a href="https://www.msn.com/en-sg/news/world/think-of-your-family-china-threatens-european-citizens-over-xinjiang-protests/ar-AAIVq44" target="_blank">private family lives</a> are increasingly being invaded, as they are hounded during everyday activities, or their property invaded by mobs and <a href="https://stv.tv/news/west-central/1437900-councillor-15-minutes-from-death-after-house-petrol-bombed/" target="_blank">arsonists</a>, with altercations <a href="https://www.youtube.com/watch?v=EZImW5ZU2uY" target="_blank">becoming increasingly violent</a>. One day, an <a href="https://www.bbc.com/news/world-latin-america-45451473" target="_blank">incident like this</a> will go too far, and <a href="https://www.wikiwand.com/en/Murder_of_Jo_Cox" target="_blank">someone will be killed</a>.</p>
             <p>Peace requires respecting personal space and privacy, even of those whose views or lifestyle one profoundly disagrees with.</p>
+            <p><code><a href="https://drive.google.com/open?id=1J0KLbXU19fFDRpF6CeZasU5ORANmvkziBC5TzDMYRYk" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-from-political-discrimination">Freedom from Political Discrimination.</h2>
             <p>End prejudice in employment, education, or housing, including based on political affiliation.</p>
@@ -452,6 +550,7 @@
             <p>As most of science comes from the academic world, the public trust is science is being weakened. The scientific community is increasingly prone to partisan bias and a preference for political correctness over accuracy. This contributes to anti-intellectual feelings in society.</p>
             <p>Having certain perceived political affiliations may make it difficult to access housing, education, and employment in certain areas, preventing people from participating in a city's cultural core, and in joining the property ladder. Most industrialised nations forbid discrimination in housing, education, and employment based on various protected characteristics, and it may be just and necessary for political orientation to become a protected characteristic also.</p>
             <p>Peace requires ensuring equality of access to the pillars upon which a successful life is built.</p>
+            <p><code><a href="https://drive.google.com/open?id=19cz9kbOIkMxzBOjzvuvoj6uDLfAGS5hyggtDUUYiUuc" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="judicial-reporting-embargo">Judicial Reporting Embargo.</h2>
             <p>A moderate level of sexuality in an appropriate context should be tolerated, and we should be careful not to demonise it. It is normal for people to scope each other out, and sometimes such processes may be clumsy and unwelcome. Unless someone is being a serious threat, stalking, or a nuisance, we should forgive unrequited interest. Generally a polite rebuff is sufficient, and it is unjust to attack someone merely for trying. One should not apply an ideological lens to shame innocent, normal, natural behaviour.</p>
@@ -463,11 +562,19 @@
             <p>Finally, the invention of <a href="http://www.fakehatecrimes.org/fakes" target="_blank">provably false</a> (or <a href="https://www.theatlantic.com/ideas/archive/2019/02/jussie-smollett-story-shows-rise-victimhood-culture/583099/" target="_blank">overinflated</a>) claims in order to gain prestige or support must be subject to stringent prosecution, along with public excoriation. If a crime is afforded an aggravated status as being also a hate crime, the injured party in this aspect is not the person to which the primary crime pertains. Rather, the wounded party in a hate crime is society at large. A hate crime injures all of us by our collective dismay and consequential diminished social trust.</p>
             <p>For this reason, the <a href="https://www.independent.co.uk/news/world/europe/france-samuel-paty-beheading-schoolgirl-b1814372.html" target="_blank">false reporting</a> (or fraudulent commission) of a hate crime is itself a hate crime, and it must be judged as such. Irrespective of whether police time is wasted or not, or if any particular party is falsely named, the costs to society from diminished social trust are immense. Legislators should consider that the reckless or bad faith creation of false reports of hate, or politically or ethnically motivated hoaxes, ought to be legislated against as a <a href="https://www.wikiwand.com/en/Public-order_crime" target="_blank">public order offense</a>.</p>
             <p>Peace requires the strict implementation of impartial justice adjudicated in a court of one's unbiased peers.</p>
+            <p><code><a href="https://drive.google.com/open?id=14uVTsfRSCtAl6RbP9Xwx22lNRtYgooZ58O_heX9F4So" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="statute-of-limitations">Statute of Limitations.</h2>
             <p>Cultural expectations and rules are changing rapidly. Conduct, jokes, writings, etc older than five years, or made <a href="https://bigthink.com/videos/what-age-is-brain-fully-developed" target="_blank">before the age of 25</a>, are not to be counted against someone, unless the matter has been judged in court.</p>
             <p>All of us have said or done things in our younger years that we regret, and that we would prefer to move on from than be remembered. Today, with so many of our private thoughts and conversations in digital form, we live in a virtual panopticon. The practice of using  'Offence Archaeology' or '<a href="https://reason.com/2019/09/25/local-man-uses-viral-fame-to-raise-1-million-for-charity-journalist-digs-up-offensive-tweets-he-made-at-age-16/" target="_blank">Opinion Necromancy</a>' to dig up dirt on people has become trivial.</p>
             <p>Media should be thought of like a <a href="https://www.nytimes.com/2019/01/08/books/review/edith-wharton-house-of-mirth-anti-semitism.html" target="_blank">time machine</a>; it can take us back to the time and culture in which it was written. But we are the visitor to that realm. We are the stranger. Media, and the statements of its creators within, should be judged in the context in which it was made.</p>
+            <blockquote>
+                <p>"The past is a foreign country; they do things differently there."</p>
+            </blockquote>
+            <p style="text-align: center;">— L.P. Hartley, The Go-Between</p>
+            <p>We should also have faith in others (and ourselves) that people can and will change. That our awareness and beliefs typically refine over time, and that making errors of judgment is a necessary part of growing into a wiser human being. Acknowledgement of human flaws, along with most people's intentions to generally act in good faith, even despite errors, invites our forgiveness. If we believe in a world that welcomes social progress, we must allow people time to catch up with it.</p>
+            <p>Peace requires forgiveness, with respect for the fact that cultural norms change, and that people can change their minds over time.</p>
+            <p><code><a href="https://drive.google.com/open?id=1KfVCGqnk6GYwre5eqLgRtxyI6hf4vsnxiH0jxpems8A" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-from-secret-exclusion">Freedom from Secret Exclusion.</h2>
             <p>No-one should ever be in doubt as to whether or not they are able to <a href="https://quillette.com/2019/02/12/it-isnt-your-imagination-twitter-treats-conservatives-more-harshly-than-liberals" target="_blank">express themselves</a> in a way that is meaningful for them. 'Shadowbanning' people is unacceptable.</p>
@@ -475,8 +582,12 @@
             <blockquote>
                 <p>"Those whom the gods wish to destroy, they first make mad."</p>
             </blockquote>
-            <p>— Henry Wadsworth Longfellow</p>
-            <p>It is not necessary to lie to people to manipulate them. A story that is told truthfully, can still impart greatly different meaning in the mind of the recipient <a href="https://www.clearerthinking.org/single-post/2019/02/13/Is-language-influencing-your-beliefs-in-ways-you-dont-realize" target="_blank">depending on how it is told</a>. Websites may also be <a href="https://thenextweb.com/google/2016/09/12/google-removed-1-75-billion-websites-copyright-takedown-requests/" target="_blank">de-listed by search engines</a> and domain registrars, so that content becomes invisible, or your computer no longer knows which server to connect to go when you type the web address, or that <a href="https://archive.ph/mImQj" target="_blank">services are not provided in a neutral way</a>. The rules are often <a href="https://reclaimthenet.org/youtube-adpocalypse-update-community-guideline-violations/" target="_blank">arbitrary, and not explicit</a>.</p>
+            <p style="text-align: center;">— Henry Wadsworth Longfellow</p>
+            <p>It is not necessary to lie to people to manipulate them. A story that is told truthfully, can still impart greatly different meaning in the mind of the recipient <a href="https://www.clearerthinking.org/single-post/2019/02/13/Is-language-influencing-your-beliefs-in-ways-you-dont-realize" target="_blank">depending on how it is told</a>. Websites may also be <a href="https://thenextweb.com/google/2016/09/12/google-removed-1-75-billion-websites-copyright-takedown-requests/" target="_blank">de-listed by search engines</a> and domain registrars, so that content becomes invisible, or your computer no longer knows which server to connect to go when you type the web address, or that <a href="https://archive.ph/mImQj" target="_blank">services are not provided in a neutral way</a>. The rules are often <a href="https://reclaimthenet.org/youtube-adpocalypse-update-community-guideline-violations/" target="_blank">arbitrary, and not explicit</a>. Even computer code deemed 'hateful' can be disappeared overnight. Meanwhile technologies are being deployed that can automatically track ethnicity, sexuality, personality, and other attributes enabling potentially different treatment.</p>
+            <p>Artificial Intelligence, particularly the generative kind, is likely to amplify issues by enabling a very plausible deniability for 'glitches and goofs' and administrative 'errors' that prevent someone from enjoying a service or having a voice. To not be able to prove or know for certain that this has happened deliberately or not, is maddening and Kafkaesque, and may cause people to become ineffective through sheer frustration. This is an extremely dangerous portent for the future of society.</p>
+            <p>Any policing or 'curation' of content, whether done by human or algorithm, must be explicit, accountable, and done for specific reason or purpose. We must not permit a weakening of Freedom of Reach to curtail Freedom of Speech. There must be no secret exclusion created between unknowing parties, i.e. two people not able to communicate, for reasons they did not choose. Applying one's own preferred filters to content, with agency and awareness, is acceptable. Forcing people into a virtual ghetto with glass walls is not acting towards them in good faith.</p>
+            <p>Peace requires respecting others enough not to play cruel games with them, or to ostracise them through deceit.</p>
+            <p><code><a href="https://drive.google.com/open?id=1S9QXcF25ALGfy-xo8PjGfiXVzfegM2P-auwoIaI2of0" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="transparency-of-judgment">Transparency of Judgment.</h2>
             <p>The specific reasoning behind decisions or predictions that affect the capabilities or reputation of people and organizations, must be made accessible, transparent, and explainable in plain language.</p>
@@ -486,6 +597,7 @@
             <p>Online tools offer to rank a potential hire by the sentiment (or contentiousness) of their comments online, on even those they have <a href="https://threadreaderapp.com/thread/1221869659139366912.html" target="_blank">liked or favorited</a>. These tools typically offer no explanation for how such an estimation is calculated, or what data drove such conclusions, or even what such a score should mean for a vettor.</p>
             <p>This threatens to enable bigotry and prejudice through the backdoor, by allowing one to wash one's hands of being explicitly discriminatory, yet ensuring that only the 'right sort of people' pass through the gate. Algorithms, along with those who deploy them, must be held accountable for their use, and that any such use that can affect reputation, access to resources, or livelihood is <a href="https://www.washingtonpost.com/world/asia_pacific/chinese-app-on-xis-ideology-allows-data-access-to-100-million-users-phones-report-says/2019/10/11/2d53bbae-eb4d-11e9-bafb-da248f8d5734_story.html" target="_blank">fully transparent</a>.</p>
             <p>Peace requires that algorithms are not used as a tool to launder secret, prejudicial acts.</p>
+            <p><code><a href="https://drive.google.com/open?id=1zpainY-ShBod9jc2N4UuAEPZa2uNjxKlSdmqcmGVdzI" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-of-consciousness">Freedom of Consciousness.</h2>
             <p>Technology must not be used to manipulate people's behavior or impressions of reality. Our minds are sacred sovereign territory.</p>
@@ -493,14 +605,22 @@
             <p>Meanwhile, technology is enabling us to make uncanny impressions about people, or to predict their future behaviors. As technology improves, our minds are likely to become even more deeply invaded, perhaps even by educators and employers.</p>
             <p>There is a war ongoing for our minds, not just our loyalties. Our minds cannot become a battlefield to be conquered, nor a testing ground for the worst excesses of psychological manipulation tactics. No non-obvious fake accounts or generated misinformation can be permitted to twist our very perception of reality. The human mind is off limits.</p>
             <p>Peace requires respecting the sovereign autonomy of the heart and mind.</p>
+            <p><code><a href="https://drive.google.com/open?id=1yKaj9JeeSyv6k3tOko1aqGSrgUBBOYFFc60PA5rQYAE" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-to-enjoy-culture">Freedom to Enjoy Culture.</h2>
             <p>Culture and cultural tropes should be open to being appreciated by others, as long as it is not being disrespected.</p>
             <p>In different places of the world, at different times, people have tried to control culture. The co-opting of cultural capital, along with the history that it represents, is an essential component of every authoritarian stance.</p>
             <p>Divide and conquer (bifurcation strategy) is a time-tested tactic, and it can apply to culture also. Forking culture, to take it in a desired direction for political or ideological aim, is an unfortunately common ploy. Because of this, many people are rightfully suspicious or alarmed when they perceive their culture being subverted, erased, or replaced by others.</p>
             <p>Respectful homage or admiration, without diminishing culture and its context, should be tolerated. Satire should also be given a pass. Good-natured ignorance or guacheness should be readily forgiven also, perhaps as part of a gentle 'teachable moment'.</p>
+            <blockquote>
+                <p>"Our love of our (pop) culture is a non-threatening bridge not politicized, a bridge that links people of every political stripe, a line of communication between all camps."</p>
+            </blockquote>
+            <p style="text-align: center;">— 'Overlord DVD'</p>
+            <p>However, the subversion or co-opting of a culture is unacceptable. If culture is taken and changed in a way that violates existing traditions and canon in a way that disrupts it, and attempts to change its character and its values, then that is cultural appropriation.</p>
+            <p>Peace requires that we do not culturally appropriate the culture of others in a negative or revisionist manner. Peace requires not locking people out of being able to appreciate and enjoy cultural materials in a good faith manner, also.</p>
+            <p><code><a href="https://drive.google.com/open?id=1j2MHwKC7QWi_Kb6apo7J6PphDhzhEQ6SXQcVE7vxvOI" target="_blank">[Make a Comment]</a></code></p>
             
-            <h2 id="equality-of-public-access">EQUALITY OF PUBLIC ACCESS</h2>
+            <h2 id="equality-of-public-access">EQUALITY OF PUBLIC ACCESS.</h2>
             <p>People should not be removed from access to public communities and the goods and services of public corporations without good reason.</p>
             <p>From reverse-engineering Youtube's algorithms, <a href="https://www.youtube.com/watch?v=ll8zGaWhofU" target="_blank">evidence is emerging</a> that it may be demonetizing content based on simple keywords. Anything with a title or description featuring words as innocuous as 'Gay/Lesbian' to 'North Carolina', or even 'Asians' may be liable to be blocked from advertising revenue.</p>
             <p>Furthermore, tools such as <a href="https://torrentfreak.com/record-label-targets-copyright-experts-with-bogus-takedown-request/" target="_blank">alleging copyright infringement</a> may be used to <a href="https://www.theregister.co.uk/2019/06/05/apple_stand_copyright_lockdown/" target="_blank">suppress unfavorable news</a>, hold people to <a href="https://cyware.com/news/scammers-report-youtube-channels-stating-fake-copyright-infringements-and-demand-ransom-54b42845" target="_blank">digital ransom</a>, or <a href="https://torrentfreak.com/star-wars-theorys-vader-fan-film-hit-with-copyright-claim-190116/" target="_blank">appropriation of revenue</a>. Online flash mobs may even cause content to be <a href="http://archive.fo/YzaKH" target="_blank">demonetised simply for commenting on it</a>. This can lead to the <a href="https://www.techdirt.com/articles/20190221/11402041647/youtube-filters-it-again-pokemon-youtubers-have-accounts-nuked-over-child-porn-discussions-that-werent-occurring.shtml" target="_blank">deletion of associated email accounts, along with the channel</a>, greatly amplifying the <a href="https://gizmodo.com/i-cut-the-big-five-tech-giants-from-my-life-it-was-hel-1831304194" target="_blank">economic and social damage</a>, and amplifying the <a href="https://www.wikiwand.com/en/Chilling_effect" target="_blank">chilling effects</a>.</p>
@@ -510,13 +630,16 @@
             <p>Furthermore, there is a meaningful difference between a private company and a public corporation. If a venture has a public corporate charter, is open to the general public and uses the commons for commercial transactions, and if it is publicly traded, then it should engage with the public on a general basis, without discrimination. Private business transactions involving one-on-one contracts, membership clubs, and consultations, occur on private property exclusively. That's why private country clubs are allowed for example to be discriminating in terms of their membership, and individuals can choose to enter into contractual relationships using whatever criteria of discrimination they prefer, similarly to how one has the right to refuse entrance to one's home. But if a venture is open to the general public, and business relies upon custom from random strangers wandering in, it should not be permitted to be partisan or discriminatory due to the social contract of public benefit that affords public corporations their unique blend of privileges and duties.</p>
             <p>If people feel that they are being cheated out of a fair and equitable life, they will lose hope in the future for them and their children, and instead grow in frustration (NSFW), resentment, and destroyed livelihoods. Governmental and economic gatekeepers must not use their power and influence to support partisan interests. Boycotts must be made on an individual basis as a personal act of conscience, not at corporate or jurisdictional scale.</p>
             <p>Peace requires that we enable everyone to participate fairly in public communities and to benefit from public corporations.</p>
+            <p><code><a href="https://drive.google.com/open?id=1gN95t48AS47-gqZVKBNf9fiLTPnMUgMX2Hv8fy29rDc" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="freedom-of-association">Freedom of Association.</h2>
             <p>Association with a person or group, following them, or an acknowledgement of their content should not be equated to agreement with it, or endorsement of it. Contamination by proxy is unjust and invalid.</p>
-            <p>Many people seek a variety of opinions and ideas to take inspiration and guidance from. Even ideas or opinions that are dismissed as being incorrect might retain a grain of truth, or an unusual perspective. Even a bad idea can still be interesting, and it might serve as a jumping-off point to explore a space of uncharted thought where better ideas might lie.In a time of with-us-or-against-us polarization, there is a tendency to police the attention of others – to root out signs of potential dissent. This is an increasingly prevalent practice in the online world, where who has viewed or acknowledged content is often transparent information.</p>
+            <p>Many people seek a variety of opinions and ideas to take inspiration and guidance from. Even ideas or opinions that are dismissed as being incorrect might retain a grain of truth, or an unusual perspective. Even a bad idea can still be interesting, and it might serve as a jumping-off point to explore a space of uncharted thought where better ideas might lie.</p>
+            <p>In a time of with-us-or-against-us polarization, there is a tendency to police the attention of others – to root out signs of potential dissent. This is an increasingly prevalent practice in the online world, where who has viewed or acknowledged content is often transparent information.</p>
             <p>It can be very complicated to unpack why someone may have made note of something. Are they acknowledging the content, or the person sharing it? A like may not be an endorsement or agreement, merely an 'I hear what you're saying'. Is someone 'angry' at an incident itself, or the way that someone talked about it?</p>
             <p>Norms of communication differ by platform, as well as demography, and over time. A Twitter 'heart' was once a 'favorite' instead, a neutral selector commonly used to earmark posts. Old favorited tweets have been used to attack people and attempt to smear them as 'loving' objectionable views. This is an error of judgment, but the underlying act of policing of someone's personal curation of the content they encounter is itself an error of morals.</p>
             <p>Peace requires that we allow others to listen to a diverse variety of voices, so that human beings can be empowered to draw their own personal conclusions by syncretising from a selection of evidence.</p>
+            <p><code><a href="https://docs.google.com/document/d/1NXEgos4oTdTyCFMKsgaqK_X9_-KSTUNS8ikDSa0I3qc/edit?usp=sharing" target="_blank">[Make a Comment]</a></code></p>
             
             <h2 id="there-are-no-monopolies-on-truth">There Are No Monopolies on Truth.</h2>
             <p>No person, identity, or group has a natural monopoly on the truth of a situation. On the contrary, lived experience within a cultural tribe may be reason to take someone's assertions with a grain of salt.</p>
@@ -526,40 +649,65 @@
             <p>This creates something of a paradox. This paradox is resolved through engagement between persons who are close to a situation in terms of lived experience or identity, and those who are far from it. Only by engaging in good faith dialogue and discussion can something closer to the objective truth of a situation be ascertained, and in so doing find a balance which is more likely to be fair and equitable for everyone.</p>
             <p>Similarly, people in a particular demographic may feel that their experience generalizes to all other people in that demographic, and that they can speak for all, which is doubtful. Opinions and experiences should always be a personal matter, avoiding any claim upon those of other people.</p>
             <p>Peace requires acknowledging that having an identity tied up in a situation does not entitle one to a monopoly on the truth of it. Rather, such truth may best be located in dialogue between different groups, some close to a situation, some far from it.</p>
-            <p>What are your thoughts? What do you agree and disagree with? Think something should be changed? Is something missing?</p>
-            <p>Please kindly make a comment, or lead a discussion in our <a href="https://www.facebook.com/groups/2579956202044912/" target="_blank">Facebook Group</a>.</p>
-            <p>Sign our <a href="https://culturalpeace.formstack.com/forms/online_petition_copy" target="_blank">Online Petition</a>.</p>
+            <p><code><a href="https://docs.google.com/document/d/1HGhclF9F53nEHjaIOugxl1Ob5fJsfMnqyW2DW6rk3oE/edit?usp=sharing" target="_blank">[Make a Comment]</a></code></p>
             
-            <!-- External Links Section -->
-            <div style="margin: 80px auto; text-align: center; max-width: 900px;">
-                <h2 style="font-family: proxima-nova, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(26, 26, 26, 0.9); margin-bottom: 20px;">External links</h2>
-                <p style="font-family: adobe-garamond-pro, serif; font-size: 18px; line-height: 1.6em; color: rgba(26, 26, 26, 0.7); margin-bottom: 20px;">Curious to read more about polarization in our society, and efforts to help reduce it?</p>
-                <p><a href="links.html" style="color: rgb(61, 153, 145); text-decoration: none; font-size: 18px;">Take a look</a></p>
+            <!-- Comment Section -->
+            <div style="margin: 80px auto 60px; text-align: center; max-width: 900px; padding: 0 40px;">
+                <p style="font-family: adobe-garamond-pro, serif; font-size: 20px; line-height: 32px; color: rgba(26, 26, 26, 0.7); margin-bottom: 30px;">What are your thoughts? What do you agree and disagree with? Think something should be changed? Is something missing?</p>
+                <p style="font-family: adobe-garamond-pro, serif; font-size: 19px; line-height: 30.4px; color: rgba(26, 26, 26, 0.7);">Please kindly make a comment, or lead a discussion in our <a href="https://www.facebook.com/groups/2579956202044912/" target="_blank" style="color: rgb(61, 153, 145); text-decoration: none;">Facebook Group</a>.</p>
             </div>
             
-            <!-- Bottom Image -->
-            <div style="width: 100%; margin: 60px 0;">
-                <img src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1544135059505-BEVW1TI2K9LZ69RD2APN/tumblr_mn8b8sLRb61rkz363o1_1280.jpg" 
-                     alt="Cultural Peace" 
-                     style="width: 100%; height: auto; display: block;" />
-            </div>
-            
-            <!-- Subscribe Section -->
-            <div style="background: #f8f8f8; padding: 60px 40px; text-align: center;">
-                <h2 style="font-family: proxima-nova, sans-serif; font-size: 24px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(26, 26, 26, 0.9); margin-bottom: 20px;">Subscribe</h2>
-                <p style="font-family: adobe-garamond-pro, serif; font-size: 16px; color: rgba(26, 26, 26, 0.7); margin-bottom: 30px;">Sign up with your email address to receive news and updates.</p>
-                <div style="max-width: 400px; margin: 0 auto; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 5px;">
-                    <p style="font-family: adobe-garamond-pro, serif; font-size: 14px; color: rgba(26, 26, 26, 0.6); font-style: italic;">Email subscription has been disabled. Please join our Facebook Group or sign the petition above to stay connected.</p>
+            <!-- YouTube Videos -->
+            <div style="margin: 60px auto; max-width: 900px; padding: 0 40px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/8tGMept_SvM" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allowfullscreen
+                            title="Cultural Peace YouTube Video"
+                            loading="lazy">
+                    </iframe>
                 </div>
             </div>
             
+            <!-- Second YouTube Video -->
+            <div style="margin: 60px auto; max-width: 900px; padding: 0 40px;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/5cEuwF3wBAE" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                            allowfullscreen
+                            title="Cultural Peace - Second YouTube Video"
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- External Links Section -->
+            <div style="margin: 100px auto 80px; padding: 0 40px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 60px;">
+                    <div style="flex: 1; text-align: center;">
+                        <h2 style="font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: rgba(26, 26, 26, 0.4); margin-bottom: 30px;">EXTERNAL LINKS</h2>
+                        <p style="font-family: adobe-garamond-pro, serif; font-size: 24px; line-height: 33.6px; color: rgba(26, 26, 26, 0.8); margin-bottom: 20px;">Curious to read more about polarization in our society, and efforts to help reduce it?</p>
+                        <p style="font-family: adobe-garamond-pro, serif; font-size: 24px; line-height: 33.6px; color: rgba(26, 26, 26, 0.8); margin-bottom: 40px;">Check out these thoughts on the topic.</p>
+                        <a href="links.html" style="background-color: rgb(61, 153, 145); color: white; text-decoration: none; font-size: 12px; text-transform: uppercase; font-family: proxima-nova, sans-serif; font-weight: 600; letter-spacing: 2px; padding: 16px 32px; border-radius: 300px; display: inline-block; transition: all 0.3s ease;">TAKE A LOOK</a>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1544135059505-BEVW1TI2K9LZ69RD2APN/tumblr_mn8b8sLRb61rkz363o1_1280.jpg" 
+                             alt="Cultural Peace Illustration - Two people connecting" 
+                             style="width: 100%; height: auto; display: block; border-radius: 4px;" 
+                             loading="lazy" />
+                    </div>
+                </div>
+            </div>
+            
+            
+            
             <!-- Footer -->
-            <footer style="background: #333; color: rgba(255, 255, 255, 0.7); padding: 40px 20px; text-align: center;">
-                <p style="font-family: proxima-nova, sans-serif; font-size: 12px; margin-bottom: 10px;">
-                    2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: rgb(61, 153, 145); text-decoration: none;">CC BY 4.0</a>
-                </p>
-                <p style="font-family: proxima-nova, sans-serif; font-size: 12px;">
-                    <a href="#header" style="color: rgb(61, 153, 145); text-decoration: none;">Back to Top</a>
+            <footer style="background: rgb(31, 31, 31); padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div style="margin-bottom: 32px;">
+                    <a href="#header" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;" aria-label="Back to top of page">Back to Top</a>
+                </div>
+                <p style="font-family: adobe-garamond-pro, serif; font-size: 18px; font-weight: 400; line-height: 28.8px; color: rgba(255, 255, 255, 0.4); margin: 0; display: flex; align-items: center; justify-content: center;">
+                    2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: rgba(255, 255, 255, 0.4) !important; text-decoration: none !important; display: inline !important; background: transparent !important; padding: 0 !important; margin: 0 0 0 5px !important; border: none !important; outline: none !important;">CC BY 4.0</a>
                 </p>
             </footer>
         </div>

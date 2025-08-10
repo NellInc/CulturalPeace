@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
     <style>
-        /* VERBATIM CONTACT PAGE STYLES */
+        /* EXACT MATCH TO LIVE SITE */
         * {
             margin: 0;
             padding: 0;
@@ -16,14 +16,26 @@
         
         body {
             font-family: adobe-garamond-pro, serif;
-            background-color: rgb(31, 31, 31);
-            color: rgba(26, 26, 26, 0.9);
+            background-color: white;
+            color: rgba(26, 26, 26, 0.7);
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            font-size: 18px;
+            line-height: 1.6em;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0em;
         }
         
-        /* HEADER - EXACT MATCH */
+        /* DARK HEADER SECTION */
+        .header-section {
+            background-color: rgb(26, 26, 26);
+            min-height: 200px;
+            position: relative;
+        }
+        
+        /* HEADER */
         .header-replica {
             position: absolute;
             top: 0;
@@ -61,7 +73,7 @@
         
         .nav-replica {
             position: absolute;
-            top: 29.25px;
+            top: 70px;
             right: 45px;
             display: flex;
             gap: 0;
@@ -71,7 +83,7 @@
         .nav-btn {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: proxima-nova, sans-serif;
             font-size: 13px;
             font-weight: 600;
             letter-spacing: 2px;
@@ -85,7 +97,7 @@
         }
         
         .nav-btn.contact {
-            padding: 9.75px 0;
+            padding: 9.75px 13px;
             border: none;
             background: transparent;
             margin: 0;
@@ -101,47 +113,35 @@
             display: block;
         }
         
-        /* MAIN CONTENT AREA */
+        /* MAIN CONTENT */
         .main-content {
-            padding-top: 200px;
-            padding-bottom: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 188px);
+            background-color: white;
+            padding: 60px 40px 80px;
+            min-height: calc(100vh - 200px);
         }
         
         .content-wrapper {
-            width: 100%;
-            max-width: 1020px;
-            padding: 0 32px;
+            max-width: 740px;
+            margin: 0 auto;
         }
         
         .page-header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            text-align: left;
         }
         
         .page-header p {
             font-family: adobe-garamond-pro, serif;
-            font-size: 19px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 40px;
+            font-size: 20px;
+            line-height: 1.6em;
+            color: rgba(26, 26, 26, 0.7);
+            font-weight: 400;
+            letter-spacing: 0em;
         }
         
-        /* FORM STYLES - VERBATIM */
-        .form-wrapper {
-            width: 100%;
-        }
-        
-        .form-inner-wrapper {
-            width: 100%;
-        }
-        
+        /* FORM STYLES */
         form {
             width: 100%;
-            max-width: 956px;
-            margin: 0 auto;
         }
         
         .field-list {
@@ -149,65 +149,36 @@
         }
         
         .form-item {
-            margin-bottom: 18px;
+            margin-bottom: 28px;
         }
         
-        .form-item.fields {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-        
-        .form-item label.title,
-        .form-item legend.title {
+        .form-item label.title {
             display: block;
-            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: proxima-nova, sans-serif;
             font-size: 12px;
             font-weight: 600;
+            line-height: 1.2em;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 8px;
-        }
-        
-        .form-item legend.title {
-            padding: 0;
-            border: none;
-            width: 100%;
-        }
-        
-        .required {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .field {
-            flex: 1;
-        }
-        
-        .field label.caption {
-            display: block;
-        }
-        
-        .caption-text {
-            display: block;
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 4px;
-            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, sans-serif;
+            color: rgba(26, 26, 26, 0.7);
+            margin-bottom: 10px;
         }
         
         input[type="text"],
         input[type="email"],
         textarea {
             width: 100%;
-            padding: 10px;
-            font-size: 18px;
+            padding: 12px 16px;
+            font-size: 16px;
             font-family: adobe-garamond-pro, serif;
-            border: 1px solid rgb(169, 169, 169);
+            font-weight: 400;
+            line-height: 1.6em;
+            border: 1px solid rgba(26, 26, 26, 0.12);
             border-radius: 0;
-            background-color: rgb(250, 250, 250);
+            background-color: white;
             color: rgb(26, 26, 26);
-            transition: border-color 0.3s ease;
+            transition: border-color 0.1s ease;
+            -webkit-appearance: none;
         }
         
         input[type="text"]:focus,
@@ -219,103 +190,123 @@
         
         input[type="text"],
         input[type="email"] {
-            height: 45px;
+            height: 44px;
         }
         
         textarea {
-            height: 100px;
+            height: 120px;
             resize: vertical;
             min-height: 100px;
+            padding-top: 10px;
+        }
+        
+        /* Required asterisk */
+        .required {
+            color: #f00;
         }
         
         /* SUBMIT BUTTON */
         .form-button-wrapper {
             text-align: right;
-        }
-        
-        .form-button-wrapper--align-right {
-            text-align: right;
+            margin-top: 30px;
         }
         
         input[type="submit"] {
-            padding: 18px 45px;
-            font-size: 18px;
-            font-weight: 300;
-            font-family: adobe-garamond-pro, serif;
+            padding: 13px 26px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: proxima-nova, sans-serif;
+            line-height: 1.2em;
             color: rgb(255, 255, 255);
             background-color: rgb(26, 26, 26);
-            border: none;
-            border-radius: 3px;
+            border: 2px solid rgb(26, 26, 26);
+            border-radius: 300px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.1s ease;
+            -webkit-appearance: none;
         }
         
         input[type="submit"]:hover {
-            background-color: rgba(26, 26, 26, 0.8);
-            transform: translateY(-2px);
+            background-color: transparent;
+            color: rgb(26, 26, 26);
         }
         
-        /* SUBSCRIBE SECTION */
-        .subscribe-section {
-            margin-top: 80px;
-            padding-top: 60px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        
-        .subscribe-section h2 {
-            font-family: adobe-garamond-pro, serif;
-            font-size: 36px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-        }
-        
-        .subscribe-section p {
-            font-family: adobe-garamond-pro, serif;
-            font-size: 17px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Honeypot field - ensure it's completely hidden on all devices */
+        /* Honeypot field - completely hidden */
         input[name="_gotcha"] {
             display: none !important;
             position: absolute !important;
             left: -5000px !important;
             height: 0 !important;
             width: 0 !important;
-            line-height: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            border: 0 !important;
             visibility: hidden !important;
             opacity: 0 !important;
-            pointer-events: none !important;
-            clip: rect(0,0,0,0) !important;
-            white-space: nowrap !important;
-            overflow: hidden !important;
+        }
+        
+        /* Checkbox styling */
+        .checkbox-wrapper {
+            margin: 28px 0 32px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 12px;
+            margin-top: 3px;
+            cursor: pointer;
+            flex-shrink: 0;
+            accent-color: rgb(26, 26, 26);
+        }
+        
+        .checkbox-wrapper label {
+            font-family: adobe-garamond-pro, serif;
+            font-size: 15px;
+            line-height: 1.6em;
+            color: rgba(26, 26, 26, 0.6);
+            cursor: pointer;
+            flex: 1;
+            font-weight: 400;
+            letter-spacing: 0em;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: rgb(31, 31, 31);
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            padding: 64px 32px;
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+        }
+        
+        footer p {
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            color: rgba(255, 255, 255, 0.4);
+            margin: 0;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            opacity: 0.7;
         }
         
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            /* Extra safety for honeypot on mobile devices */
-            input[name="_gotcha"] {
-                display: none !important;
-                visibility: hidden !important;
-                position: fixed !important;
-                left: -9999px !important;
-                top: -9999px !important;
-            }
-            
             .header-replica {
-                padding: 0 20px;
-                height: auto;
+                position: relative;
                 background: rgba(0,0,0,0.7);
+                padding: 20px;
+                height: auto;
             }
             
             .logo-replica {
@@ -336,140 +327,125 @@
                 max-height: 106px;
             }
             
-            .main-content {
-                padding-top: 150px;
-            }
-            
-            .form-item.fields {
-                flex-direction: column;
-            }
-            
             input[type="submit"] {
                 width: 100%;
+            }
+            
+            .form-button-wrapper {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header-replica">
-        <a href="index.html" class="logo-replica">
-            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
-        </a>
-        <nav class="nav-replica">
-            <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
-            <a href="links.html" class="nav-btn links">LINKS</a>
-        </nav>
-    </header>
+    <!-- Dark Header Section -->
+    <div class="header-section">
+        <header class="header-replica">
+            <a href="index.html" class="logo-replica">
+                <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
+            </a>
+            <nav class="nav-replica">
+                <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
+                <a href="links.html" class="nav-btn links">LINKS</a>
+            </nav>
+        </header>
+    </div>
     
+    <!-- Main Content -->
     <main class="main-content">
         <div class="content-wrapper">
             <div class="page-header">
                 <p>Do you have private questions or enquiries related to this project? Please let us know.</p>
             </div>
             
-            <div class="form-wrapper">
-                <div class="form-inner-wrapper">
-                    <form action="https://formspree.io/f/mdkdwwop" method="POST">
-                        <!-- Hidden fields -->
-                        <input type="hidden" name="_subject" value="Cultural Peace Contact Form">
-                        <!-- Honeypot field for spam protection (hidden from users) -->
-                        <input 
-                            type="text" 
-                            name="_gotcha" 
-                            tabindex="-1"
-                            autocomplete="off"
-                            style="display: none !important; position: absolute !important; left: -5000px !important; height: 0 !important; width: 0 !important; line-height: 0 !important; padding: 0 !important; margin: 0 !important; border: 0 !important;"
-                            aria-hidden="true"
+            <!-- Contact Form with Formspree -->
+            <form action="https://formspree.io/f/mdkdwwop" method="POST">
+                <!-- Hidden fields -->
+                <input type="hidden" name="_subject" value="Cultural Peace Contact Form">
+                
+                <!-- Honeypot field for spam protection (completely hidden) -->
+                <input 
+                    type="text" 
+                    name="_gotcha" 
+                    tabindex="-1"
+                    autocomplete="off"
+                    aria-hidden="true"
+                />
+                
+                <div class="field-list">
+                    <!-- Name Field -->
+                    <div class="form-item">
+                        <label class="title" for="name-field">
+                            Name <span class="required">*</span>
+                        </label>
+                        <input
+                            id="name-field"
+                            name="name"
+                            type="text"
+                            required
+                            aria-required="true"
                         />
-                        
-                        <div class="field-list">
-                            <!-- Name Field -->
-                            <div class="form-item field name required">
-                                <label class="title" for="name-field">
-                                    Name
-                                    <span class="required" aria-hidden="true">*</span>
-                                </label>
-                                
-                                <input
-                                    class="field-element"
-                                    id="name-field"
-                                    name="name"
-                                    type="text"
-                                    placeholder="Your name..."
-                                    required
-                                    aria-required="true"
-                                />
-                            </div>
-                            
-                            <!-- Email Field -->
-                            <div class="form-item field email required">
-                                <label class="title" for="email-field">
-                                    Email Address
-                                    <span class="required" aria-hidden="true">*</span>
-                                </label>
-                                
-                                <input
-                                    class="field-element"
-                                    id="email-field"
-                                    name="email"
-                                    type="email"
-                                    placeholder="your@email.com"
-                                    required
-                                    aria-required="true"
-                                />
-                            </div>
-                            
-                            <!-- Message Field -->
-                            <div class="form-item field textarea required">
-                                <label class="title" for="message-field">
-                                    Message
-                                    <span class="required" aria-hidden="true">*</span>
-                                </label>
-                                
-                                <textarea
-                                    class="field-element"
-                                    id="message-field"
-                                    name="message"
-                                    placeholder="Write your message..."
-                                    required
-                                    aria-required="true"
-                                ></textarea>
-                            </div>
-                            
-                            <!-- Privacy Consent Checkbox -->
-                            <div class="form-item field checkbox required" style="margin-top: 20px; margin-bottom: 30px;">
-                                <label style="display: flex; align-items: flex-start; font-family: adobe-garamond-pro, serif; font-size: 16px; line-height: 1.4; color: rgba(255, 255, 255, 0.7); cursor: pointer;">
-                                    <input
-                                        type="checkbox"
-                                        name="privacy-consent"
-                                        id="privacy-consent"
-                                        required
-                                        aria-required="true"
-                                        style="margin-right: 10px; margin-top: 3px; width: auto; height: auto; cursor: pointer;"
-                                    />
-                                    <span>I agree to the processing of my personal data for the purpose of responding to this inquiry. <span class="required" aria-hidden="true">*</span></span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <!-- Submit Button -->
-                        <div class="form-button-wrapper form-button-wrapper--align-right">
-                            <input
-                                class="button"
-                                type="submit"
-                                value="Send Message"
-                            />
-                        </div>
-                    </form>
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div class="form-item">
+                        <label class="title" for="email-field">
+                            Email <span class="required">*</span>
+                        </label>
+                        <input
+                            id="email-field"
+                            name="email"
+                            type="email"
+                            required
+                            aria-required="true"
+                        />
+                    </div>
+                    
+                    <!-- Message Field -->
+                    <div class="form-item">
+                        <label class="title" for="message-field">
+                            Message <span class="required">*</span>
+                        </label>
+                        <textarea
+                            id="message-field"
+                            name="message"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Anti-spam Checkbox -->
+                    <div class="checkbox-wrapper">
+                        <input
+                            type="checkbox"
+                            name="privacy_consent"
+                            id="privacy-consent"
+                            required
+                            aria-required="true"
+                        />
+                        <label for="privacy-consent">
+                            I confirm this is a genuine inquiry and I'm not a robot. I agree to the processing of my personal data for the purpose of responding to this inquiry. <span class="required">*</span>
+                        </label>
+                    </div>
                 </div>
-            </div>
+                
+                <!-- Submit Button -->
+                <div class="form-button-wrapper">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
             
-            <!-- Subscribe Section -->
-            <div class="subscribe-section">
-                <h2>SUBSCRIBE</h2>
-                <p>Sign up with your email address to receive news and updates.</p>
+            <!-- Comment Section -->
+            <div style="margin: 80px auto 60px; text-align: center; max-width: 900px; padding: 0 40px;">
+                <p style="font-family: adobe-garamond-pro, serif; font-size: 20px; line-height: 1.6em; color: rgba(26, 26, 26, 0.7); margin-bottom: 30px;">What are your thoughts? What do you agree and disagree with? Think something should be changed? Is something missing?</p>
+                <p style="font-family: adobe-garamond-pro, serif; font-size: 19px; line-height: 1.6em; color: rgba(26, 26, 26, 0.7);">Please kindly make a comment, or lead a discussion in our <a href="https://www.facebook.com/groups/2579956202044912/" target="_blank" style="color: rgb(61, 153, 145); text-decoration: none;">Facebook Group</a>.</p>
             </div>
         </div>
     </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>2018-25 <a href="https://www.culturalpeace.org/links" target="_blank">CC BY 4.0</a></p>
+    </footer>
 </body>
 </html>
