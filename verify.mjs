@@ -45,11 +45,12 @@ async function comparePages(liveUrl, localPath) {
   try {
     // Get live content
     const page = await browser.newPage();
-    await page.goto(liveUrl, { 
+    await page.goto(liveUrl, {
       waitUntil: 'networkidle0',
       timeout: 30000
     });
-    await page.waitForTimeout(2000);
+    // Wait for page to fully render (replaced deprecated waitForTimeout)
+    await new Promise(resolve => setTimeout(resolve, 2000));
     
     const liveHtml = await page.content();
     const liveContent = await normalizeContent(liveHtml);

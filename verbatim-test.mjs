@@ -25,11 +25,8 @@ async function verbatimTest() {
     localPage.goto(LOCAL_URL, { waitUntil: 'networkidle0' })
   ]);
   
-  // Wait for identical conditions
-  await Promise.all([
-    livePage.waitForTimeout(5000),
-    localPage.waitForTimeout(5000)
-  ]);
+  // Wait for identical conditions (replaced deprecated waitForTimeout)
+  await new Promise(resolve => setTimeout(resolve, 5000));
   
   // Inject identical scripts to ensure identical state
   const script = `
