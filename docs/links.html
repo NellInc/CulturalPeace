@@ -51,6 +51,10 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
     <style>
+        /* Font display swap for better performance */
+        @font-face { font-display: swap !important; }
+    </style>
+    <style>
         /* EXACT MATCH TO ORIGINAL SITE */
         * {
             margin: 0;
@@ -305,11 +309,11 @@
 <body>
     <header class="header-replica">
         <a href="index.html" class="logo-replica">
-            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace">
+            <img class="logo-icon" src="https://images.squarespace-cdn.com/content/v1/5c09945b2971142b63035e4a/1568046251289-I7HN1YV91NKCA6SD9WVO/Cultural+Peace-logo-white+%281%29.png?format=1500w" alt="Cultural Peace Logo" width="250" height="148">
         </a>
-        <nav class="nav-replica">
-            <a href="contact-1.html" class="nav-btn contact">CONTACT</a>
-            <a href="links.html" class="nav-btn links">LINKS</a>
+        <nav class="nav-replica" role="navigation" aria-label="Main navigation">
+            <a href="contact.html" class="nav-btn contact">CONTACT</a>
+            <a href="links.html" class="nav-btn links" aria-current="page">LINKS</a>
         </nav>
     </header>
     
@@ -455,7 +459,7 @@
     <footer>
         <nav style="margin-bottom: 24px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;" aria-label="Footer navigation">
             <a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;">14 Principles</a>
-            <a href="contact-1.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;">Contact</a>
+            <a href="contact.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;">Contact</a>
         </nav>
         <p>2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
     </footer>

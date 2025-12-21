@@ -169,7 +169,8 @@ async function crawlSite() {
               $(el).attr('href', relativePath);
             }
           } catch (e) {
-            // Keep relative links as-is
+            // Keep relative links as-is, URL parsing failed
+            if (process.env.DEBUG) console.warn(`Could not parse URL: ${href}`);
           }
         });
         
@@ -192,10 +193,12 @@ async function crawlSite() {
                   $(el).removeAttr('data-image');
                 }
               }));
-            } catch (e) {}
+            } catch (e) {
+              if (process.env.DEBUG) console.warn(`Could not process image: ${src}`, e.message);
+            }
           }
         });
-        
+
         // CSS
         $('link[rel="stylesheet"][href]').each((_, el) => {
           const href = $(el).attr('href');
@@ -210,10 +213,12 @@ async function crawlSite() {
                   $(el).attr('href', relativePath);
                 }
               }));
-            } catch (e) {}
+            } catch (e) {
+              if (process.env.DEBUG) console.warn(`Could not process stylesheet: ${href}`, e.message);
+            }
           }
         });
-        
+
         // JavaScript (be selective)
         $('script[src]').each((_, el) => {
           const src = $(el).attr('src');
@@ -228,10 +233,12 @@ async function crawlSite() {
                   $(el).attr('src', relativePath);
                 }
               }));
-            } catch (e) {}
+            } catch (e) {
+              if (process.env.DEBUG) console.warn(`Could not process script: ${src}`, e.message);
+            }
           }
         });
-        
+
         // Background images in style attributes
         $('[style*="background-image"]').each((_, el) => {
           const style = $(el).attr('style');
