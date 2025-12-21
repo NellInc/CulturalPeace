@@ -26,3 +26,7 @@ Thumbs.db
 
 # XML exports (contain original data)
 *.xml
+# Development files
+generate-pdf.mjs
+lighthouse-report.report.html
+lighthouse-report.report.json
