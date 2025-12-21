@@ -52,24 +52,45 @@
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
-        /* Font display swap for better performance */
-        @font-face { font-display: swap !important; }
-    </style>
-    <style>
-        /* EXACT MATCH TO ORIGINAL SITE */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* Animations */
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
             font-family: adobe-garamond-pro, serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background: white;
+            background: #f8fafc;
             color: rgba(26, 26, 26, 0.7);
             font-size: 18px;
             line-height: 1.6em;
@@ -77,18 +98,85 @@
             font-style: normal;
             letter-spacing: 0em;
         }
-        
+
+        /* Color Variables */
+        :root {
+            --teal: rgb(61, 153, 145);
+            --teal-dark: rgb(45, 120, 112);
+            --coral: #f97316;
+            --purple: #8b5cf6;
+            --rose: #ec4899;
+            --amber: #f59e0b;
+            --emerald: #10b981;
+            --blue: #3b82f6;
+            --indigo: #6366f1;
+        }
+
+        /* Skip Link - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            font-family: proxima-nova, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--purple);
+            outline-offset: 2px;
+        }
+
+        /* Focus States - Accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--purple);
+            outline-offset: 2px;
+        }
+
+        .nav-btn:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 4px;
+        }
+
+        .link-card:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 2px;
+        }
+
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--teal);
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
         /* HERO SECTION */
         .hero-section {
             position: relative;
-            height: 500px;
+            height: 450px;
             background: url('assets/links-header.png') center center;
             background-size: cover;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .hero-section::before {
             content: '';
             position: absolute;
@@ -96,28 +184,54 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.25);
             z-index: 1;
         }
-        
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, #f8fafc, transparent);
+            z-index: 2;
+        }
+
+        .hero-content {
+            z-index: 3;
+            text-align: center;
+            padding: 0 20px;
+        }
+
         .hero-text {
             font-family: proxima-nova, sans-serif;
-            font-size: 72px;
+            font-size: 60px;
             font-weight: 700;
             color: white;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.08em;
             text-align: center;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            z-index: 2;
-            position: relative;
-            margin: 0;
+            margin: 0 0 20px;
             line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        
+
+        .hero-subtitle {
+            font-family: adobe-garamond-pro, serif;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            max-width: 500px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
         /* HEADER */
         .header-replica {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -128,12 +242,52 @@
             display: block;
             background: transparent;
             pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        /* Glassmorphism sticky header when scrolled */
+        .header-replica.scrolled {
+            height: 70px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .header-replica.scrolled .logo-icon {
+            width: 150px;
+            height: auto;
+            max-height: 50px;
+        }
+
+        .header-replica.scrolled .logo-replica {
+            top: 10px;
+        }
+
+        .header-replica.scrolled .nav-replica {
+            top: 20px;
+        }
+
+        .header-replica.scrolled .nav-btn {
+            color: var(--teal-dark);
+        }
+
+        .header-replica.scrolled .nav-btn.links {
+            border-color: var(--teal);
+            color: var(--teal);
+            background-color: transparent;
+        }
+
+        .header-replica.scrolled .nav-btn.links:hover {
+            background-color: var(--teal);
+            color: white;
+        }
+
         .header-replica * {
             pointer-events: all;
         }
-        
+
         .logo-replica {
             display: inline-block;
             position: absolute;
@@ -141,16 +295,18 @@
             left: 20px;
             color: transparent;
             text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .logo-icon {
             width: 250px;
             height: 148.328px;
             display: inline;
             max-height: 150px;
             object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav-replica {
             position: absolute;
             top: 70px;
@@ -158,10 +314,11 @@
             display: flex;
             gap: 0;
             align-items: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav-btn {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             text-decoration: none;
             font-family: proxima-nova, sans-serif;
             font-size: 13px;
@@ -169,13 +326,32 @@
             letter-spacing: 2px;
             line-height: 13px;
             text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        /* Animated underline for nav buttons */
+        .nav-btn.contact::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
             transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
-        
+
+        .nav-btn.contact:hover::after {
+            width: 100%;
+        }
+
         .nav-btn:hover {
-            opacity: 0.7;
+            transform: translateY(-2px);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
-        
+
         .nav-btn.contact {
             padding: 9.75px 13px;
             border: none;
@@ -183,287 +359,1148 @@
             margin: 0;
             display: block;
         }
-        
+
         .nav-btn.links {
             padding: 13px 19.5px;
             margin-left: 13px;
             border: 2px solid rgb(255, 255, 255);
             border-radius: 300px;
-            background-color: transparent;
+            background-color: rgba(255,255,255,0.1);
+            color: rgb(255, 255, 255);
             display: block;
+            backdrop-filter: blur(4px);
         }
-        
+
+        .nav-btn.links:hover {
+            background-color: rgb(255, 255, 255);
+            color: var(--teal);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+        }
+
         /* CONTENT SECTIONS */
         .content-section {
-            padding: 70px 40px 100px;
-            max-width: 900px;
+            padding: 60px 40px 120px;
+            max-width: 1000px;
             margin: 0 auto;
         }
-        
-        .content-section h3 {
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-top: 40px;
+        }
+
+        .section-header:first-child {
+            padding-top: 0;
+        }
+
+        .section-line {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .section-line::before,
+        .section-line::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            border-radius: 1px;
+        }
+
+        /* Section colors */
+        .section-header.articles .section-line::before,
+        .section-header.articles .section-line::after {
+            background: rgba(61, 153, 145, 0.3);
+        }
+        .section-header.articles h2 {
+            color: var(--teal);
+        }
+
+        .section-header.tools .section-line::before,
+        .section-header.tools .section-line::after {
+            background: rgba(139, 92, 246, 0.3);
+        }
+        .section-header.tools h2 {
+            color: var(--purple);
+        }
+
+        .section-header.games .section-line::before,
+        .section-header.games .section-line::after {
+            background: rgba(245, 158, 11, 0.3);
+        }
+        .section-header.games h2 {
+            color: var(--amber);
+        }
+
+        .section-header h2 {
+            font-family: proxima-nova, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .section-intro {
+            font-family: adobe-garamond-pro, serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(26, 26, 26, 0.55);
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Link Cards */
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 72px;
+        }
+
+        .links-grid.two-column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .link-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid rgba(26, 26, 26, 0.06);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--teal);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(61, 153, 145, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: rgba(61, 153, 145, 0.2);
+        }
+
+        .link-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Icon styles with beautiful gradients */
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+        }
+
+        /* Article icons - teal */
+        .card-icon.article {
+            background: rgba(61, 153, 145, 0.12);
+            color: var(--teal);
+        }
+        .link-card:hover .card-icon.article {
+            background: var(--teal);
+            color: white;
+        }
+
+        /* Video icons - rose */
+        .card-icon.video {
+            background: rgba(236, 72, 153, 0.12);
+            color: var(--rose);
+        }
+        .link-card:hover .card-icon.video {
+            background: var(--rose);
+            color: white;
+        }
+
+        /* Tool icons - purple */
+        .card-icon.tool {
+            background: rgba(139, 92, 246, 0.12);
+            color: var(--purple);
+        }
+        .link-card:hover .card-icon.tool {
+            background: var(--purple);
+            color: white;
+        }
+
+        /* Organization icons - blue */
+        .card-icon.org {
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--blue);
+        }
+        .link-card:hover .card-icon.org {
+            background: var(--blue);
+            color: white;
+        }
+
+        /* Game icons - amber */
+        .card-icon.game {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--amber);
+        }
+        .link-card:hover .card-icon.game {
+            background: var(--amber);
+            color: white;
+        }
+
+        /* Book icons - emerald */
+        .card-icon.book {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--emerald);
+        }
+        .link-card:hover .card-icon.book {
+            background: var(--emerald);
+            color: white;
+        }
+
+        .card-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-title {
             font-family: proxima-nova, sans-serif;
             font-size: 16px;
             font-weight: 600;
-            line-height: 1.2em;
-            letter-spacing: 2px;
+            line-height: 1.4;
+            color: rgba(26, 26, 26, 0.88);
+            margin: 0 0 5px 0;
+            transition: color 0.2s ease;
+        }
+
+        .link-card:hover .card-title {
+            color: var(--teal-dark);
+        }
+
+        .card-source {
+            font-family: proxima-nova, sans-serif;
+            font-size: 12px;
+            color: rgba(26, 26, 26, 0.5);
             text-transform: uppercase;
-            color: rgba(26, 26, 26, 0.9);
-            margin-top: 60px;
-            margin-bottom: 30px;
-            text-align: center;
+            letter-spacing: 0.5px;
+            margin: 0;
+            font-weight: 500;
         }
-        
-        .content-section p {
-            font-family: adobe-garamond-pro, serif;
-            font-size: 18px;
-            line-height: 28.8px;
-            color: rgba(26, 26, 26, 0.7);
-            margin-bottom: 18px;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0em;
+
+        .card-arrow {
+            color: rgba(26, 26, 26, 0.2);
+            font-size: 14px;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            margin-left: 8px;
         }
-        
-        /* Link styling */
-        .content-section a,
-        main a {
-            color: rgb(61, 153, 145);
+
+        .link-card:hover .card-arrow {
+            color: var(--teal);
+            transform: translateX(5px);
+        }
+
+        /* Link styling for non-card links */
+        .content-section a:not(.link-card),
+        main a:not(.link-card) {
+            color: var(--teal);
             text-decoration: none;
-            transition: opacity 0.1s ease;
+            transition: all 0.2s ease;
             border-bottom: 1px solid transparent;
         }
-        
-        .content-section a:hover,
-        main a:hover {
-            opacity: 0.8;
-            border-bottom: 1px solid rgb(61, 153, 145);
+
+        .content-section a:not(.link-card):hover,
+        main a:not(.link-card):hover {
+            color: var(--teal-dark);
+            border-bottom: 1px solid var(--teal);
         }
-        
+
+        @media (max-width: 768px) {
+            .links-grid.two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .link-card {
+                padding: 16px 18px;
+                gap: 14px;
+            }
+
+            .card-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .card-title {
+                font-size: 15px;
+            }
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(61, 153, 145, 0.3);
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--teal-dark);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2.5;
+        }
+
         /* Footer */
         footer {
-            background-color: rgb(31, 31, 31);
+            background: #1e293b;
             color: rgba(255, 255, 255, 0.4);
             text-align: center;
             padding: 64px 32px;
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
         }
-        
+
         footer p {
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
             font-weight: 400;
             line-height: 28.8px;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
             margin: 0;
         }
-        
+
         footer a {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
-        
+
         footer a:hover {
-            opacity: 0.7;
+            color: var(--teal);
         }
-        
+
+        footer nav a:hover {
+            color: white;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .header-replica {
                 position: relative;
-                background: rgba(0,0,0,0.7);
+                background: #1e293b;
                 padding: 20px;
                 height: auto;
             }
-            
+
             .logo-replica {
                 position: static;
                 display: inline-block;
                 margin-top: 15px;
             }
-            
+
             .nav-replica {
                 position: static;
                 display: inline-block;
                 float: right;
                 margin-top: 20px;
             }
-            
+
             .logo-icon {
                 width: 180px;
                 max-height: 106px;
             }
-            
+
+            /* Improved touch targets for mobile (min 44px) */
+            .nav-btn.contact,
+            .nav-btn.links {
+                padding: 12px 16px;
+                min-height: 44px;
+            }
+
             .hero-section {
                 height: 350px;
             }
-            
+
             .hero-text {
-                font-size: 48px;
+                font-size: 38px;
             }
-            
+
+            .hero-subtitle {
+                font-size: 17px;
+            }
+
             .content-section {
-                padding: 40px 20px;
+                padding: 40px 20px 80px;
+            }
+
+            .section-header {
+                margin-bottom: 32px;
+                padding-top: 30px;
+            }
+
+            .links-grid {
+                margin-bottom: 56px;
+            }
+
+            /* Ensure link cards have good touch targets */
+            .link-card {
+                min-height: 60px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header-replica">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Reading progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <header class="header-replica" id="header">
         <a href="index.html" class="logo-replica">
             <img class="logo-icon" src="assets/logo-white.png" alt="Cultural Peace Logo" width="250" height="148">
+            <img class="logo-icon logo-dark" src="assets/logo.png" alt="Cultural Peace Logo" width="150" height="89" style="display: none;">
         </a>
         <nav class="nav-replica" role="navigation" aria-label="Main navigation">
             <a href="contact.html" class="nav-btn contact">CONTACT</a>
             <a href="links.html" class="nav-btn links" aria-current="page">LINKS</a>
         </nav>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero-section">
-        <h1 class="hero-text">EXTERNAL LINKS</h1>
+        <div class="hero-content">
+            <h1 class="hero-text">External Links</h1>
+            <p class="hero-subtitle">Curated resources for understanding and bridging divides</p>
+        </div>
     </section>
-    
+
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <div class="content-section">
-            <h3>External Links to Conflict Management Thoughts & Comments</h3>
-            
-            <p><a href="https://www.wsj.com/articles/geneva-conventions-for-the-culture-war-1532729748" target="_blank">Geneva Conventions for the Culture War – Orrin G. Hatch</a></p>
-            
-            <p><a href="https://marginalrevolution.com/marginalrevolution/2013/06/55494.html" target="_blank">Partisan Bias Diminishes When Partisans Pay – Alex Tabarrok</a></p>
-            
-            <p><a href="https://www.nellwatson.com/blog/the-umbrella-ethic-of-good-faith" target="_blank">The Umbrella Ethic of Good Faith – Nell Watson</a></p>
-            
-            <p><a href="https://www.acsh.org/news/2018/11/28/polarization-society-even-scientists-become-tribal-13628" target="_blank">The Polarization Of Society: Even Scientists Become Tribal – American Council on Science & Health</a></p>
-            
-            <p><a href="https://evonomics.com/economist-ideologically-biased-javdani-chang/" target="_blank">Are Economists Ideologically Biased? – Javdani Chang</a></p>
-            
-            <p><a href="https://www.civilpolitics.org/content/two-evidence-based-recommendations-for-civil-disagreement/" target="_blank">Two Evidence-Based Recommendations for Civil Disagreement – CivilPolitics.org</a></p>
-            
-            <p><a href="https://www.davidbrin.com/nonfiction/disputation.html" target="_blank">Disputation Arenas – David Brin</a></p>
-            
-            <p><a href="https://slatestarcodex.com/2014/10/16/five-case-studies-on-politicization/" target="_blank">Five Case Studies on Politicization – Scott Alexander</a></p>
-            
-            <p><a href="https://slatestarcodex.com/2014/12/17/the-toxoplasma-of-rage/" target="_blank">The Toxoplasma of Rage – Scott Alexander</a></p>
-            
-            <p><a href="https://slatestarcodex.com/2018/09/25/the-tails-coming-apart-as-metaphor-for-life/" target="_blank">The Tails Coming Apart As Metaphor for Life – Scott Alexander</a></p>
-            
-            <p><a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/" target="_blank">I Can Tolerate Anything Except The Outgroup – Scott Alexander</a></p>
-            
-            <p><a href="https://slatestarcodex.com/2019/02/22/rip-culture-war-thread/" target="_blank">RIP Culture War Thread – Scott Alexander</a></p>
-            
-            <p><a href="https://www.youtube.com/watch?v=THILuP582iw" target="_blank">The Genetics of Politics – Rose McDermott</a></p>
-            
-            <p><a href="https://www.youtube.com/watch?v=m6JTaRNTN0c" target="_blank">The Death of Facebook | How Social Media Ripped Apart a Generation – ColdfusionTV</a></p>
-            
-            <p><a href="https://www.axios.com/smart-misinformation-bots-game-web-platforms-studies-3eed22e9-ffde-490e-98a6-890e5ad39f8a.html" target="_blank">Misinformation bots are smarter than we thought – Axios</a></p>
-            
-            <p><a href="https://www.independent.co.uk/life-style/gadgets-and-tech/news/google-chief-my-fears-for-generation-facebook-2055390.html" target="_blank">Google Chief: My Fears for Generation Facebook – Independent</a></p>
-            
-            <p><a href="https://classic.austlii.edu.au/au/journals/FedJSchol/2004/16.html#fn4" target="_blank">Courts and social change – Justice Ronald Sackville</a></p>
-            
-            <p><a href="https://phys.org/news/2018-25-ways-facebook-social-media-companies.html" target="_blank">Three ways Facebook and other social media companies could clean up their acts – if they wanted to – A.M. Nadler & M. Crain</a></p>
-            
-            <p><a href="https://www.centreforeffectivealtruism.org/blog/considering-considerateness-why-communities-of-do-gooders-should-be/" target="_blank">Considering Considerateness: Why communities of do-gooders should be exceptionally considerate – Owen Cotton-Barratt</a></p>
-            
-            <p><a href="https://www.nytimes.com/2019/03/13/opinion/hate-politics.html" target="_blank">No Hate Left Behind – Thomas B. Edsall</a></p>
-            
-            <p><a href="https://medium.com/@ThingMaker/in-my-culture-29c6464072b2" target="_blank">In My Culture – Duncan Sabien</a></p>
-            
-            <p><a href="https://www.theatlantic.com/politics/archive/2017/06/the-highest-form-of-disagreement/531597" target="_blank">The Highest Form of Disagreement – Conor Friedersdorf</a></p>
-            
-            <p><a href="https://longnow.org/seminars/02018/sep/12/soldiers-and-scouts-why-our-minds-werent-built-truth-and-how-we-can-change" target="_blank">Soldiers & Scouts – Julia Galef</a></p>
-            
-            <p><a href="https://creativefuture.org/rotten-tomatoes/" target="_blank">How to Fight Trolls and Win</a></p>
-            
-            <p><a href="https://www.persuasion.community/p/a-taxonomy-of-fear" target="_blank">A Taxonomy of Fear – Emily Yoffe</a></p>
-            
-            <p><a href="https://centerforinquiry.org/blog/how-to-star-man-arguing-from-compassion/" target="_blank">How to Star-Man | Arguing from Compassion – Angel Eduardo</a></p>
-            
-            <p><a href="https://www.theatlantic.com/family/archive/2022/04/arguing-with-someone-different-values/629495/" target="_blank">A Gentler, Better Way to Change Minds – Arthur C. Brooks</a></p>
-            
-            <p><a href="https://www.theatlantic.com/magazine/archive/2022/05/social-media-democracy-trust-babel/629369/" target="_blank">Why The Past 10 Years of American Life Have Been Uniquely Stupid – Jonathan Haidt</a></p>
-            
-            <br>
-            
-            <h3>Tools and orgs:</h3>
-            
-            <p><a href="https://www.ideologicaltt.com/" target="_blank">Ideological Turing Test</a></p>
-            
-            <p><a href="https://www.clearerthinking.org/the-political-bias-test" target="_blank">Political Bias Test</a></p>
-            
-            <p><a href="https://perceptiongap.us/the-perception-gap-quiz/" target="_blank">Perception Gap Quiz</a></p>
-            
-            <p><a href="https://redbrainbluebrain.org/" target="_blank">Red Brain Blue Brain</a></p>
-            
-            <p><a href="https://openmindplatform.org/" target="_blank">OpenMind</a></p>
-            
-            <p><a href="https://civilpolitics.org/" target="_blank">Civil Politics</a></p>
-            
-            <p><a href="https://www.their.tube/" target="_blank">Their Tube</a></p>
-            
-            <p><a href="https://www.moreincommon.com/" target="_blank">More In Common</a></p>
-            
-            <p><a href="https://www.improvethenews.org/" target="_blank">Improve The News</a></p>
-            
-            <p><a href="https://heterodoxacademy.org/" target="_blank">Heterodox Academy</a></p>
-            
-            <p><a href="https://middlewaysociety.org/" target="_blank">The Middle Way Society</a></p>
-            
-            <p><a href="https://memepoliceman.com/" target="_blank">Meme Policeman</a></p>
-            
-            <p><a href="https://pol.is/" target="_blank">Pol.is Consensus Tools</a></p>
-            
-            <p><a href="https://www.allsides.com/civil-discourse" target="_blank">Civil Discourse Resources – All Sides</a></p>
-            
-            <p><a href="https://www.amazon.com/How-Have-Impossible-Conversations-Practical/dp/0738285323" target="_blank">How To Have Impossible Conversations – Peter Boghossian</a></p>
-            
-            <p><a href="https://michaelisenberg.substack.com/p/top-10-ways-to-heal-the-partisan" target="_blank">Top 10 Ways to Heal the Partisan Divide</a></p>
-            
-            <p><a href="https://www.reddit.com/r/changemyview/" target="_blank">Change My View on Reddit</a></p>
-            
-            <p><a href="https://docs.google.com/document/d/19RVAIxDIDf017aVMHGCfIS1L_jtREB_t9Tv72dlrxPs" target="_blank">Ultimate Community Code of Conduct</a></p>
-            
-            <p><a href="https://joinlincoln.org/reports/2019/viewpoint-diversity" target="_blank">Viewpoint Diversity & Inclusion – Lincoln Network</a></p>
-            
-            <p><a href="https://www.facebook.com/notes/daniel-schmachtenberger/a-few-guidelines-that-tend-to-support-the-quality-of-dialogue/10156477811705213/" target="_blank">A few guidelines that tend to support the quality of dialogue – Daniel Schmachtenberger</a></p>
-            
-            <p><a href="https://www.clearerthinking.org/single-post/2020/06/23/Learn-the-three-types-of-binary-thinking" target="_blank">The Three Types of Binary Thinking – ClearerThinking.org</a></p>
-            
-            <p><a href="https://www.skeptic.com/reading_room/how-to-navigate-contentious-conversations-excert-from-how-to-have-impossible-conversations-very-practical-guide/" target="_blank">How to Navigate Contentious Conversations – Peter Boghossian & James Lindsay</a></p>
-            
-            <p><a href="https://www.nytimes.com/interactive/2019/09/18/opinion/peter-boghossian-interview.html" target="_blank">You Can Disagree Better – NewYorkTimes/Boghossian</a></p>
-            
-            <p><a href="https://vicariously.io/" target="_blank">Vicariously – Get out of your Twitter bubble and into someone else's</a></p>
-            
-            <p><a href="https://ground.news/" target="_blank">Ground News</a></p>
-            
-            <p><a href="https://hiddentribes.us/" target="_blank">Hidden Tribes</a></p>
-            
-            <p><a href="https://consider.it/" target="_blank">Consider It</a></p>
-            
-            <p><a href="https://programs.clearerthinking.org/productive_disagreement.html" target="_blank">Productive Disagreements Tool</a></p>
-            
-            <h3>GAMES & LEARNING TOYS:</h3>
-            
-            <p><a href="https://getbadnews.com/" target="_blank">Get Bad News – DROG</a></p>
-            
-            <p><a href="https://ncase.me/polygons/" target="_blank">Polygons – Nicky Case</a></p>
-            
-            <p><a href="https://ncase.me/crowds/" target="_blank">The Wisdom (and/or madness) of Crowds – Nicky Case</a></p>
-            
-            <p><a href="https://ncase.me/trust/" target="_blank">The Evolution of Trust – Nicky Case</a></p>
+
+            <!-- Articles Section -->
+            <div class="section-header articles">
+                <div class="section-line">
+                    <h2>Articles & Thoughts</h2>
+                </div>
+                <p class="section-intro">Curated readings on polarization, civil discourse, and conflict resolution</p>
+            </div>
+
+            <div class="links-grid">
+                <a href="https://www.wsj.com/articles/geneva-conventions-for-the-culture-war-1532729748" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Geneva Conventions for the Culture War</p>
+                        <p class="card-source">Orrin G. Hatch · WSJ</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.theatlantic.com/magazine/archive/2022/05/social-media-democracy-trust-babel/629369/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Why The Past 10 Years of American Life Have Been Uniquely Stupid</p>
+                        <p class="card-source">Jonathan Haidt · The Atlantic</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://marginalrevolution.com/marginalrevolution/2013/06/55494.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Partisan Bias Diminishes When Partisans Pay</p>
+                        <p class="card-source">Alex Tabarrok · Marginal Revolution</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.nellwatson.com/blog/the-umbrella-ethic-of-good-faith" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Umbrella Ethic of Good Faith</p>
+                        <p class="card-source">Nell Watson</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.acsh.org/news/2018/11/28/polarization-society-even-scientists-become-tribal-13628" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Polarization Of Society: Even Scientists Become Tribal</p>
+                        <p class="card-source">American Council on Science & Health</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.theatlantic.com/family/archive/2022/04/arguing-with-someone-different-values/629495/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">A Gentler, Better Way to Change Minds</p>
+                        <p class="card-source">Arthur C. Brooks · The Atlantic</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://slatestarcodex.com/2014/12/17/the-toxoplasma-of-rage/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Toxoplasma of Rage</p>
+                        <p class="card-source">Scott Alexander · Slate Star Codex</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">I Can Tolerate Anything Except The Outgroup</p>
+                        <p class="card-source">Scott Alexander · Slate Star Codex</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.theatlantic.com/politics/archive/2017/06/the-highest-form-of-disagreement/531597" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Highest Form of Disagreement</p>
+                        <p class="card-source">Conor Friedersdorf · The Atlantic</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=THILuP582iw" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon video"><i class="fa-solid fa-play"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Genetics of Politics</p>
+                        <p class="card-source">Rose McDermott · YouTube</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=m6JTaRNTN0c" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon video"><i class="fa-solid fa-play"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Death of Facebook | How Social Media Ripped Apart a Generation</p>
+                        <p class="card-source">ColdFusion · YouTube</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://longnow.org/seminars/02018/sep/12/soldiers-and-scouts-why-our-minds-werent-built-truth-and-how-we-can-change" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Soldiers & Scouts: Why Our Minds Weren't Built for Truth</p>
+                        <p class="card-source">Julia Galef · Long Now</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.persuasion.community/p/a-taxonomy-of-fear" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">A Taxonomy of Fear</p>
+                        <p class="card-source">Emily Yoffe · Persuasion</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://centerforinquiry.org/blog/how-to-star-man-arguing-from-compassion/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">How to Star-Man: Arguing from Compassion</p>
+                        <p class="card-source">Angel Eduardo · Center for Inquiry</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.davidbrin.com/nonfiction/disputation.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Disputation Arenas</p>
+                        <p class="card-source">David Brin</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://slatestarcodex.com/2014/10/16/five-case-studies-on-politicization/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Five Case Studies on Politicization</p>
+                        <p class="card-source">Scott Alexander · Slate Star Codex</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://medium.com/@ThingMaker/in-my-culture-29c6464072b2" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">In My Culture</p>
+                        <p class="card-source">Duncan Sabien · Medium</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.nytimes.com/2019/03/13/opinion/hate-politics.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">No Hate Left Behind</p>
+                        <p class="card-source">Thomas B. Edsall · New York Times</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://evonomics.com/economist-ideologically-biased-javdani-chang/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Are Economists Ideologically Biased?</p>
+                        <p class="card-source">Javdani Chang · Evonomics</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.civilpolitics.org/content/two-evidence-based-recommendations-for-civil-disagreement/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Two Evidence-Based Recommendations for Civil Disagreement</p>
+                        <p class="card-source">CivilPolitics.org</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://slatestarcodex.com/2018/09/25/the-tails-coming-apart-as-metaphor-for-life/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Tails Coming Apart As Metaphor for Life</p>
+                        <p class="card-source">Scott Alexander · Slate Star Codex</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://slatestarcodex.com/2019/02/22/rip-culture-war-thread/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">RIP Culture War Thread</p>
+                        <p class="card-source">Scott Alexander · Slate Star Codex</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.axios.com/smart-misinformation-bots-game-web-platforms-studies-3eed22e9-ffde-490e-98a6-890e5ad39f8a.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Misinformation bots are smarter than we thought</p>
+                        <p class="card-source">Axios</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.independent.co.uk/life-style/gadgets-and-tech/news/google-chief-my-fears-for-generation-facebook-2055390.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Google Chief: My Fears for Generation Facebook</p>
+                        <p class="card-source">The Independent</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://classic.austlii.edu.au/au/journals/FedJSchol/2004/16.html#fn4" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Courts and Social Change</p>
+                        <p class="card-source">Justice Ronald Sackville</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://phys.org/news/2018-12-ways-facebook-social-media-companies.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Three ways Facebook could clean up their acts – if they wanted to</p>
+                        <p class="card-source">A.M. Nadler & M. Crain · Phys.org</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.centreforeffectivealtruism.org/blog/considering-considerateness-why-communities-of-do-gooders-should-be/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Considering Considerateness: Why communities of do-gooders should be exceptionally considerate</p>
+                        <p class="card-source">Owen Cotton-Barratt · CEA</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://creativefuture.org/rotten-tomatoes/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">How to Fight Trolls and Win</p>
+                        <p class="card-source">Creative Future</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="section-header tools">
+                <div class="section-line">
+                    <h2>Tools & Organizations</h2>
+                </div>
+                <p class="section-intro">Interactive tools, quizzes, and organizations working toward civil discourse</p>
+            </div>
+
+            <div class="links-grid two-column">
+                <a href="https://www.ideologicaltt.com/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-flask"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Ideological Turing Test</p>
+                        <p class="card-source">Interactive Quiz</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.clearerthinking.org/the-political-bias-test" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-brain"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Political Bias Test</p>
+                        <p class="card-source">Clearer Thinking</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://perceptiongap.us/the-perception-gap-quiz/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-chart-pie"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Perception Gap Quiz</p>
+                        <p class="card-source">More In Common</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://openmindplatform.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon org"><i class="fa-solid fa-lightbulb"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">OpenMind Platform</p>
+                        <p class="card-source">Organization</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://civilpolitics.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon org"><i class="fa-solid fa-handshake"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Civil Politics</p>
+                        <p class="card-source">Organization</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.their.tube/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-filter"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">TheirTube</p>
+                        <p class="card-source">Filter Bubble Tool</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.moreincommon.com/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon org"><i class="fa-solid fa-people-group"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">More In Common</p>
+                        <p class="card-source">Organization</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://heterodoxacademy.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon org"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Heterodox Academy</p>
+                        <p class="card-source">Organization</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://ground.news/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-newspaper"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Ground News</p>
+                        <p class="card-source">News Comparison</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.allsides.com/civil-discourse" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-scale-balanced"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Civil Discourse Resources</p>
+                        <p class="card-source">AllSides</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://hiddentribes.us/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-users-viewfinder"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Hidden Tribes</p>
+                        <p class="card-source">Research Project</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://pol.is/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-diagram-project"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Pol.is Consensus Tools</p>
+                        <p class="card-source">Collaboration Platform</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://programs.clearerthinking.org/productive_disagreement.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-comments"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Productive Disagreements Tool</p>
+                        <p class="card-source">Clearer Thinking</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.reddit.com/r/changemyview/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-brands fa-reddit"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Change My View</p>
+                        <p class="card-source">Reddit Community</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://redbrainbluebrain.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-brain"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Red Brain Blue Brain</p>
+                        <p class="card-source">Interactive Tool</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.improvethenews.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Improve The News</p>
+                        <p class="card-source">News Platform</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://middlewaysociety.org/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon org"><i class="fa-solid fa-road"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Middle Way Society</p>
+                        <p class="card-source">Organization</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://memepoliceman.com/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-shield-halved"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Meme Policeman</p>
+                        <p class="card-source">Fact-Checking</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.amazon.com/How-Have-Impossible-Conversations-Practical/dp/0738285323" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon book"><i class="fa-solid fa-book"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">How To Have Impossible Conversations</p>
+                        <p class="card-source">Peter Boghossian · Book</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://michaelisenberg.substack.com/p/top-10-ways-to-heal-the-partisan" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Top 10 Ways to Heal the Partisan Divide</p>
+                        <p class="card-source">Michael Isenberg · Substack</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://docs.google.com/document/d/19RVAIxDIDf017aVMHGCfIS1L_jtREB_t9Tv72dlrxPs" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-solid fa-scroll"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Ultimate Community Code of Conduct</p>
+                        <p class="card-source">Google Docs</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://joinlincoln.org/reports/2019/viewpoint-diversity" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-solid fa-chart-bar"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Viewpoint Diversity & Inclusion</p>
+                        <p class="card-source">Lincoln Network</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.facebook.com/notes/daniel-schmachtenberger/a-few-guidelines-that-tend-to-support-the-quality-of-dialogue/10156477811705213/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">A few guidelines that tend to support the quality of dialogue</p>
+                        <p class="card-source">Daniel Schmachtenberger</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.clearerthinking.org/single-post/2020/06/23/Learn-the-three-types-of-binary-thinking" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-solid fa-circle-half-stroke"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Three Types of Binary Thinking</p>
+                        <p class="card-source">ClearerThinking.org</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.skeptic.com/reading_room/how-to-navigate-contentious-conversations-excert-from-how-to-have-impossible-conversations-very-practical-guide/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-solid fa-compass"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">How to Navigate Contentious Conversations</p>
+                        <p class="card-source">Peter Boghossian & James Lindsay · Skeptic</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.nytimes.com/interactive/2019/09/18/opinion/peter-boghossian-interview.html" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon article"><i class="fa-regular fa-file-lines"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">You Can Disagree Better</p>
+                        <p class="card-source">Peter Boghossian · New York Times</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://vicariously.io/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-brands fa-twitter"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Vicariously</p>
+                        <p class="card-source">Twitter Bubble Tool</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://consider.it/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon tool"><i class="fa-solid fa-layer-group"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Consider It</p>
+                        <p class="card-source">Deliberation Platform</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+
+            <!-- Games Section -->
+            <div class="section-header games">
+                <div class="section-line">
+                    <h2>Games & Learning Toys</h2>
+                </div>
+                <p class="section-intro">Interactive experiences that teach concepts through play</p>
+            </div>
+
+            <div class="links-grid two-column">
+                <a href="https://getbadnews.com/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon game"><i class="fa-solid fa-ghost"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Get Bad News</p>
+                        <p class="card-source">DROG · Misinformation Game</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://ncase.me/polygons/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon game"><i class="fa-solid fa-shapes"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">Parable of the Polygons</p>
+                        <p class="card-source">Nicky Case · Segregation Sim</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://ncase.me/crowds/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon game"><i class="fa-solid fa-network-wired"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Wisdom and/or Madness of Crowds</p>
+                        <p class="card-source">Nicky Case · Network Effects</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://ncase.me/trust/" target="_blank" rel="noopener" class="link-card">
+                    <span class="card-icon game"><i class="fa-solid fa-handshake"></i></span>
+                    <div class="card-content">
+                        <p class="card-title">The Evolution of Trust</p>
+                        <p class="card-source">Nicky Case · Game Theory</p>
+                    </div>
+                    <span class="card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
         </div>
     </main>
-    
+
     <!-- Footer -->
-    <footer>
+    <footer style="background: #1e293b; padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <nav style="margin-bottom: 24px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;" aria-label="Footer navigation">
-            <a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;">14 Principles</a>
-            <a href="contact.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease;">Contact</a>
+            <a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;">14 Principles</a>
+            <a href="contact.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;">Contact</a>
         </nav>
-        <p>2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+        <p style="font-family: adobe-garamond-pro, Georgia, serif; font-size: 18px; color: rgba(255, 255, 255, 0.5); margin: 0;">2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: rgba(255, 255, 255, 0.5); text-decoration: none;">CC BY 4.0</a></p>
     </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="17 11 12 6 7 11"></polyline>
+            <line x1="12" y1="6" x2="12" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Throttle function for performance
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        // Elements
+        const header = document.getElementById('header');
+        const progressBar = document.getElementById('progressBar');
+        const backToTop = document.getElementById('backToTop');
+        const logoWhite = document.querySelector('.logo-icon:not(.logo-dark)');
+        const logoDark = document.querySelector('.logo-dark');
+
+        // Scroll handler
+        const handleScroll = throttle(() => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+
+            // Progress bar
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+
+            // Sticky header
+            if (header) {
+                if (scrollTop > 100) {
+                    header.classList.add('scrolled');
+                    if (logoWhite) logoWhite.style.display = 'none';
+                    if (logoDark) logoDark.style.display = 'inline';
+                } else {
+                    header.classList.remove('scrolled');
+                    if (logoWhite) logoWhite.style.display = 'inline';
+                    if (logoDark) logoDark.style.display = 'none';
+                }
+            }
+
+            // Back to top button
+            if (backToTop) {
+                if (scrollTop > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        }, 16);
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Back to top click
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Scroll reveal animation for link cards
+        const cards = document.querySelectorAll('.link-card');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 30);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            revealObserver.observe(card);
+        });
+
+    </script>
 </body>
 </html>

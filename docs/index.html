@@ -92,43 +92,127 @@
     }
     </script>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Preload hero image for faster first paint -->
+    <link rel="preload" as="image" href="assets/hero-togetherness.png" fetchpriority="high">
     <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
     <style>
         /* Font display swap for better performance */
         @font-face { font-display: swap !important; }
     </style>
     <style>
-        /* EXACT SQUARESPACE REPLICA STYLES */
+        /* ENHANCED DESIGN STYLES */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
+
+        /* Color Variables */
+        :root {
+            --teal: rgb(61, 153, 145);
+            --teal-dark: rgb(45, 120, 112);
+            --coral: #f97316;
+            --purple: #8b5cf6;
+            --rose: #ec4899;
+            --amber: #f59e0b;
+            --emerald: #10b981;
+            --blue: #3b82f6;
+            --indigo: #6366f1;
         }
-        
+
+        /* Skip Link - Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            font-family: proxima-nova, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--purple);
+            outline-offset: 2px;
+        }
+
+        /* Focus States - Accessibility */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--purple);
+            outline-offset: 2px;
+        }
+
+        .nav-btn:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 4px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: auto;
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
         body {
             font-family: adobe-garamond-pro, serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background: white;
+            background: #f8fafc;
             color: rgba(26, 26, 26, 0.7);
             font-size: 18px;
-            line-height: 28.8px;
-            letter-spacing: 0px;
+            line-height: 1.6em;
             font-weight: 400;
             font-style: normal;
+            letter-spacing: 0em;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
+
+        /* GPU acceleration for smooth scrolling */
+        .hero-replica,
+        .content-section,
+        main {
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
         
-        /* HEADER REPLICA - ABSOLUTE PERFECTION */
+        /* Reading progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--teal);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* MAIN HEADER - Fixed, matches other pages */
         .header-replica {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -139,12 +223,13 @@
             display: block;
             background: transparent;
             pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .header-replica * {
             pointer-events: all;
         }
-        
+
         .logo-replica {
             display: inline-block;
             position: absolute;
@@ -152,16 +237,18 @@
             left: 20px;
             color: transparent;
             text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .logo-icon {
             width: 250px;
             height: 148.328px;
             display: inline;
             max-height: 150px;
             object-fit: contain;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav-replica {
             position: absolute;
             top: 70px;
@@ -169,8 +256,9 @@
             display: flex;
             gap: 0;
             align-items: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav-btn {
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
@@ -180,11 +268,30 @@
             letter-spacing: 2px;
             line-height: 13px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
-        
+
+        /* Animated underline for nav buttons */
+        .nav-btn.contact::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-btn.contact:hover::after {
+            width: 100%;
+        }
+
         .nav-btn:hover {
-            opacity: 0.7;
+            transform: translateY(-2px);
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
         
         /* Footer link states */
@@ -223,15 +330,22 @@
             border: 2px solid rgb(255, 255, 255);
             border-radius: 300px;
             background-color: transparent;
+            color: rgb(255, 255, 255);
             display: block;
         }
-        
-        /* HERO SECTION REPLICA */
+
+        .nav-btn.links:hover {
+            background-color: rgb(255, 255, 255);
+            color: var(--teal);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* HERO SECTION - ENHANCED */
         .hero-replica {
             position: relative;
             height: 100vh;
             min-height: 700px;
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/hero-togetherness.png');
+            background-image: url('assets/hero-togetherness.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -239,20 +353,36 @@
             align-items: center;
             justify-content: center;
         }
-        
-        .hero-overlay {
+
+        .hero-replica::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.15);
+            background: rgba(0, 0, 0, 0.25);
             z-index: 1;
         }
-        
+
+        .hero-replica::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, #ffffff, transparent);
+            z-index: 2;
+        }
+
+        .hero-overlay {
+            display: none;
+        }
+
         .hero-text {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: center;
             color: white;
             font-family: proxima-nova, sans-serif;
@@ -261,10 +391,42 @@
             line-height: 85px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
             max-width: 900px;
+            animation: fadeInUp 1s ease-out;
             margin: 0 auto;
             padding: 0 40px;
+        }
+
+        /* Scroll indicator bounce */
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: scrollBounce 1.5s ease-in-out infinite;
+            cursor: pointer;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
         
         /* CONTENT SECTIONS */
@@ -273,7 +435,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .content-section h1 {
             font-family: adobe-garamond-pro, serif;
             font-size: 32px;
@@ -282,8 +444,9 @@
             margin-bottom: 30px;
             text-align: center;
             line-height: 38.4px;
+            text-wrap: balance;
         }
-        
+
         .content-section h2 {
             font-family: proxima-nova, sans-serif;
             font-size: 20px;
@@ -294,8 +457,14 @@
             margin-top: 60px;
             margin-bottom: 20px;
             line-height: 28px;
+            text-wrap: balance;
         }
-        
+
+        /* Section headers */
+        .content-section h2[id] {
+            color: var(--teal);
+        }
+
         .content-section h3 {
             font-family: proxima-nova, sans-serif;
             font-size: 13px;
@@ -307,7 +476,7 @@
             margin-bottom: 20px;
             line-height: 19.2px;
         }
-        
+
         .content-section p {
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
@@ -322,13 +491,49 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Drop cap for first paragraph after h2 */
+        .content-section h2[id] + p::first-letter {
+            float: left;
+            font-size: 3.5em;
+            line-height: 0.8;
+            padding-right: 12px;
+            padding-top: 6px;
+            font-weight: 400;
+            color: var(--teal);
+            font-family: adobe-garamond-pro, serif;
+        }
+
+        /* Decorative section divider */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 80px auto;
+            max-width: 400px;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(61, 153, 145, 0.3), transparent);
+        }
+
+        .section-divider span {
+            padding: 0 20px;
+            color: var(--teal);
+            font-size: 20px;
+        }
         
-        /* Link styling - exact color from original */
+        /* Link styling - enhanced */
         .content-section a,
         main a {
-            color: rgb(61, 153, 145);
+            color: var(--teal);
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: all 0.25s ease;
+            border-bottom: 1px solid transparent;
         }
         
         /* Special styling for the principles title */
@@ -352,31 +557,51 @@
             max-width: 900px;
             margin: 40px auto 60px;
         }
-        
+
         .principles-list li {
             counter-increment: principle-counter;
             position: relative;
-            padding-left: 40px;
-            margin-bottom: 25px;
+            padding-left: 70px;
+            margin-bottom: 30px;
             font-family: adobe-garamond-pro, serif;
             font-size: 18px;
             line-height: 28.8px;
             font-weight: 300;
             color: rgba(26, 26, 26, 0.7);
+            transition: transform 0.3s ease, padding-left 0.3s ease;
         }
-        
+
+        .principles-list li:hover {
+            transform: translateX(5px);
+        }
+
         .principles-list li::before {
-            content: counter(principle-counter) ".";
+            content: counter(principle-counter);
             position: absolute;
             left: 0;
-            top: 0;
-            color: rgb(61, 153, 145);
-            font-weight: 600;
+            top: -5px;
+            font-family: proxima-nova, sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--teal);
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+
+        .principles-list li:hover::before {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
         .principles-list li strong {
-            color: rgb(61, 153, 145);
+            color: var(--teal);
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .principles-list li:hover strong {
+            color: var(--purple);
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
         }
         
         /* Anchor links in principles list */
@@ -391,26 +616,56 @@
         
         .content-section a:hover,
         main a:hover {
-            opacity: 0.7;
-            text-decoration: underline;
+            color: var(--teal-dark);
+            border-bottom: 1px solid var(--teal);
+        }
+
+        /* Image hover effects */
+        .external-links-image img {
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        .external-links-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
         
         /* Blockquote styling */
         blockquote {
-            margin: 30px auto;
-            max-width: 800px;
-            padding: 0 20px;
-            border-left: 3px solid rgb(61, 153, 145);
-            font-style: italic;
+            position: relative;
+            margin: 40px auto;
+            max-width: 760px;
+            padding: 35px 45px 30px 55px;
+            border: none;
+            background: linear-gradient(135deg, rgba(61, 153, 145, 0.06) 0%, rgba(61, 153, 145, 0.02) 100%);
+            border-radius: 12px;
+            box-shadow: inset 0 0 0 1px rgba(61, 153, 145, 0.15);
         }
-        
+
+        blockquote::before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-family: Georgia, serif;
+            font-size: 72px;
+            line-height: 1;
+            color: var(--teal);
+            opacity: 0.25;
+        }
+
         blockquote p,
         .content-section blockquote p {
-            color: rgba(26, 26, 26, 0.6);
+            color: rgba(26, 26, 26, 0.7);
             font-family: adobe-garamond-pro, serif;
-            font-size: 18px;
-            line-height: 28.8px;
+            font-size: 19px;
+            line-height: 1.7;
             font-style: italic !important;
+            margin-bottom: 12px;
+        }
+
+        blockquote p:last-child {
+            margin-bottom: 0;
         }
         
         /* Video Container */
@@ -435,7 +690,16 @@
         
         /* EXTRACTED INLINE STYLES */
         .quote-attribution {
-            text-align: center;
+            text-align: right;
+            max-width: 760px;
+            margin: -25px auto 40px;
+            padding-right: 45px;
+            font-family: proxima-nova, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .section-intro {
@@ -545,26 +809,75 @@
         }
 
         .cta-button {
-            background-color: rgb(61, 153, 145);
-            color: white;
-            text-decoration: none;
+            background: var(--teal);
+            color: #ffffff !important;
+            text-decoration: none !important;
             font-size: 12px;
             text-transform: uppercase;
-            font-family: proxima-nova, sans-serif;
+            font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-weight: 600;
             letter-spacing: 2px;
-            padding: 16px 32px;
+            padding: 18px 36px;
             border-radius: 300px;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            line-height: 1.2;
+            box-shadow: 0 4px 20px rgba(61, 153, 145, 0.3);
+            border: none;
         }
 
         .cta-button:hover {
-            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(61, 153, 145, 0.4);
+            background: var(--teal-dark);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(61, 153, 145, 0.3);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            border: none;
+            contain: layout style;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, background 0.2s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: var(--teal-dark);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2.5;
         }
 
         .site-footer {
-            background: rgb(31, 31, 31);
+            background: #1e293b;
             padding: 64px 32px;
             display: flex;
             flex-direction: column;
@@ -588,29 +901,53 @@
             font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--teal);
+            transition: width 0.3s ease;
         }
 
         .footer-nav a:hover {
-            opacity: 0.7;
+            color: white;
+        }
+
+        .footer-nav a:hover::after {
+            width: 100%;
         }
 
         .footer-copyright {
-            font-family: adobe-garamond-pro, serif;
+            font-family: adobe-garamond-pro, Georgia, serif;
             font-size: 18px;
             font-weight: 400;
             line-height: 28.8px;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
             margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .footer-copyright a {
-            color: rgba(255, 255, 255, 0.4);
+        .footer-copyright a,
+        .site-footer a {
+            color: rgba(255, 255, 255, 0.5) !important;
             text-decoration: none;
             margin-left: 5px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-copyright a:hover,
+        .site-footer a:hover {
+            color: var(--teal) !important;
+        }
+
+        .site-footer .footer-nav a {
+            margin-left: 0;
         }
 
         @media (max-width: 900px) {
@@ -628,38 +965,46 @@
         
         @media (max-width: 768px) {
             .header-replica {
-                padding: 0 20px;
+                position: relative;
+                background: #1e293b;
+                padding: 20px;
                 height: auto;
-                background: rgba(0,0,0,0.7);
             }
-            
+
             .logo-replica {
                 position: static;
                 display: inline-block;
                 margin-top: 15px;
             }
-            
+
             .nav-replica {
                 position: static;
                 display: inline-block;
                 float: right;
                 margin-top: 20px;
             }
-            
+
             .logo-icon {
                 width: 180px;
                 max-height: 106px;
             }
-            
-            .hero-replica {
-                min-height: 600px;
+
+            /* Improved touch targets for mobile (min 44px) */
+            .nav-btn.contact,
+            .nav-btn.links {
+                padding: 12px 16px;
+                min-height: 44px;
             }
-            
+
+            .hero-replica {
+                min-height: 550px;
+            }
+
             .hero-text {
                 font-size: 48px;
                 line-height: 1.2;
             }
-            
+
             .content-section {
                 padding: 40px 20px;
             }
@@ -671,9 +1016,224 @@
                 line-height: 38.4px;
             }
         }
+
+        /* PRINT STYLESHEET - Beautiful PDF output for 14 Principles */
+        @media print {
+            /* Reset and base */
+            *, *::before, *::after {
+                background: transparent !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+
+            html, body {
+                font-size: 11pt;
+                line-height: 1.5;
+                color: #000;
+                background: #fff;
+            }
+
+            /* Hide non-essential elements */
+            .skip-link,
+            .progress-bar,
+            .header-replica,
+            .hero-replica,
+            .scroll-indicator,
+            .back-to-top,
+            .video-container,
+            .video-section,
+            .external-links-section,
+            .comment-section,
+            footer,
+            nav,
+            a[download] {
+                display: none !important;
+            }
+
+            /* Page setup */
+            @page {
+                size: letter;
+                margin: 0.75in 1in;
+            }
+
+            @page :first {
+                margin-top: 1.5in;
+            }
+
+            /* Main content styling */
+            main, .content-section {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+
+            /* Typography */
+            h1 {
+                font-size: 24pt !important;
+                text-align: center !important;
+                margin-bottom: 24pt !important;
+                page-break-after: avoid;
+                color: #2d7870 !important;
+            }
+
+            h2 {
+                font-size: 14pt !important;
+                margin-top: 18pt !important;
+                margin-bottom: 8pt !important;
+                page-break-after: avoid;
+                color: #2d7870 !important;
+                border-bottom: 1pt solid #3d9991;
+                padding-bottom: 4pt;
+            }
+
+            h2.principles-title {
+                font-size: 18pt !important;
+                text-align: center !important;
+                border-bottom: none !important;
+                margin-top: 24pt !important;
+            }
+
+            p {
+                font-size: 11pt !important;
+                line-height: 1.6 !important;
+                margin-bottom: 10pt !important;
+                orphans: 3;
+                widows: 3;
+                text-align: justify;
+                max-width: 100% !important;
+            }
+
+            /* Principles list - beautiful numbered formatting */
+            .principles-list {
+                counter-reset: print-principle;
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 16pt 0 24pt !important;
+            }
+
+            .principles-list li {
+                counter-increment: print-principle;
+                position: relative;
+                padding-left: 36pt !important;
+                margin-bottom: 14pt !important;
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+                page-break-inside: avoid;
+            }
+
+            .principles-list li::before {
+                content: counter(print-principle) ".";
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 12pt !important;
+                font-weight: 700;
+                color: #2d7870 !important;
+                width: 24pt;
+                text-align: right;
+            }
+
+            .principles-list li strong {
+                color: #1a5750 !important;
+                font-weight: 600;
+            }
+
+            /* Blockquotes */
+            blockquote {
+                margin: 12pt 24pt !important;
+                padding: 8pt 12pt !important;
+                border-left: 3pt solid #3d9991 !important;
+                font-style: italic;
+                page-break-inside: avoid;
+            }
+
+            blockquote p {
+                font-size: 10pt !important;
+                margin-bottom: 6pt !important;
+            }
+
+            .quote-attribution {
+                font-style: normal;
+                font-size: 9pt !important;
+                color: #666 !important;
+            }
+
+            /* Links - show URLs for print */
+            a {
+                color: #1a5750 !important;
+                text-decoration: none !important;
+            }
+
+            .content-section > p a::after,
+            .principles-list a::after {
+                content: none; /* Don't show URLs inline - cleaner PDF */
+            }
+
+            /* Hide "Make a Comment" links in print */
+            a[href*="drive.google.com"],
+            a[href*="docs.google.com"] {
+                display: none !important;
+            }
+
+            /* Drop cap - simplified for print */
+            .content-section h2[id] + p::first-letter {
+                float: left;
+                font-size: 28pt;
+                line-height: 0.8;
+                padding-right: 6pt;
+                padding-top: 3pt;
+                color: #2d7870;
+            }
+
+            /* Page breaks */
+            h2[id] {
+                page-break-before: auto;
+            }
+
+            /* First principle section starts on new page */
+            #self-determination {
+                page-break-before: always;
+            }
+
+            /* Ensure images don't break across pages */
+            img {
+                max-width: 100% !important;
+                page-break-inside: avoid;
+            }
+
+            /* Add document header on first page */
+            main::before {
+                content: "CULTURAL PEACE";
+                display: block;
+                text-align: center;
+                font-family: proxima-nova, sans-serif;
+                font-size: 10pt;
+                letter-spacing: 3pt;
+                color: #999;
+                margin-bottom: 12pt;
+                padding-bottom: 8pt;
+                border-bottom: 0.5pt solid #ddd;
+            }
+
+            /* Footer with URL */
+            main::after {
+                content: "culturalpeace.org";
+                display: block;
+                text-align: center;
+                font-family: proxima-nova, sans-serif;
+                font-size: 9pt;
+                color: #999;
+                margin-top: 24pt;
+                padding-top: 12pt;
+                border-top: 0.5pt solid #ddd;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="progress-bar" id="progressBar"></div>
+
     <header class="header-replica" id="header">
         <a href="index.html" class="logo-replica">
             <img class="logo-icon" src="assets/logo-white.png" alt="Cultural Peace Logo" width="250" height="148" loading="eager">
@@ -683,7 +1243,8 @@
             <a href="links.html" class="nav-btn links">LINKS</a>
         </nav>
     </header>
-    
+
+
     <section class="hero-replica">
         <div class="hero-overlay"></div>
         <div class="hero-text">
@@ -692,10 +1253,17 @@
             DURING CULTURAL<br>
             CONFLICT.
         </div>
+        <!-- Scroll indicator -->
+        <a href="#main-content" class="scroll-indicator" aria-label="Scroll down">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+        </a>
     </section>
     
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <div class="content-section">
             <h1>We can manage political polarization in our society better.</h1>
             
@@ -722,7 +1290,7 @@
             
             <!-- Cultural Peace Principles -->
             <h2 class="principles-title">14 Principles for Cultural Peace</h2>
-            
+
             <ol class="principles-list">
                 <li><a href="#self-determination"><strong>Self Determination & Political Franchise.</strong></a> Allow people to enjoy their own communities with their own subcultures. Don't prevent or invade other people's conversations.</li>
                 <li><a href="#banking-neutrality"><strong>Banking Neutrality.</strong></a> End the removal of economic franchise. No-one may be economically 'outlawed' without due process.</li>
@@ -739,9 +1307,14 @@
                 <li><a href="#freedom-of-association"><strong>Freedom of Association.</strong></a> Association with a person or group, following them, or an acknowledgement of their content should not be equated to agreement with it, or endorsement of it. Contamination by proxy is unjust and invalid.</li>
                 <li><a href="#there-are-no-monopolies-on-truth"><strong>There Are No Monopolies on Truth.</strong></a> No person, identity, or group has a natural monopoly on the truth of a situation. On the contrary, lived experience within a cultural tribe may be reason to take someone's assertions with a grain of salt.</li>
             </ol>
-            
-            <p class="section-intro"><strong>Further description:</strong></p>
-            
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="Cultural-Peace-14-Principles-Infographic.pdf" download class="cta-button" style="font-size: 11px; padding: 14px 28px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 8px; margin-top: -2px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    DOWNLOAD INFOGRAPHIC
+                </a>
+            </div>
+
             <h2 id="self-determination">Self Determination & Political Franchise.</h2>
             <p>Allow people to enjoy their own communities with their own subcultures. Don't stop or invade other people's conversations.</p>
             <p>People have a natural right to form their own communities. People who share certain characteristics and perspectives require a degree of separation in order to build and sustain subcultures. Being part of a group can make it much easier to coordinate with others, and build networks based on trust. It can also mean enabling a unique and specific culture and norms, a quality of diversity that may otherwise be washed away within the mainstream.</p>
@@ -753,7 +1326,7 @@
             <p class="quote-attribution">— Christopher Robinson</p>
             <p>One should allow others to possess, maintain, and defend their own private spaces. One should not petition for private spaces or <a href="https://reclaimthenet.org/private-conversations-hate-speech-facebook/" target="_blank">private conversations to be shut down</a>, <a href="https://www.thecollegefix.com/university-ignores-its-own-lawyer-refuses-to-recognize-conservative-club/" target="_blank">simply because one dislikes</a> a non-violent ideology, or the content of their communication, unless they are actively breaking the rule of law.</p>
             <p>Different groups may have very different norms for communication. Someone 'wandering by' a conversation, particularly in the online world these days, may find such discussion alarming or insensitive if they have different values or culture. However, one should not apply one's own cultural norms or values to other groups, or expect them to communicate in the same way that one would think common. It can be very misleading to pull a snippet of conversation from a place with one set of norms, for it to be appraised somewhere else.</p>
-            <p>One should not be judged based upon who one happens to follow or is connected to. Merely following someone's tweets or retweeting a single statement, etc, should not be taken as a tacit endorsement of someone else's character or beliefs. Some folks like to culture a broad set of inputs, or may respect someone's professional achievements without necessarily agreeing with their values.</p>
+            <p>One should not be judged based upon who one happens to follow or is connected to. Merely following someone's tweets or retweeting a single statement, etc, should not be taken as a tacit endorsement of someone else's character or beliefs. Some folks like to curate a broad set of inputs, or may respect someone's professional achievements without necessarily agreeing with their values.</p>
             <p>Similarly, a network or group should not be judged by the actions of a small minority within it, unless the larger group is explicitly shown to approve of those actions. Works featuring <a href="https://www.youtube.com/watch?v=t4VRkE01mi4" target="_blank">challenging material from a historical perspective</a> should not be excised, particularly if the <a href="https://www.timesofisrael.com/youtubes-new-policy-blocks-history-teachers-from-uploading-hitler-archive-clips/" target="_blank">context is within education</a>. Furthermore, large tech companies are <a href="https://fee.org/articles/google-is-burying-alternative-health-sites-to-protect-people-from-dangerous-medical-advice/" target="_blank">deliberately censoring (or down-throttling) information</a> that they feel is dangerous or misleading, without being sufficiently transparent as to what they have censored, or how <a href="https://www.projectveritas.com/video/to-catch-a-journalist-rutgers-education-professor-in-pay-for-play/" target="_blank">research may be cherry-picked to order</a>. <a href="https://www.forbes.com/sites/kalevleetaru/2019/05/05/would-facebooks-phone-based-content-moderation-solve-its-globalization-problem" target="_blank">On-device content moderation</a> may soon mean that even a file or link sent directly to you from a friend may be disappeared or 'harmonized' once it reaches your location.</p>
             <p>Who are they to say what info qualifies? If one starts censoring one thing 'for the common good', it's a very slippery slope towards censoring almost anything potentially controversial or objectionable to someone, somewhere. Not only does this prevent subcultures, minority beliefs, and internet sleuths from coalescing, but it may also prevent justified whistleblowing of scandalous truths, as well as the innovation of new ideas, which are naturally avant-garde before they are accepted by the mainstream.</p>
             <p>All public spaces, including schools, hospitals, and corporate and academic campuses, especially those that take public funding, should remain an impartial commons without any partisan allegiance. Online discussions must be designated as public spaces, where rules and expectations that would apply in a street are enforced, and only those same rules.</p>
@@ -761,7 +1334,7 @@
             <p>Peace requires allowing people to form their own communities and conversations, and to enable a diversity of amicable norms within them.</p>
             <p><a href="https://drive.google.com/open?id=1YHcShsFzSKcLtTKpFrQaf9S5Fv7ro-fMK4ThSvkrQT8" target="_blank">[Make a Comment]</a></p>
             
-            <h2 id="banking-neutrality">BANKING NEUTRALITY.</h2>
+            <h2 id="banking-neutrality">Banking Neutrality.</h2>
             <p>End the removal of economic franchise. No-one may be 'outlawed' without due process.</p>
             <p>We live in a deeply inter-connected world, where so many aspects of our daily lives depend upon apps, online shopping, and mobile payments. Modern life is dependent on being able to make convenient payments and access online services, and to receive legitimate payment for honest work.</p>
             <p>Payment processors today have immense power. They can use their influence to force others to comply with their wishes, at an implied risk of losing access to the payments network, or a downgrade of service. This means that payment processors can single-handedly strongarm <a href="https://www.youtube.com/watch?v=Hv7hvZee-PQ" target="_blank">other players</a> into doing their bidding for them.</p>
@@ -780,7 +1353,7 @@
             <h2 id="immunity-from-partiality">Immunity from Partiality.</h2>
             <p>Termination of Employment on 'moral grounds' must reach a threshold of being legally prosecutable / indictable, as well as having demonstrated clear negative intent.</p>
             <p>We live in a world where what is moral or acceptable is changing very quickly, and may differ greatly between different groups. Secular moralities are being felt very keenly by many people. As political polarization continues, there are going to be increasingly differing moral norms in our society. Forbearance must be given for any alleged infraction or moral failure that does not have a clear demonstration of bad faith or negative intent behind it.</p>
-            <p>In a world of very different moral assumptions, we also must refuse to attack the livelihoods of those who we disagree with, through understanding that such tit-for-tat economic violence simply makes paupers of us all. An increasingly used tactic is to put pressure on the employers of a disliked person to fire them, and creating irate supporters of that person, thereby metastasizing a small conflict into a much larger one.</p>
+            <p>In a world of very different moral assumptions, we also must refuse to attack the livelihoods of those who we disagree with, through understanding that such tit-for-tat economic violence simply makes paupers of us all. An increasingly used tactic is to put pressure on the employers of a disliked person to fire them, creating irate supporters of that person, thereby metastasizing a small conflict into a much larger one.</p>
             <p>To attack a person's livelihood is to attack their spouse and dependents, innocent parties. We must tolerate those that we disagree with, confronting their arguments, but leaving the person and their family and livelihoods intact, unless they have been justly prosecuted in a court of law.</p>
             <p>Employers should commit to not release people on subjective, non-judicial 'moral' grounds because of intimidation. Should they happen to do so, the public should hold them accountable for their lack of courage, compassion, and resolve in safeguarding their employees from mob attacks.</p>
             <p>Peace requires enabling people to build a secure career built upon honest work.</p>
@@ -803,7 +1376,7 @@
             <p><a href="https://mic.com/articles/103600/how-politically-biased-is-each-industry-check-these-charts" target="_blank">Industries are very strongly segregated by political affiliation</a>. This means that it can be extremely challenging to enter or <a href="https://www.dailywire.com/news/14588/11-hollywood-conservatives-who-have-faced-aaron-bandler" target="_blank">maintain a career</a> in a certain sector if <a href="https://theotherlifenow.com/occupations-and-their-ideologies/" target="_blank">one's political alignment does not fit</a>. Over time, this effect tends to increase further, as minorities will leave, and thus the predominant ideologies concentrate. This risks the creation of something like a soft caste system, whereby people are kept out of certain professions by default.</p>
             <p><a href="https://www.nas.org/articles/homogenous_political_affiliations_of_elite_liberal" target="_blank">Academia is one of the most polarised sectors</a>, in some colleges having more than a 100:1 ratio of polarization. Academia is considered to be a nest that the future elite are nurtured within. Academic departments (particularly within the humanities), are often <a href="https://www.nytimes.com/2016/05/08/opinion/sunday/a-confession-of-liberal-intolerance.html" target="_blank">institutionally prejudiced</a> against anyone who does not follow postmodernist values. This reinforces structural inequities by locking underprivileged traditional people out of access to higher education.</p>
             <p>If one group in society is frustrated by <a href="https://www.thecollegefix.com/i-called-for-diversity-of-thought-my-peers-compared-me-to-a-neo-nazi/" target="_blank">feeling unwelcome</a>, <a href="https://quillette.com/2019/04/28/like-the-campus-thought-police" target="_blank">or even heretical</a>, within an academic environment, this will inevitably create immense resentment. This may be one reason why many people today who are less likely to be welcome in such an environment <a href="https://www.pewresearch.org/politics/2019/07/22/trust-and-distrust-in-america/" target="_blank">trust experts less than ever</a>.</p>
-            <p>As most of science comes from the academic world, the public trust is science is being weakened. The scientific community is increasingly prone to partisan bias and a preference for political correctness over accuracy. This contributes to anti-intellectual feelings in society.</p>
+            <p>As most of science comes from the academic world, public trust in science is being weakened. The scientific community is increasingly prone to partisan bias and a preference for political correctness over accuracy. This contributes to anti-intellectual feelings in society.</p>
             <p>Having certain perceived political affiliations may make it difficult to access housing, education, and employment in certain areas, preventing people from participating in a city's cultural core, and in joining the property ladder. Most industrialised nations forbid discrimination in housing, education, and employment based on various protected characteristics, and it may be just and necessary for political orientation to become a protected characteristic also.</p>
             <p>Peace requires ensuring equality of access to the pillars upon which a successful life is built.</p>
             <p><a href="https://drive.google.com/open?id=19cz9kbOIkMxzBOjzvuvoj6uDLfAGS5hyggtDUUYiUuc" target="_blank">[Make a Comment]</a></p>
@@ -822,7 +1395,7 @@
             
             <h2 id="statute-of-limitations">Statute of Limitations.</h2>
             <p>Cultural expectations and rules are changing rapidly. Conduct, jokes, writings, etc older than five years, or made <a href="https://bigthink.com/videos/what-age-is-brain-fully-developed" target="_blank">before the age of 25</a>, are not to be counted against someone, unless the matter has been judged in court.</p>
-            <p>All of us have said or done things in our younger years that we regret, and that we would prefer to move on from than be remembered. Today, with so many of our private thoughts and conversations in digital form, we live in a virtual panopticon. The practice of using  'Offence Archaeology' or '<a href="https://reason.com/2019/09/25/local-man-uses-viral-fame-to-raise-1-million-for-charity-journalist-digs-up-offensive-tweets-he-made-at-age-16/" target="_blank">Opinion Necromancy</a>' to dig up dirt on people has become trivial.</p>
+            <p>All of us have said or done things in our younger years that we regret, and that we would prefer to move on from than be remembered. Today, with so many of our private thoughts and conversations in digital form, we live in a virtual panopticon. The practice of using 'Offence Archaeology' or '<a href="https://reason.com/2019/09/25/local-man-uses-viral-fame-to-raise-1-million-for-charity-journalist-digs-up-offensive-tweets-he-made-at-age-16/" target="_blank">Opinion Necromancy</a>' to dig up dirt on people has become trivial.</p>
             <p>Media should be thought of like a <a href="https://www.nytimes.com/2019/01/08/books/review/edith-wharton-house-of-mirth-anti-semitism.html" target="_blank">time machine</a>; it can take us back to the time and culture in which it was written. But we are the visitor to that realm. We are the stranger. Media, and the statements of its creators within, should be judged in the context in which it was made.</p>
             <blockquote>
                 <p>"The past is a foreign country; they do things differently there."</p>
@@ -876,7 +1449,7 @@
             <p>Peace requires that we do not culturally appropriate the culture of others in a negative or revisionist manner. Peace requires not locking people out of being able to appreciate and enjoy cultural materials in a good faith manner, also.</p>
             <p><a href="https://drive.google.com/open?id=1j2MHwKC7QWi_Kb6apo7J6PphDhzhEQ6SXQcVE7vxvOI" target="_blank">[Make a Comment]</a></p>
             
-            <h2 id="equality-of-public-access">EQUALITY OF PUBLIC ACCESS.</h2>
+            <h2 id="equality-of-public-access">Equality of Public Access.</h2>
             <p>People should not be removed from access to public communities and the goods and services of public corporations without good reason.</p>
             <p>From reverse-engineering Youtube's algorithms, <a href="https://www.youtube.com/watch?v=ll8zGaWhofU" target="_blank">evidence is emerging</a> that it may be demonetizing content based on simple keywords. Anything with a title or description featuring words as innocuous as 'Gay/Lesbian' to 'North Carolina', or even 'Asians' may be liable to be blocked from advertising revenue.</p>
             <p>Furthermore, tools such as <a href="https://torrentfreak.com/record-label-targets-copyright-experts-with-bogus-takedown-request/" target="_blank">alleging copyright infringement</a> may be used to <a href="https://www.theregister.co.uk/2019/06/05/apple_stand_copyright_lockdown/" target="_blank">suppress unfavorable news</a>, hold people to <a href="https://cyware.com/news/scammers-report-youtube-channels-stating-fake-copyright-infringements-and-demand-ransom-54b42845" target="_blank">digital ransom</a>, or <a href="https://torrentfreak.com/star-wars-theorys-vader-fan-film-hit-with-copyright-claim-190116/" target="_blank">appropriation of revenue</a>. Online flash mobs may even cause content to be <a href="http://archive.fo/YzaKH" target="_blank">demonetised simply for commenting on it</a>. This can lead to the <a href="https://www.techdirt.com/articles/20190221/11402041647/youtube-filters-it-again-pokemon-youtubers-have-accounts-nuked-over-child-porn-discussions-that-werent-occurring.shtml" target="_blank">deletion of associated email accounts, along with the channel</a>, greatly amplifying the <a href="https://gizmodo.com/i-cut-the-big-five-tech-giants-from-my-life-it-was-hel-1831304194" target="_blank">economic and social damage</a>, and amplifying the <a href="https://www.wikiwand.com/en/Chilling_effect" target="_blank">chilling effects</a>.</p>
@@ -956,17 +1529,83 @@
             
             
             <!-- Footer -->
-            <footer class="site-footer">
-                <nav class="footer-nav" aria-label="Footer navigation">
-                    <a href="links.html">Resources</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="#header" aria-label="Back to top of page">Back to Top</a>
+            <footer style="background: #1e293b; padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <nav style="margin-bottom: 24px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;" aria-label="Footer navigation">
+                    <a href="links.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;">Resources</a>
+                    <a href="contact.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;">Contact</a>
+                    <a href="#header" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-family: proxima-nova, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;" aria-label="Back to top of page">Back to Top</a>
                 </nav>
-                <p class="footer-copyright">
-                    2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+                <p style="font-family: adobe-garamond-pro, Georgia, serif; font-size: 18px; color: rgba(255, 255, 255, 0.5); margin: 0;">
+                    2018-25 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: rgba(255, 255, 255, 0.5); text-decoration: none;">CC BY 4.0</a>
                 </p>
             </footer>
         </div>
     </main>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="17 11 12 6 7 11"></polyline>
+            <line x1="12" y1="6" x2="12" y2="18"></line>
+        </svg>
+    </button>
+
+    <script>
+        // Progress bar - lightweight scroll handler
+        const progressBar = document.getElementById('progressBar');
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    if (progressBar && docHeight > 0) {
+                        progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Smooth scroll for back to top button
+        const backToTop = document.getElementById('backToTop');
+        backToTop?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Show back-to-top when principles list is in view
+        const principlesList = document.querySelector('.principles-list');
+        if (principlesList && backToTop) {
+            const listObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        const rect = principlesList.getBoundingClientRect();
+                        if (rect.top > window.innerHeight) {
+                            backToTop.classList.remove('visible');
+                        }
+                    }
+                });
+            }, { threshold: 0 });
+            listObserver.observe(principlesList);
+        }
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                const href = anchor.getAttribute('href');
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
