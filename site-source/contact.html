@@ -356,7 +356,7 @@
             transform: translateY(-2px);
             text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
         }
-        
+
         .nav-btn.contact {
             padding: 9.75px 13px;
             border: none;
@@ -364,7 +364,7 @@
             margin: 0;
             display: block;
         }
-        
+
         .nav-btn.links {
             padding: 13px 19.5px;
             margin-left: 13px;
@@ -380,25 +380,25 @@
             color: var(--teal);
             box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
         }
-        
+
         /* MAIN CONTENT */
         .main-content {
             background-color: white;
             padding: 60px 40px 80px;
             min-height: calc(100vh - 200px);
         }
-        
+
         .content-wrapper {
             max-width: 740px;
             margin: 0 auto;
             animation: fadeInUp 0.8s ease-out;
         }
-        
+
         .page-header {
             margin-bottom: 50px;
             text-align: left;
         }
-        
+
         .page-header p {
             font-family: adobe-garamond-pro, serif;
             font-size: 20px;
@@ -407,20 +407,20 @@
             font-weight: 400;
             letter-spacing: 0em;
         }
-        
+
         /* FORM STYLES */
         form {
             width: 100%;
         }
-        
+
         .field-list {
             margin-bottom: 30px;
         }
-        
+
         .form-item {
             margin-bottom: 28px;
         }
-        
+
         .form-item label.title {
             display: block;
             font-family: proxima-nova, sans-serif;
@@ -432,7 +432,7 @@
             color: rgba(26, 26, 26, 0.7);
             margin-bottom: 10px;
         }
-        
+
         input[type="text"],
         input[type="email"],
         textarea {
@@ -449,7 +449,7 @@
             transition: border-color 0.1s ease;
             -webkit-appearance: none;
         }
-        
+
         input[type="text"]:focus,
         input[type="email"]:focus,
         textarea:focus {
@@ -457,24 +457,24 @@
             border-color: var(--teal);
             box-shadow: 0 0 0 3px rgba(61, 153, 145, 0.1);
         }
-        
+
         input[type="text"],
         input[type="email"] {
             height: 44px;
         }
-        
+
         textarea {
             height: 120px;
             resize: vertical;
             min-height: 100px;
             padding-top: 10px;
         }
-        
+
         /* Required asterisk */
         .required {
             color: #f00;
         }
-        
+
         /* SUBMIT BUTTON */
         .form-button-wrapper {
             text-align: right;
@@ -509,7 +509,7 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 15px rgba(61, 153, 145, 0.3);
         }
-        
+
         /* Honeypot field - completely hidden */
         input[name="_gotcha"] {
             display: none !important;
@@ -520,14 +520,14 @@
             visibility: hidden !important;
             opacity: 0 !important;
         }
-        
+
         /* Checkbox styling */
         .checkbox-wrapper {
             margin: 28px 0 32px;
             display: flex;
             align-items: flex-start;
         }
-        
+
         .checkbox-wrapper input[type="checkbox"] {
             width: 16px;
             height: 16px;
@@ -537,7 +537,7 @@
             flex-shrink: 0;
             accent-color: var(--teal);
         }
-        
+
         .checkbox-wrapper label {
             font-family: adobe-garamond-pro, serif;
             font-size: 15px;
@@ -548,7 +548,7 @@
             font-weight: 400;
             letter-spacing: 0em;
         }
-        
+
         /* FOOTER */
         footer {
             background: #1e293b;
@@ -581,7 +581,7 @@
         footer nav a:hover {
             color: white;
         }
-        
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .header-replica {
@@ -646,7 +646,7 @@
             </nav>
         </header>
     </div>
-    
+
     <!-- Main Content -->
     <main id="main-content" class="main-content">
         <div class="content-wrapper">
@@ -654,21 +654,21 @@
                 <h1 style="font-family: proxima-nova, sans-serif; font-size: 32px; font-weight: 700; color: rgba(26, 26, 26, 0.9); margin-bottom: 20px; letter-spacing: -0.02em;">Contact Us</h1>
                 <p>Do you have private questions or enquiries related to this project? Please let us know.</p>
             </div>
-            
+
             <!-- Contact Form with Formspree -->
             <form action="https://formspree.io/f/mdkdwwop" method="POST">
                 <!-- Hidden fields -->
                 <input type="hidden" name="_subject" value="Cultural Peace Contact Form">
-                
+
                 <!-- Honeypot field for spam protection (completely hidden) -->
-                <input 
-                    type="text" 
-                    name="_gotcha" 
+                <input
+                    type="text"
+                    name="_gotcha"
                     tabindex="-1"
                     autocomplete="off"
                     aria-hidden="true"
                 />
-                
+
                 <div class="field-list">
                     <!-- Name Field -->
                     <div class="form-item">
@@ -683,7 +683,7 @@
                             aria-required="true"
                         />
                     </div>
-                    
+
                     <!-- Email Field -->
                     <div class="form-item">
                         <label class="title" for="email-field">
@@ -697,7 +697,7 @@
                             aria-required="true"
                         />
                     </div>
-                    
+
                     <!-- Message Field -->
                     <div class="form-item">
                         <label class="title" for="message-field">
@@ -710,7 +710,7 @@
                             aria-required="true"
                         ></textarea>
                     </div>
-                    
+
                     <!-- Anti-spam Checkbox -->
                     <div class="checkbox-wrapper">
                         <input
@@ -725,16 +725,16 @@
                         </label>
                     </div>
                 </div>
-                
+
                 <!-- Submit Button -->
                 <div class="form-button-wrapper">
                     <input type="submit" value="Submit" />
                 </div>
             </form>
-            
+
         </div>
     </main>
-    
+
     <!-- Footer -->
     <footer style="background: #1e293b; padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <nav style="margin-bottom: 24px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;" aria-label="Footer navigation">
