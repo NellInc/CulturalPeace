@@ -4,9 +4,153 @@ import * as cheerio from 'cheerio';
 import { minify } from 'html-minifier-terser';
 import prettier from 'prettier';
 
-const SOURCE_DIR = './culturalpeace_clone';
-const OUTPUT_DIR = './docs'; // GitHub Pages typically serves from 'docs' folder
-const CNAME_DOMAIN = 'culturalpeace.org'; // Update if using custom domain
+// Curated, reviewable source pages. The raw Squarespace scrape remains an import
+// artifact and contains obsolete routes, broken local assets, and duplicate H1s.
+const SOURCE_DIR = './site-source';
+const OUTPUT_DIR = process.env.OUTPUT_DIR || './docs';
+const STATIC_DIR = './site-static';
+const CNAME_DOMAIN = 'www.culturalpeace.org';
+const SITE_ORIGIN = `https://${CNAME_DOMAIN}`;
+const PAGE_SEO = {
+  'index.html': {
+    output: 'index.html',
+    url: `${SITE_ORIGIN}/`,
+    title: 'Cultural Peace | 14 Principles for Managing Political Polarization',
+    description: 'Explore 14 principles for managing political polarization, protecting innocent people during cultural conflict, and strengthening civil discourse.',
+    image: 'social-share.jpg',
+    imageAlt: 'People gathering together beneath an open sky',
+    type: 'WebPage'
+  },
+  'contact.html': {
+    output: 'contact.html',
+    url: `${SITE_ORIGIN}/contact.html`,
+    title: 'Contact Cultural Peace | Questions and Collaboration',
+    description: 'Contact Cultural Peace with questions, feedback, or collaboration ideas about the 14 principles for managing political polarization.',
+    image: 'social-share.jpg',
+    imageAlt: 'People gathering together beneath an open sky',
+    type: 'ContactPage',
+    breadcrumb: 'Contact'
+  },
+  'links.html': {
+    output: 'links.html',
+    url: `${SITE_ORIGIN}/links.html`,
+    title: 'Political Polarization Resources | Cultural Peace',
+    description: 'Explore curated articles, videos, tools, and organizations focused on political polarization, civil discourse, conflict management, and cultural peace.',
+    image: 'links-social-share.jpg',
+    imageAlt: 'A person looking toward a calm coastal landscape',
+    type: 'CollectionPage',
+    breadcrumb: 'Resources'
+  }
+};
+
+function addSeoMetadata($, filePath) {
+  const fileName = path.basename(filePath);
+  const seo = PAGE_SEO[fileName];
+  if (!seo) return;
+
+  $('title, meta[name="description"], meta[name="robots"], meta[name^="twitter:"], meta[property^="og:"]').remove();
+  $('link[rel="canonical"], link[rel="alternate"][hreflang], script[type="application/ld+json"]').remove();
+
+  const organization = {
+    '@type': 'Organization',
+    '@id': `${SITE_ORIGIN}/#organization`,
+    name: 'Cultural Peace',
+    url: `${SITE_ORIGIN}/`,
+    logo: { '@type': 'ImageObject', url: `${SITE_ORIGIN}/assets/logo.png`, width: 1500, height: 890 },
+    description: 'An initiative presenting 14 principles for managing political polarization and cultural conflict.'
+  };
+  const website = {
+    '@type': 'WebSite',
+    '@id': `${SITE_ORIGIN}/#website`,
+    url: `${SITE_ORIGIN}/`,
+    name: 'Cultural Peace',
+    inLanguage: 'en',
+    publisher: { '@id': `${SITE_ORIGIN}/#organization` }
+  };
+  const page = {
+    '@type': seo.type,
+    '@id': `${seo.url}#webpage`,
+    url: seo.url,
+    name: seo.title,
+    description: seo.description,
+    inLanguage: 'en',
+    dateModified: new Date().toISOString().slice(0, 10),
+    isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
+    about: { '@id': `${SITE_ORIGIN}/#organization` },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: `${SITE_ORIGIN}/assets/${seo.image}`,
+      width: 1200,
+      height: 630
+    }
+  };
+  if (fileName === 'index.html') {
+    const principles = [
+      'Self-Determination', 'Banking Neutrality', 'Immunity from Partiality',
+      'Freedom from Assault', 'Freedom from Political Discrimination',
+      'Judicial Reporting Embargo', 'Statute of Limitations',
+      'Freedom from Secret Exclusion', 'Transparency of Judgment',
+      'Freedom of Consciousness', 'Freedom to Enjoy Culture',
+      'Equality of Public Access', 'Freedom of Association',
+      'No Monopolies on Truth'
+    ];
+    page.mainEntity = {
+      '@type': 'ItemList',
+      name: '14 Principles for Cultural Peace',
+      numberOfItems: principles.length,
+      itemListElement: principles.map((name, index) => ({
+        '@type': 'ListItem', position: index + 1, name
+      }))
+    };
+    page.subjectOf = {
+      '@type': 'DigitalDocument',
+      name: 'Cultural Peace: 14 Principles Infographic',
+      encodingFormat: 'application/pdf',
+      contentUrl: `${SITE_ORIGIN}/Cultural-Peace-14-Principles-Infographic.pdf`
+    };
+  }
+  const graph = [organization, website, page];
+  if (seo.breadcrumb) {
+    const breadcrumbId = `${seo.url}#breadcrumb`;
+    page.breadcrumb = { '@id': breadcrumbId };
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': breadcrumbId,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: seo.breadcrumb, item: seo.url }
+      ]
+    });
+  }
+
+  const imageUrl = `${SITE_ORIGIN}/assets/${seo.image}`;
+  const structuredData = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+  $('head').prepend(`
+    <title>${seo.title}</title>
+    <meta name="description" content="${seo.description}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="${seo.url}">
+    <link rel="alternate" hreflang="en" href="${seo.url}">
+    <link rel="alternate" hreflang="x-default" href="${seo.url}">
+    <meta property="og:site_name" content="Cultural Peace">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${seo.title}">
+    <meta property="og:description" content="${seo.description}">
+    <meta property="og:url" content="${seo.url}">
+    <meta property="og:image" content="${imageUrl}">
+    <meta property="og:image:secure_url" content="${imageUrl}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${seo.imageAlt}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${seo.title}">
+    <meta name="twitter:description" content="${seo.description}">
+    <meta name="twitter:image" content="${imageUrl}">
+    <meta name="twitter:image:alt" content="${seo.imageAlt}">
+    <script type="application/ld+json">${structuredData}</script>
+  `);
+}
 
 async function cleanHTML(htmlContent, filePath) {
   const $ = cheerio.load(htmlContent);
@@ -74,6 +218,8 @@ async function cleanHTML(htmlContent, filePath) {
   if ($('meta[charset]').length === 0) {
     $('head').prepend('<meta charset="UTF-8">');
   }
+
+  addSeoMetadata($, filePath);
   
   // Add a simple navigation menu
   if ($('nav').length === 0) {
@@ -180,16 +326,29 @@ async function processFile(sourcePath, destPath) {
   }
 }
 
+async function processCanonicalPage(sourcePath, destPath) {
+  const html = await fs.readFile(sourcePath, 'utf-8');
+  const $ = cheerio.load(html, { decodeEntities: false });
+  addSeoMetadata($, sourcePath);
+  const minified = await minify($.html(), {
+    collapseWhitespace: true,
+    removeComments: true,
+    minifyCSS: true,
+    minifyJS: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true
+  });
+  await fs.writeFile(destPath, minified);
+}
+
 async function generateSitemap(outputDir) {
-  const files = await fs.readdir(outputDir);
-  const htmlFiles = files.filter(f => f.endsWith('.html'));
-  
+  const pages = Object.values(PAGE_SEO);
+  const lastModified = new Date().toISOString().split('T')[0];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${htmlFiles.map(file => `  <url>
-    <loc>https://${CNAME_DOMAIN}/${file}</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <priority>${file === 'index.html' ? '1.0' : '0.8'}</priority>
+${pages.map(page => `  <url>
+    <loc>${page.url}</loc>
+    <lastmod>${lastModified}</lastmod>
   </url>`).join('\n')}
 </urlset>`;
   
@@ -202,52 +361,62 @@ async function generate404Page(outputDir) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
   <title>404 - Page Not Found | Cultural Peace</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: adobe-garamond-pro, Georgia, serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-    .container {
+      min-height: 100vh;
+      padding: 24px;
       text-align: center;
-      padding: 20px;
+      color: #fff;
+      background: linear-gradient(160deg, #101d1b 0%, #162724 55%, #1d3934 100%);
+    }
+    img { height: 72px; width: auto; margin-bottom: 40px; opacity: 0.95; }
+    .code {
+      font-family: adobe-garamond-pro, Georgia, serif;
+      font-size: clamp(90px, 18vw, 150px);
+      line-height: 1;
+      color: #f4e3c6;
+      letter-spacing: 0.02em;
     }
     h1 {
-      font-size: 120px;
-      margin: 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-weight: 400;
+      font-size: clamp(22px, 4vw, 30px);
+      margin: 18px 0 10px;
     }
-    p {
-      font-size: 24px;
-      margin: 20px 0;
-    }
-    a {
+    p { font-size: 19px; color: rgba(255,255,255,0.7); max-width: 44ch; }
+    a.btn {
       display: inline-block;
-      padding: 12px 30px;
-      background: white;
-      color: #667eea;
+      margin-top: 34px;
+      padding: 16px 34px;
+      background: #fff;
+      color: #174e49;
       text-decoration: none;
-      border-radius: 25px;
-      margin-top: 20px;
-      transition: transform 0.3s;
+      border-radius: 100px;
+      font-family: proxima-nova, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    a:hover {
-      transform: scale(1.05);
-    }
+    a.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>404</h1>
-    <p>Oops! The page you're looking for doesn't exist.</p>
-    <a href="index.html">Return to Home</a>
-  </div>
+  <img src="assets/logo-white.webp" alt="Cultural Peace">
+  <div class="code">404</div>
+  <h1>This page has wandered off.</h1>
+  <p>The page you're looking for doesn't exist — but the 14 Principles are right where you left them.</p>
+  <a class="btn" href="index.html">Return Home</a>
 </body>
 </html>`;
   
@@ -278,7 +447,8 @@ async function copyDirectory(source, dest) {
   
   for (const entry of entries) {
     const sourcePath = path.join(source, entry.name);
-    const destPath = path.join(dest, entry.name);
+      const outputName = PAGE_SEO[entry.name]?.output || entry.name;
+      const destPath = path.join(dest, outputName);
     
     if (entry.isDirectory()) {
       await copyDirectory(sourcePath, destPath);
@@ -301,8 +471,18 @@ async function main() {
   // Clean output directory
   await fs.emptyDir(OUTPUT_DIR);
   
-  // Process all files
-  await copyDirectory(SOURCE_DIR, OUTPUT_DIR);
+  // Publish only the three canonical pages. The scrape also contains obsolete
+  // Squarespace routes and test pages that must not become indexable again.
+  for (const [sourceName, seo] of Object.entries(PAGE_SEO)) {
+    console.log(`Processing: ${sourceName}`);
+    await processCanonicalPage(
+      path.join(SOURCE_DIR, sourceName),
+      path.join(OUTPUT_DIR, seo.output)
+    );
+  }
+
+  // Restore stable first-party assets that are not part of the Squarespace scrape.
+  await fs.copy(STATIC_DIR, OUTPUT_DIR, { overwrite: true });
   
   // Generate additional files
   console.log('Generating sitemap...');

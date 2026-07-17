@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 Principles for Cultural Peace</title>
+    <link rel="stylesheet" href="https://use.typekit.net/ycr5rin.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #1c2422;
+            --paper: #faf8f4;
+            --cream: #f3efe7;
+            --teal: #26766f;
+            --teal-deep: #174e49;
+            --teal-ghost: rgba(38, 118, 111, 0.09);
+            --teal-line: rgba(38, 118, 111, 0.25);
+            --gold: #b98d4f;
+            --night: #101d1b;
+            --serif: adobe-garamond-pro, Georgia, serif;
+            --sans: proxima-nova, -apple-system, sans-serif;
+        }
+
+        @page { size: letter; margin: 0; }
+
+        body { font-family: var(--sans); background: #e8e6e1; }
+
+        .infographic {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            background: var(--paper);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Header band */
+        .header {
+            background: linear-gradient(150deg, var(--night) 0%, #162724 55%, #1d3934 100%);
+            text-align: center;
+            padding: 0.34in 0.5in 0.3in;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+        }
+
+        .header img {
+            height: 62px;
+            margin-bottom: 8px;
+        }
+
+        .header .overline {
+            display: block;
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 3.4px;
+            text-transform: uppercase;
+            color: #d9b989;
+            margin-bottom: 6px;
+        }
+
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 26pt;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            color: #ffffff;
+            line-height: 1.08;
+        }
+
+        .header .subtitle {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 11pt;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 5px;
+        }
+
+        /* Grid */
+        .principles-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.055in 0.18in;
+            padding: 0.22in 0.38in 0.1in;
+            align-content: space-between;
+        }
+
+        .principle {
+            display: flex;
+            align-items: center;
+            gap: 0.12in;
+            padding: 0.065in 0.1in;
+            border-radius: 9px;
+        }
+
+        .principle:nth-child(4n+1),
+        .principle:nth-child(4n+2) {
+            background: var(--cream);
+        }
+
+        .principle-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #ffffff;
+            border: 1px solid var(--teal-line);
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(16, 29, 27, 0.07);
+        }
+
+        .principle:nth-child(4n+3) .principle-icon,
+        .principle:nth-child(4n+4) .principle-icon {
+            background: var(--cream);
+        }
+
+        .principle-icon svg { width: 34px; height: 34px; }
+
+        /* Shared icon strokes/fills */
+        .s  { stroke: var(--teal); stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+        .s2 { stroke: var(--teal); stroke-width: 1.9;  stroke-linecap: round; stroke-linejoin: round; fill: none; }
+        .s3 { stroke: var(--teal); stroke-width: 2.8;  stroke-linecap: round; stroke-linejoin: round; fill: none; }
+        .f  { fill: var(--teal); }
+        .g  { fill: var(--gold); }
+        .gs { stroke: var(--gold); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+        .gs2{ stroke: var(--gold); stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+        .principle-content { flex: 1; }
+
+        .principle-header {
+            display: flex;
+            align-items: baseline;
+            gap: 7px;
+            margin-bottom: 2px;
+        }
+
+        .principle-number {
+            font-family: var(--serif);
+            font-size: 15pt;
+            font-weight: 400;
+            color: var(--gold);
+            min-width: 24px;
+            line-height: 1;
+        }
+
+        .principle-title {
+            font-size: 8.6pt;
+            font-weight: 700;
+            color: var(--teal-deep);
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.55px;
+        }
+
+        .principle-desc {
+            font-family: var(--serif);
+            font-size: 9pt;
+            color: rgba(28, 36, 34, 0.68);
+            line-height: 1.32;
+            margin-left: 31px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 0.1in 0.42in 0.16in;
+            border-top: 1px solid rgba(185, 141, 79, 0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.5pt;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            color: var(--teal-deep);
+            letter-spacing: 2.4px;
+            font-size: 8pt;
+        }
+
+        .footer-tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: rgba(28, 36, 34, 0.55);
+            font-size: 9pt;
+        }
+
+        .footer-meta { color: rgba(28, 36, 34, 0.5); letter-spacing: 0.4px; }
+        .footer-meta strong { color: var(--teal); font-weight: 600; }
+
+        @media print {
+            body { background: white; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <header class="header">
+            <img src="site-static/assets/logo-white.webp" alt="Cultural Peace">
+            <span class="overline">A Framework for Civil Discourse</span>
+            <h1>14 Principles for Cultural Peace</h1>
+            <p class="subtitle">Fair, impartial rules above the fray &mdash; protecting innocent people during cultural conflict</p>
+        </header>
+
+        <div class="principles-grid">
+            <!-- 01 Self-Determination — three homes, each with its own hearth -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s" d="M9 22l-5 5v13h10V27l-5-5z"/>
+                        <path class="s" d="M24 13l-7 7v20h14V20l-7-7z"/>
+                        <path class="s" d="M39 22l-5 5v13h10V27l-5-5z"/>
+                        <circle class="g" cx="24" cy="30.5" r="2.4"/>
+                        <circle class="f" cx="9" cy="32.5" r="1.8"/>
+                        <circle class="f" cx="39" cy="32.5" r="1.8"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">01</span>
+                        <span class="principle-title">Self-Determination</span>
+                    </div>
+                    <div class="principle-desc">Allow people to enjoy their own communities. Don&rsquo;t invade others&rsquo; conversations.</div>
+                </div>
+            </div>
+
+            <!-- 02 Banking Neutrality — payment card, gold check of good standing -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <rect class="s" x="4" y="10.5" width="31" height="21" rx="3.5"/>
+                        <line class="s" x1="4" y1="18" x2="35" y2="18"/>
+                        <line class="s" x1="9.5" y1="25.5" x2="18.5" y2="25.5"/>
+                        <circle class="g" cx="37" cy="34" r="8.5"/>
+                        <path d="M33 34l3 3 5.5-6" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">02</span>
+                        <span class="principle-title">Banking Neutrality</span>
+                    </div>
+                    <div class="principle-desc">No one may be economically outlawed without due process.</div>
+                </div>
+            </div>
+
+            <!-- 03 Immunity from Partiality — a person sheltered by the shield -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s" d="M24 4L7 11.5V22c0 10.5 7 18.5 17 21.5C34 40.5 41 32.5 41 22V11.5L24 4z"/>
+                        <circle class="g" cx="24" cy="18.5" r="4.6"/>
+                        <path class="s" d="M16 33.5c0-4.8 3.8-7 8-7s8 2.2 8 7"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">03</span>
+                        <span class="principle-title">Immunity from Partiality</span>
+                    </div>
+                    <div class="principle-desc">Firing on moral grounds requires legal threshold and proven negative intent.</div>
+                </div>
+            </div>
+
+            <!-- 04 Freedom from Assault — the home stays locked to intruders -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s" d="M6 21L24 7l18 14"/>
+                        <path class="s" d="M10 19.5V40h28V19.5"/>
+                        <rect class="g" x="18" y="27.5" width="12" height="9.5" rx="2"/>
+                        <path class="s" d="M20.8 27.5v-3.2a3.2 3.2 0 0 1 6.4 0v3.2"/>
+                        <circle cx="24" cy="32.2" r="1.5" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">04</span>
+                        <span class="principle-title">Freedom from Assault</span>
+                    </div>
+                    <div class="principle-desc">No doxxing, harassment, or threats. Everyone has the right to privacy.</div>
+                </div>
+            </div>
+
+            <!-- 05 Political Discrimination — different people, equal standing -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <circle class="f" cx="11" cy="12" r="5.2"/>
+                        <path class="s" d="M4.5 36c0-6 3.2-9.5 6.5-9.5s6.5 3.5 6.5 9.5"/>
+                        <line class="gs" x1="20.5" y1="20" x2="27.5" y2="20"/>
+                        <line class="gs" x1="20.5" y1="26" x2="27.5" y2="26"/>
+                        <rect class="f" x="31.5" y="6.8" width="10.5" height="10.5" rx="2.4"/>
+                        <path class="s" d="M30.5 36c0-6 3.2-9.5 6.5-9.5s6.5 3.5 6.5 9.5"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">05</span>
+                        <span class="principle-title">Freedom from Political Discrimination</span>
+                    </div>
+                    <div class="principle-desc">End prejudice in employment, education, or housing based on politics.</div>
+                </div>
+            </div>
+
+            <!-- 06 Judicial Reporting Embargo — the gavel waits for the clock -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <rect class="s" x="5" y="7.5" width="18" height="9.5" rx="2"/>
+                        <line class="s" x1="14" y1="17" x2="14" y2="38"/>
+                        <rect class="f" x="6.5" y="40" width="15" height="4" rx="1.5"/>
+                        <circle class="s" cx="35.5" cy="28" r="9.5"/>
+                        <path class="gs2" d="M35.5 22.5v5.5l3.8 2.8"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">06</span>
+                        <span class="principle-title">Judicial Reporting Embargo</span>
+                    </div>
+                    <div class="principle-desc">No media reporting on sensitive cases until verdict. Avoid trial by opinion.</div>
+                </div>
+            </div>
+
+            <!-- 07 Statute of Limitations — time winds back, and is forgiven -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <circle class="s" cx="27" cy="27" r="15"/>
+                        <path class="gs2" d="M27 17.5V27l6.5 4.5"/>
+                        <path class="s" d="M5.5 7.5v9.5H15"/>
+                        <path class="s" d="M5.8 17c3.2-7.5 11.7-11.5 19.5-9.6"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">07</span>
+                        <span class="principle-title">Statute of Limitations</span>
+                    </div>
+                    <div class="principle-desc">Conduct older than 5 years or before age 25 should not be held against people.</div>
+                </div>
+            </div>
+
+            <!-- 08 Secret Exclusion — the eye that sees openly -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s" d="M4 27c0 0 8-11.5 20-11.5S44 27 44 27s-8 11.5-20 11.5S4 27 4 27z"/>
+                        <circle class="s" cx="24" cy="27" r="5.8"/>
+                        <circle class="g" cx="24" cy="27" r="2.8"/>
+                        <line class="s" x1="24" y1="5.5" x2="24" y2="11"/>
+                        <line class="s" x1="11" y1="9" x2="14.5" y2="13.7"/>
+                        <line class="s" x1="37" y1="9" x2="33.5" y2="13.7"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">08</span>
+                        <span class="principle-title">Freedom from Secret Exclusion</span>
+                    </div>
+                    <div class="principle-desc">No shadowbanning. People deserve to know if they&rsquo;re being silenced.</div>
+                </div>
+            </div>
+
+            <!-- 09 Transparency of Judgment — the record, open to the lens -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s" d="M27 4H10.5A3.5 3.5 0 0 0 7 7.5v33a3.5 3.5 0 0 0 3.5 3.5H29a3.5 3.5 0 0 0 3.5-3.5V9.5L27 4z"/>
+                        <path class="s" d="M27 4v6h5.5"/>
+                        <line class="s2" x1="12.5" y1="18" x2="23" y2="18"/>
+                        <line class="s2" x1="12.5" y1="24" x2="21" y2="24"/>
+                        <line class="s2" x1="12.5" y1="30" x2="19" y2="30"/>
+                        <circle class="gs2" cx="35.5" cy="33.5" r="7.5"/>
+                        <line class="gs" x1="41" y1="39" x2="45" y2="43"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">09</span>
+                        <span class="principle-title">Transparency of Judgment</span>
+                    </div>
+                    <div class="principle-desc">Algorithmic decisions affecting reputation must be explainable.</div>
+                </div>
+            </div>
+
+            <!-- 10 Freedom of Consciousness — the strings are cut; the face is calm -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <circle class="s" cx="24" cy="31" r="12.5"/>
+                        <circle class="f" cx="19.8" cy="29" r="1.6"/>
+                        <circle class="f" cx="28.2" cy="29" r="1.6"/>
+                        <path class="gs2" d="M20.5 35c2 1.8 5 1.8 7 0"/>
+                        <path class="s" d="M5.5 6.5h12"/>
+                        <path class="s" d="M30.5 8.5h12"/>
+                        <path class="s2" d="M9.5 6.5c0 4-2 7.5-2 11.5"/>
+                        <path class="s2" d="M38.5 8.5c0 4 2 6 2 9.5"/>
+                        <path class="s2" d="M24 18.5v-5"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">10</span>
+                        <span class="principle-title">Freedom of Consciousness</span>
+                    </div>
+                    <div class="principle-desc">Technology must not manipulate behavior or perception of reality.</div>
+                </div>
+            </div>
+
+            <!-- 11 Freedom to Enjoy Culture — one world, loved in good faith -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <circle class="s" cx="24" cy="17.5" r="13.5"/>
+                        <ellipse class="s2" cx="24" cy="17.5" rx="5.8" ry="13.5"/>
+                        <line class="s2" x1="10.5" y1="17.5" x2="37.5" y2="17.5"/>
+                        <path class="s2" d="M13 10.5h22"/>
+                        <path class="s2" d="M13 24.5h22"/>
+                        <path class="g" d="M24 37.5c-1.6-2.2-4.8-2.2-6.2 0-1.1 1.7-0.8 3.8 0.6 5.2l5.6 5 5.6-5c1.4-1.4 1.7-3.5 0.6-5.2-1.4-2.2-4.6-2.2-6.2 0z"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">11</span>
+                        <span class="principle-title">Freedom to Enjoy Culture</span>
+                    </div>
+                    <div class="principle-desc">Cultural appreciation is welcome. Subversion or co-opting is not.</div>
+                </div>
+            </div>
+
+            <!-- 12 Equality of Public Access — the door stands open -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <rect class="s" x="8" y="5" width="21" height="38" rx="2.5"/>
+                        <path class="s" d="M29 5l8.5 4v30L29 43"/>
+                        <circle class="f" cx="13.8" cy="24" r="1.9"/>
+                        <path class="gs" d="M37.5 18.5l5.5 5.5-5.5 5.5"/>
+                        <line class="gs" x1="30" y1="24" x2="42.5" y2="24"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">12</span>
+                        <span class="principle-title">Equality of Public Access</span>
+                    </div>
+                    <div class="principle-desc">Public corporations cannot remove access without good reason.</div>
+                </div>
+            </div>
+
+            <!-- 13 Freedom of Association — watching is not loving -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="s2" d="M3 15.5c0 0 4.6-7 11-7s11 7 11 7-4.6 7-11 7-11-7-11-7z"/>
+                        <circle class="s2" cx="14" cy="15.5" r="3.6"/>
+                        <circle class="f" cx="14" cy="15.5" r="1.7"/>
+                        <line class="s3" x1="20.5" y1="30" x2="31.5" y2="30"/>
+                        <line class="s3" x1="20.5" y1="37.5" x2="31.5" y2="37.5"/>
+                        <line class="s3" x1="19.5" y1="41.5" x2="32.5" y2="26"/>
+                        <path class="g" d="M39.5 9.8c-1.4-2-4.3-2-5.6 0-1 1.5-0.7 3.4 0.5 4.7l5.1 4.8 5.1-4.8c1.2-1.3 1.5-3.2 0.5-4.7-1.3-2-4.2-2-5.6 0z"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">13</span>
+                        <span class="principle-title">Freedom of Association</span>
+                    </div>
+                    <div class="principle-desc">Following someone doesn&rsquo;t equal endorsement. No guilt by association.</div>
+                </div>
+            </div>
+
+            <!-- 14 No Monopolies on Truth — one gem, seen from many angles -->
+            <div class="principle">
+                <div class="principle-icon">
+                    <svg viewBox="0 0 48 48">
+                        <path class="g" d="M24 16.5l7.5 7.5-7.5 7.5-7.5-7.5z"/>
+                        <ellipse class="s2" cx="24" cy="6.5" rx="6" ry="3.2"/>
+                        <circle class="f" cx="24" cy="6.5" r="1.5"/>
+                        <ellipse class="s2" cx="8.5" cy="38.5" rx="6" ry="3.2" transform="rotate(-45 8.5 38.5)"/>
+                        <circle class="f" cx="8.5" cy="38.5" r="1.5"/>
+                        <ellipse class="s2" cx="39.5" cy="38.5" rx="6" ry="3.2" transform="rotate(45 39.5 38.5)"/>
+                        <circle class="f" cx="39.5" cy="38.5" r="1.5"/>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <div class="principle-header">
+                        <span class="principle-number">14</span>
+                        <span class="principle-title">No Monopolies on Truth</span>
+                    </div>
+                    <div class="principle-desc">No group owns the truth. Lived experience can bias as well as inform.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-brand">CULTURAL PEACE</div>
+            <div class="footer-tagline">Fair, impartial rules above the fray.</div>
+            <div class="footer-meta"><strong>culturalpeace.org</strong> &nbsp;&middot;&nbsp; CC BY 4.0</div>
+        </footer>
+    </div>
+</body>
+</html>
