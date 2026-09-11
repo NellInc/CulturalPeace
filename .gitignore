@@ -30,3 +30,7 @@ Thumbs.db
 generate-pdf.mjs
 lighthouse-report.report.html
 lighthouse-report.report.json
+
+# Cloudflare Worker local state
+worker/.wrangler/
+worker/.dev.vars

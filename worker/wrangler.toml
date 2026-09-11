@@ -1,0 +1,36 @@
+# Cultural Peace — amendment intake Worker.
+# Deploy:  cd worker && npx wrangler deploy
+# Secrets: npx wrangler secret put GITHUB_TOKEN
+#          npx wrangler secret put TURNSTILE_SECRET
+name = "culturalpeace-amendments"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+GITHUB_REPO = "NellInc/CulturalPeace"
+ALLOWED_ORIGINS = "https://culturalpeace.org,https://www.culturalpeace.org"
+
+# Required: hourly per-IP cap, duplicate rejection, and private storage of
+# optional contact emails (never written into the issue). The Worker returns
+# 503 without it.  Create with:  npx wrangler kv namespace create AMEND_KV
+[[kv_namespaces]]
+binding = "AMEND_KV"
+id = "PASTE_NAMESPACE_ID"
+
+# Required: atomic per-IP limiter, 3 requests per minute, evaluated before Turnstile.
+[[unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }
+
+# Local development only:  npx wrangler dev --env dev
+# Inherits nothing from the top level except the script, so bindings are repeated.
+[env.dev]
+vars = { GITHUB_REPO = "NellInc/CulturalPeace", ALLOWED_ORIGINS = "http://localhost:8000,http://127.0.0.1:8000,http://localhost:8771" }
+kv_namespaces = [{ binding = "AMEND_KV", id = "PASTE_NAMESPACE_ID" }]
+[[env.dev.unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }

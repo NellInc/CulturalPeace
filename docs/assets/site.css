@@ -132,7 +132,7 @@ textarea:focus-visible {
 }
 
 .site-header .brand img {
-    height: 54px;
+    height: 66px;
     width: auto;
     transition: height 0.35s var(--ease), opacity 0.3s ease;
 }
@@ -206,7 +206,7 @@ textarea:focus-visible {
     box-shadow: 0 1px 0 rgba(28, 36, 34, 0.08), 0 8px 30px rgba(16, 29, 27, 0.08);
 }
 
-.site-header.scrolled .brand img { height: 40px; }
+.site-header.scrolled .brand img { height: 48px; }
 .site-header.scrolled .brand .logo-white { display: none; }
 .site-header.scrolled .brand .logo-dark { display: block; }
 .site-header.scrolled .nav-link { color: var(--ink-soft); }
@@ -229,7 +229,7 @@ textarea:focus-visible {
 
 @media (max-width: 640px) {
     .site-header { height: 68px; }
-    .site-header .brand img { height: 40px; }
+    .site-header .brand img { height: 46px; }
     .nav-link { display: none; }
     .nav-link.nav-essential { display: inline-block; }
     .nav-cta { padding: 10px 18px; }
@@ -593,6 +593,7 @@ textarea:focus-visible {
     max-width: 780px;
     margin: 0 auto;
     padding-top: clamp(56px, 8vw, 88px);
+    padding-bottom: clamp(48px, 7vw, 76px);
 }
 
 .principle-article .overline { display: block; margin-bottom: 12px; }
@@ -1351,3 +1352,76 @@ main { counter-reset: article-num; }
   ::view-transition-old(*),
   ::view-transition-new(*) { animation: none !important; }
 }
+
+/* ==========================================================================
+   Propose an amendment — dialog
+   ========================================================================== */
+.comment-link.amend-btn { cursor: pointer; line-height: 1.2; -webkit-appearance: none; appearance: none; }
+.comment-link.amend-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+.amend-dialog {
+    width: min(680px, calc(100vw - 32px));
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: var(--shadow-lg);
+    overflow: auto;
+}
+.amend-dialog::backdrop {
+    background: rgba(16, 29, 27, 0.55);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+.amend-form { position: relative; padding: 40px 44px 36px; }
+@media (max-width: 600px) { .amend-form { padding: 32px 20px 24px; } }
+
+.amend-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink-faint);
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.amend-close:hover { background: var(--teal-ghost); color: var(--teal-deep); }
+
+.amend-heading { font-family: var(--serif); font-size: 1.75rem; line-height: 1.2; margin: 8px 0 12px; color: var(--teal-deep); }
+.amend-intro { font-size: 1rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 28px; }
+
+.amend-form .form-field { margin-bottom: 20px; }
+.amend-form .form-field textarea { min-height: 96px; }
+.amend-optional { font-weight: 500; letter-spacing: 0.04em; text-transform: none; color: var(--ink-faint); }
+
+.amend-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+@media (max-width: 600px) { .amend-row { grid-template-columns: 1fr; } }
+
+.amend-hp { display: none !important; position: absolute !important; left: -5000px !important; }
+.amend-turnstile { min-height: 0; margin: 4px 0 8px; }
+.amend-turnstile:empty { display: none; }
+
+.amend-status { min-height: 1.4em; font-family: var(--sans); font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 18px; }
+.amend-status.is-error { color: #a03d2e; }
+.amend-status.is-success { color: var(--teal-deep); font-weight: 600; }
+.amend-status a { color: var(--teal-deep); }
+
+.amend-actions { gap: 12px; flex-wrap: wrap; }
+.amend-form .btn[disabled] { opacity: 0.55; cursor: progress; transform: none; }
+
+.amend-form.is-sent .form-field,
+.amend-form.is-sent .amend-row,
+.amend-form.is-sent .amend-turnstile,
+.amend-form.is-sent #amendSubmit { display: none; }
+
+@media print { .amend-dialog { display: none !important; } }
