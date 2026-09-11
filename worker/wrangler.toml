@@ -28,7 +28,7 @@ simple = { limit = 3, period = 60 }
 # Inherits nothing from the top level except the script, so bindings are repeated.
 [env.dev]
 vars = { GITHUB_REPO = "NellInc/CulturalPeace", ALLOWED_ORIGINS = "http://localhost:8000,http://127.0.0.1:8000,http://localhost:8771" }
-kv_namespaces = [{ binding = "AMEND_KV", id = "952fe42292314a7abee4d7079f4e53e6" }]
+kv_namespaces = [{ binding = "AMEND_KV", id = "55c583b86b9f4ec2bd02c74765a3abc8" }]
 [[env.dev.unsafe.bindings]]
 name = "RATE_LIMITER"
 type = "ratelimit"
