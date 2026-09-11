@@ -134,7 +134,7 @@ The site is deployed from the `docs/` folder on the main branch. The CNAME file 
 
 - **Old Contract** — Every change has a far side. Before calling it safe, name what still speaks the previous contract: the deployed server meeting your new schema, clients still sending the old shape, a cache holding the prior value, the consumer of the API you altered. Confirm it won't break.
 - **Reproduce-first** — A traced cause stays unverified until you reproduce it: make the bug happen, then make the fix stop it. A compile, build, or read is not a runtime; never let "it builds" stand for "it works."
-- **Baseline-with-names** — Baseline before the first change: state the starting pass/fail counts and the names of failing tests up front; after each step re-run the whole gate and report the delta vs baseline. A green on the thing you touched says nothing about what you broke.
+- **Baseline-with-names** — Baseline before the first change: state the starting pass/fail counts and the names of failing tests up front. Under Claude Code, after each step re-run the whole gate and report the delta vs baseline. A green on the thing you touched says nothing about what you broke. Under Codex, validate a coherent change with the affected checks, checking earlier when diagnosis warrants it. Retain the named baseline, all required final whole-project gates, and their actual terminal results; report the delta before marking the task complete. This changes check cadence only. Working if: dependent edits are validated together, missed consumers are caught, and the required final gates still pass without redundant per-file runs.
 
 ---
 
