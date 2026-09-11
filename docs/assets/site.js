@@ -68,8 +68,8 @@
 (function () {
     'use strict';
 
-    var AMEND_ENDPOINT = '';      // e.g. https://culturalpeace-amendments.<account>.workers.dev
-    var TURNSTILE_SITE_KEY = '';  // public site key from the Cloudflare Turnstile dashboard
+    var AMEND_ENDPOINT = 'https://culturalpeace-amendments.nell-b82.workers.dev';      // e.g. https://culturalpeace-amendments.<account>.workers.dev
+    var TURNSTILE_SITE_KEY = '0x4AAAAAAEwplZBFRHx3WDGk';  // public site key from the Cloudflare Turnstile dashboard
     var TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 
     var dialog = document.getElementById('amendDialog');
