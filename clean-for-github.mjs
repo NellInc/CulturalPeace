@@ -130,6 +130,7 @@ function addSeoMetadata($, filePath) {
     <meta name="description" content="${seo.description}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="${seo.url}">
+    <link rel="describedby" href="/llms.txt" type="text/markdown">
     <link rel="alternate" hreflang="en" href="${seo.url}">
     <link rel="alternate" hreflang="x-default" href="${seo.url}">
     <meta property="og:site_name" content="Cultural Peace">
