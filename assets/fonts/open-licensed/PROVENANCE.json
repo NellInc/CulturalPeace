@@ -1,0 +1,1036 @@
+{
+  "repository": "CulturalPeace",
+  "changed": [
+    "Backport/index.html",
+    "Backport/slana_clone/index.html",
+    "docs-backup/404.html",
+    "docs-backup/assets/squarespace/static/sitecss/5c09945b2971142b63035e4a/59/52a74dafe4b073a80cd253c5/5c09945b2971142b63035e5f/1053/site.css",
+    "docs-backup/contact-1.html",
+    "docs-backup/index.html",
+    "docs-backup/links.html",
+    "docs/404.html",
+    "docs/assets/site.css",
+    "docs/contact.html",
+    "docs/index.html",
+    "docs/links.html",
+    "infographic.html",
+    "site-source/contact.html",
+    "site-source/index.html",
+    "site-source/links.html",
+    "site-static/assets/site.css",
+    "verbatim-clone/contact-1.html",
+    "verbatim-clone/index.html",
+    "verbatim-clone/links.html"
+  ],
+  "new": [
+    "assets/fonts/open-licensed/EB-GARAMOND-OFL.txt",
+    "assets/fonts/open-licensed/FA-LICENSE.txt",
+    "assets/fonts/open-licensed/INTER-OFL.txt",
+    "assets/fonts/open-licensed/PROVENANCE.json",
+    "assets/fonts/open-licensed/open-03fdcf2e62da5f72.woff2",
+    "assets/fonts/open-licensed/open-05cf802c73c174d1.woff2",
+    "assets/fonts/open-licensed/open-1ec93848f8ce5893.woff2",
+    "assets/fonts/open-licensed/open-2b2f25a453b4fdfb.woff2",
+    "assets/fonts/open-licensed/open-2ff3de0722418f01.woff2",
+    "assets/fonts/open-licensed/open-385f7cb4d158ddf4.woff2",
+    "assets/fonts/open-licensed/open-467acc7aa76b62d6.woff2",
+    "assets/fonts/open-licensed/open-59e19c31b594dd71.woff2",
+    "assets/fonts/open-licensed/open-6e85163c68a33810.woff2",
+    "assets/fonts/open-licensed/open-6eb09e8cbd7ecca6.woff2",
+    "assets/fonts/open-licensed/open-7048add3bf7c79c5.woff2",
+    "assets/fonts/open-licensed/open-75faa677c427d054.woff2",
+    "assets/fonts/open-licensed/open-832073536d36a184.woff2",
+    "assets/fonts/open-licensed/open-86fd4971c9e0a091.woff2",
+    "assets/fonts/open-licensed/open-91aba817984c0c7a.woff2",
+    "assets/fonts/open-licensed/open-95ccbd6843ba8792.woff2",
+    "assets/fonts/open-licensed/open-9be0371ef54b377a.woff2",
+    "assets/fonts/open-licensed/open-a28b7e319024809f.woff2",
+    "assets/fonts/open-licensed/open-aa1ab01919f1bcc2.woff2",
+    "assets/fonts/open-licensed/open-b724bdd58390cc3c.woff2",
+    "assets/fonts/open-licensed/open-b8fdf354efc11ac6.woff2",
+    "assets/fonts/open-licensed/open-c209f2dce8049d0a.woff2",
+    "assets/fonts/open-licensed/open-c5e64e77ba839191.woff2",
+    "assets/fonts/open-licensed/open-cabeb3675215f007.woff2",
+    "assets/fonts/open-licensed/open-d22b093a876a7a66.woff2",
+    "assets/fonts/open-licensed/open-d26cc78fa0542809.woff2",
+    "assets/fonts/open-licensed/open-d52143162dac93ed.woff2",
+    "assets/fonts/open-licensed/open-faab223bb3d69874.woff2",
+    "assets/fonts/open-licensed/open-fonts.css",
+    "assets/fonts/open-licensed/open-social-brands.woff2",
+    "assets/fonts/open-licensed/open-social-solid.woff2",
+    "assets/fonts/open-licensed/open-ui-solid.woff2",
+    "assets/fonts/open-licensed/template-d1bb66055ede2925.css",
+    "docs/assets/fonts/open-licensed/EB-GARAMOND-OFL.txt",
+    "docs/assets/fonts/open-licensed/FA-LICENSE.txt",
+    "docs/assets/fonts/open-licensed/INTER-OFL.txt",
+    "docs/assets/fonts/open-licensed/PROVENANCE.json",
+    "docs/assets/fonts/open-licensed/open-03fdcf2e62da5f72.woff2",
+    "docs/assets/fonts/open-licensed/open-05cf802c73c174d1.woff2",
+    "docs/assets/fonts/open-licensed/open-1ec93848f8ce5893.woff2",
+    "docs/assets/fonts/open-licensed/open-2b2f25a453b4fdfb.woff2",
+    "docs/assets/fonts/open-licensed/open-2ff3de0722418f01.woff2",
+    "docs/assets/fonts/open-licensed/open-385f7cb4d158ddf4.woff2",
+    "docs/assets/fonts/open-licensed/open-467acc7aa76b62d6.woff2",
+    "docs/assets/fonts/open-licensed/open-59e19c31b594dd71.woff2",
+    "docs/assets/fonts/open-licensed/open-6e85163c68a33810.woff2",
+    "docs/assets/fonts/open-licensed/open-6eb09e8cbd7ecca6.woff2",
+    "docs/assets/fonts/open-licensed/open-7048add3bf7c79c5.woff2",
+    "docs/assets/fonts/open-licensed/open-75faa677c427d054.woff2",
+    "docs/assets/fonts/open-licensed/open-832073536d36a184.woff2",
+    "docs/assets/fonts/open-licensed/open-86fd4971c9e0a091.woff2",
+    "docs/assets/fonts/open-licensed/open-91aba817984c0c7a.woff2",
+    "docs/assets/fonts/open-licensed/open-95ccbd6843ba8792.woff2",
+    "docs/assets/fonts/open-licensed/open-9be0371ef54b377a.woff2",
+    "docs/assets/fonts/open-licensed/open-a28b7e319024809f.woff2",
+    "docs/assets/fonts/open-licensed/open-aa1ab01919f1bcc2.woff2",
+    "docs/assets/fonts/open-licensed/open-b724bdd58390cc3c.woff2",
+    "docs/assets/fonts/open-licensed/open-b8fdf354efc11ac6.woff2",
+    "docs/assets/fonts/open-licensed/open-c209f2dce8049d0a.woff2",
+    "docs/assets/fonts/open-licensed/open-c5e64e77ba839191.woff2",
+    "docs/assets/fonts/open-licensed/open-cabeb3675215f007.woff2",
+    "docs/assets/fonts/open-licensed/open-d22b093a876a7a66.woff2",
+    "docs/assets/fonts/open-licensed/open-d26cc78fa0542809.woff2",
+    "docs/assets/fonts/open-licensed/open-d52143162dac93ed.woff2",
+    "docs/assets/fonts/open-licensed/open-faab223bb3d69874.woff2",
+    "docs/assets/fonts/open-licensed/open-fonts.css",
+    "docs/assets/fonts/open-licensed/open-social-brands.woff2",
+    "docs/assets/fonts/open-licensed/open-social-solid.woff2",
+    "docs/assets/fonts/open-licensed/open-ui-solid.woff2"
+  ],
+  "font_sources": {
+    "open-d22b093a876a7a66.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDY1ZyHKpWiGIg.woff2",
+      "sha256": "8b2dcef53a6ade1cbbe7038372cccf1585cc766a09ff1db0b70246bca39d6b72"
+    },
+    "open-59e19c31b594dd71.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweD81ZyHKpWiGIg.woff2",
+      "sha256": "d2c4018bf5127a0d3d761c537ab8d96d4bbfb27c592835d23f7ac9db77c11980"
+    },
+    "open-b8fdf354efc11ac6.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDc1ZyHKpWiGIg.woff2",
+      "sha256": "6f05b7834287650ff917192744e045ca26b78fbfce32a68879fa8169e556275b"
+    },
+    "open-b724bdd58390cc3c.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDg1ZyHKpWiGIg.woff2",
+      "sha256": "09d8e9535aa76ce24b659ab15c402765d8c1741222f2ba7a10661ceec69f02ef"
+    },
+    "open-1ec93848f8ce5893.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDQ1ZyHKpWiGIg.woff2",
+      "sha256": "ad65742680d232e669d8457524be63fd6a847ddc4f94f26ee81e3ac1c3d03960"
+    },
+    "open-d52143162dac93ed.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDU1ZyHKpWiGIg.woff2",
+      "sha256": "0077bd5045a699e2d26d1fc5a6071f865ec0698ba419cad62ce9465b59b6d47c"
+    },
+    "open-c209f2dce8049d0a.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2",
+      "sha256": "d2761541b314509e02df3539cd35fc712954a48a50f4e0ab424dde817c699c2a"
+    },
+    "open-d26cc78fa0542809.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR4SDk_YAPIlWk.woff2",
+      "sha256": "2db942ef6f5237810b751b686706fbd08969a28d055318a9a8fb4a1ec99bbcce"
+    },
+    "open-91aba817984c0c7a.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GRxSDk_YAPIlWk.woff2",
+      "sha256": "171a104fa20c9ccf6c25945151a98b37ed2ae26986c2e01f9afda65ee2fa9f77"
+    },
+    "open-75faa677c427d054.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR5SDk_YAPIlWk.woff2",
+      "sha256": "65f7302476afd8d89c200101a987691cd99da017e25fb4bf8f57c385f69e9b6f"
+    },
+    "open-cabeb3675215f007.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR2SDk_YAPIlWk.woff2",
+      "sha256": "19e98f32f56c0f648cc511d29305b295f6f63a7cf1f1c72eb8516dd21e69a705"
+    },
+    "open-c5e64e77ba839191.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR6SDk_YAPIlWk.woff2",
+      "sha256": "d858010614321f668ca37def13edb91c98f9747d5126092a9dcbff264d6eb948"
+    },
+    "open-faab223bb3d69874.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR7SDk_YAPIlWk.woff2",
+      "sha256": "c2fa6862b03629214873944b171b0df1189420be52aabd82142d45f96fdce588"
+    },
+    "open-95ccbd6843ba8792.woff2": {
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2",
+      "sha256": "68fd4b247dde89984ee835d99953d235e4927be2b1b732ad81173b519869cee8"
+    },
+    "open-86fd4971c9e0a091.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L0UUMbndwVgHU.woff2",
+      "sha256": "0f92203a358b4662692225df10fe0248c46f1739ec2ff6cf0a3179efe7427edd"
+    },
+    "open-2ff3de0722418f01.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L9UUMbndwVgHU.woff2",
+      "sha256": "d597da1979fa0117693401dfe465deef70518b035556a2c022d34ed37430a1c7"
+    },
+    "open-6eb09e8cbd7ecca6.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L1UUMbndwVgHU.woff2",
+      "sha256": "2625be35a2119d2661e5f8545b23f335796601b2a0341569eea1f73cad3c3934"
+    },
+    "open-832073536d36a184.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L6UUMbndwVgHU.woff2",
+      "sha256": "9f1ed4fb9c23ce2edd414e57b3845cd7b4891ae6d66ce954abca02b6796941d4"
+    },
+    "open-385f7cb4d158ddf4.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L2UUMbndwVgHU.woff2",
+      "sha256": "43c8ceb4cbc3853077673d90f044b79d6aea27e0fc8f6fde73e581fb4eab8a99"
+    },
+    "open-03fdcf2e62da5f72.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L3UUMbndwVgHU.woff2",
+      "sha256": "e3f94a6c4b2177643513bf5e2317b8458183d064e40031fa04c074136be205e8"
+    },
+    "open-aa1ab01919f1bcc2.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC53FwrK3iLTcvneQg7Ca725JhhKnNqk6L5UUMbndwV.woff2",
+      "sha256": "7ddd9658a57d7c5811b4f6aa43625433d72c05ac83c46a231ef3dfd88813c8a1"
+    },
+    "open-6e85163c68a33810.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2",
+      "sha256": "fccca918fea40089dacadc7045861314d1a6bc91f1f323cc1eeb22ebcdb321b5"
+    },
+    "open-467acc7aa76b62d6.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2",
+      "sha256": "aebf2ab4a4ce6810d73c1ac7be7cafb4e5ec4cee2d6db5fb3e09691747ec4bd6"
+    },
+    "open-9be0371ef54b377a.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2",
+      "sha256": "a2e2c783ca6f9c20486e81e72a279203e86730bbf8f01ff6a5ee9dbd09e1c271"
+    },
+    "open-05cf802c73c174d1.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2",
+      "sha256": "46dd4cdca58c26ae87cc6927657bf83b2e8abfc39ffd0ab176e301a8d28d22bf"
+    },
+    "open-2b2f25a453b4fdfb.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2",
+      "sha256": "8db00ff46c67b22cda8bed865acf7077651cac8d2841d5b40980556b48961931"
+    },
+    "open-7048add3bf7c79c5.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2",
+      "sha256": "a28eb6d3ccb534ae0c94ca999371df024aab60b08c3c8a5720ee9e32fa0faaa2"
+    },
+    "open-a28b7e319024809f.woff2": {
+      "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+      "sha256": "c940764593d0fe5d596be327ca7558855e018039fb78509aa21921fd3644c3e4"
+    }
+  },
+  "font_css_source": "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap",
+  "icon_sources": [
+    "https://github.com/FortAwesome/Font-Awesome/tree/6.7.2/webfonts",
+    "https://github.com/FortAwesome/Font-Awesome/blob/6.7.2/LICENSE.txt"
+  ],
+  "icon_mappings": [
+    {
+      "legacy_codepoint": "0xe000",
+      "meaning": "angle-left",
+      "source_icon": "f104",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe003",
+      "meaning": "angle-right",
+      "source_icon": "f105",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe006",
+      "meaning": "chevron-up",
+      "source_icon": "f077",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe009",
+      "meaning": "chevron-down",
+      "source_icon": "f078",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe00c",
+      "meaning": "clock",
+      "source_icon": "f017",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe010",
+      "meaning": "comment",
+      "source_icon": "f075",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe012",
+      "meaning": "heart",
+      "source_icon": "f004",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe015",
+      "meaning": "calendar",
+      "source_icon": "f133",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe02b",
+      "meaning": "share-nodes",
+      "source_icon": "f1e0",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe02c",
+      "meaning": "chevron-left",
+      "source_icon": "f053",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe02d",
+      "meaning": "chevron-right",
+      "source_icon": "f054",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe02e",
+      "meaning": "xmark",
+      "source_icon": "f00d",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe02f",
+      "meaning": "location-dot",
+      "source_icon": "f3c5",
+      "source_style": "solid",
+      "output": "open-ui-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe630",
+      "meaning": "rss",
+      "source_icon": "f09e",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe600",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe601",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe602",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62a",
+      "meaning": "envelope",
+      "source_icon": "f0e0",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62b",
+      "meaning": "envelope",
+      "source_icon": "f0e0",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62c",
+      "meaning": "envelope",
+      "source_icon": "f0e0",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe631",
+      "meaning": "rss",
+      "source_icon": "f09e",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe632",
+      "meaning": "rss",
+      "source_icon": "f09e",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe642",
+      "meaning": "ticket",
+      "source_icon": "f145",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe643",
+      "meaning": "ticket",
+      "source_icon": "f145",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe644",
+      "meaning": "ticket",
+      "source_icon": "f145",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64e",
+      "meaning": "music",
+      "source_icon": "f001",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64f",
+      "meaning": "music",
+      "source_icon": "f001",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe650",
+      "meaning": "music",
+      "source_icon": "f001",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65d",
+      "meaning": "play",
+      "source_icon": "f04b",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65e",
+      "meaning": "play",
+      "source_icon": "f04b",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65f",
+      "meaning": "play",
+      "source_icon": "f04b",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe663",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe664",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe665",
+      "meaning": "camera",
+      "source_icon": "f030",
+      "source_style": "solid",
+      "output": "open-social-solid.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe603",
+      "meaning": "dribbble",
+      "source_icon": "f17d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe604",
+      "meaning": "dribbble",
+      "source_icon": "f17d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe605",
+      "meaning": "dribbble",
+      "source_icon": "f17d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe606",
+      "meaning": "youtube",
+      "source_icon": "f167",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe607",
+      "meaning": "youtube",
+      "source_icon": "f167",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe608",
+      "meaning": "youtube",
+      "source_icon": "f167",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe609",
+      "meaning": "vimeo",
+      "source_icon": "f40a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60a",
+      "meaning": "vimeo",
+      "source_icon": "f40a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60b",
+      "meaning": "vimeo",
+      "source_icon": "f40a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60c",
+      "meaning": "twitter",
+      "source_icon": "f099",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60d",
+      "meaning": "twitter",
+      "source_icon": "f099",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60e",
+      "meaning": "twitter",
+      "source_icon": "f099",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe60f",
+      "meaning": "tumblr",
+      "source_icon": "f173",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe610",
+      "meaning": "tumblr",
+      "source_icon": "f173",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe611",
+      "meaning": "tumblr",
+      "source_icon": "f173",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe612",
+      "meaning": "pinterest",
+      "source_icon": "f0d2",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe613",
+      "meaning": "pinterest",
+      "source_icon": "f0d2",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe614",
+      "meaning": "pinterest",
+      "source_icon": "f0d2",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe615",
+      "meaning": "linkedin",
+      "source_icon": "f08c",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe616",
+      "meaning": "linkedin",
+      "source_icon": "f08c",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe617",
+      "meaning": "linkedin",
+      "source_icon": "f08c",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe618",
+      "meaning": "instagram",
+      "source_icon": "f16d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe619",
+      "meaning": "instagram",
+      "source_icon": "f16d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe61a",
+      "meaning": "instagram",
+      "source_icon": "f16d",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe61e",
+      "meaning": "foursquare",
+      "source_icon": "f180",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe61f",
+      "meaning": "foursquare",
+      "source_icon": "f180",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe620",
+      "meaning": "foursquare",
+      "source_icon": "f180",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe621",
+      "meaning": "flickr",
+      "source_icon": "f16e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe622",
+      "meaning": "flickr",
+      "source_icon": "f16e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe623",
+      "meaning": "flickr",
+      "source_icon": "f16e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe624",
+      "meaning": "facebook",
+      "source_icon": "f09a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe625",
+      "meaning": "facebook",
+      "source_icon": "f09a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe626",
+      "meaning": "facebook",
+      "source_icon": "f09a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe627",
+      "meaning": "500px",
+      "source_icon": "f26e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe628",
+      "meaning": "500px",
+      "source_icon": "f26e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe629",
+      "meaning": "500px",
+      "source_icon": "f26e",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62d",
+      "meaning": "github",
+      "source_icon": "f09b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62e",
+      "meaning": "github",
+      "source_icon": "f09b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe62f",
+      "meaning": "github",
+      "source_icon": "f09b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe633",
+      "meaning": "spotify",
+      "source_icon": "f1bc",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe634",
+      "meaning": "spotify",
+      "source_icon": "f1bc",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe635",
+      "meaning": "spotify",
+      "source_icon": "f1bc",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe636",
+      "meaning": "soundcloud",
+      "source_icon": "f1be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe637",
+      "meaning": "soundcloud",
+      "source_icon": "f1be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe638",
+      "meaning": "soundcloud",
+      "source_icon": "f1be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe639",
+      "meaning": "itunes",
+      "source_icon": "f3b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63a",
+      "meaning": "itunes",
+      "source_icon": "f3b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63b",
+      "meaning": "itunes",
+      "source_icon": "f3b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63c",
+      "meaning": "google-play",
+      "source_icon": "f3ab",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63d",
+      "meaning": "google-play",
+      "source_icon": "f3ab",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63e",
+      "meaning": "google-play",
+      "source_icon": "f3ab",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe63f",
+      "meaning": "dropbox",
+      "source_icon": "f16b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe640",
+      "meaning": "dropbox",
+      "source_icon": "f16b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe641",
+      "meaning": "dropbox",
+      "source_icon": "f16b",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe645",
+      "meaning": "behance",
+      "source_icon": "f1b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe646",
+      "meaning": "behance",
+      "source_icon": "f1b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe647",
+      "meaning": "behance",
+      "source_icon": "f1b4",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe648",
+      "meaning": "codepen",
+      "source_icon": "f1cb",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe649",
+      "meaning": "codepen",
+      "source_icon": "f1cb",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64a",
+      "meaning": "codepen",
+      "source_icon": "f1cb",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64b",
+      "meaning": "medium",
+      "source_icon": "f23a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64c",
+      "meaning": "medium",
+      "source_icon": "f23a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe64d",
+      "meaning": "medium",
+      "source_icon": "f23a",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe651",
+      "meaning": "squarespace",
+      "source_icon": "f5be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe652",
+      "meaning": "squarespace",
+      "source_icon": "f5be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe653",
+      "meaning": "squarespace",
+      "source_icon": "f5be",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe654",
+      "meaning": "vine",
+      "source_icon": "f1ca",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe655",
+      "meaning": "vine",
+      "source_icon": "f1ca",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe656",
+      "meaning": "vine",
+      "source_icon": "f1ca",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe657",
+      "meaning": "yelp",
+      "source_icon": "f1e9",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe658",
+      "meaning": "yelp",
+      "source_icon": "f1e9",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe659",
+      "meaning": "yelp",
+      "source_icon": "f1e9",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65a",
+      "meaning": "meetup",
+      "source_icon": "f2e0",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65b",
+      "meaning": "meetup",
+      "source_icon": "f2e0",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe65c",
+      "meaning": "meetup",
+      "source_icon": "f2e0",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe660",
+      "meaning": "twitch",
+      "source_icon": "f1e8",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe661",
+      "meaning": "twitch",
+      "source_icon": "f1e8",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    },
+    {
+      "legacy_codepoint": "0xe662",
+      "meaning": "twitch",
+      "source_icon": "f1e8",
+      "source_style": "brands",
+      "output": "open-social-brands.woff2"
+    }
+  ],
+  "icon_generated_sha256": {
+    "open-social-solid.woff2": "7dfcf67e4df95318ea88d2c54968c7434cefe3502ba058a6d457696bff6d73b3",
+    "open-ui-solid.woff2": "2cbc8863cf79c8bc576c15568d6cb80c18537830d3dd4b910de4d13d8739b70b",
+    "open-social-brands.woff2": "4ffef870e08890506a0dda51cda3f8ae537851d209f5e40a11305717298e8d29"
+  },
+  "caveat": "SmugMug, Bandsintown, Rdio, Vevo and VSCO unused legacy social selectors map to open category equivalents; no instantiated HTML font-icon social classes found. All UI glyphs remapped explicitly.",
+  "localized_css": [
+    {
+      "repository": "CulturalPeace",
+      "file": "assets/fonts/open-licensed/template-d1bb66055ede2925.css",
+      "source": "https://static1.squarespace.com/static/sitecss/5d741f0f8cab1d570da423f9/46/52a74dafe4b073a80cd253c5/5d741f0f8cab1d570da4240f/1053/site.css",
+      "sha256": "52fd85d894b2fc47df152165ce43977ae921c6b713b934f986fa7680460c3f22",
+      "source_sha256": "e95b4372887f5f370522eea9d79274b4e05c0b9dadc35a143e6c7b2b35c4e6a4"
+    }
+  ],
+  "original_icon_binary_sources": {
+    "fa-solid-900.ttf": {
+      "url": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.7.2/webfonts/fa-solid-900.ttf",
+      "sha256": "af19d135d3a935b3ebfbd80320716ffe1202052c5f68dc2c5f1abc57005ac605"
+    },
+    "fa-brands-400.ttf": {
+      "url": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.7.2/webfonts/fa-brands-400.ttf",
+      "sha256": "0821aa9ca9cc259fad64b1dc7f1cc5be71faaee46bb945ede763fca0c4166bed"
+    }
+  },
+  "licence_sources": {
+    "EB-GARAMOND-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/ebgaramond/OFL.txt",
+    "INTER-OFL.txt": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+    "FA-LICENSE.txt": "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.7.2/LICENSE.txt"
+  },
+  "published_icon_binary_sources": {}
+}
